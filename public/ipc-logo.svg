@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <linearGradient id="redGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#dc2626;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b91c1c;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#16a34a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#15803d;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Circular text arc: "THE INDIA PENTECOSTAL CHURCH OF GOD" -->
+  <path id="arcPath" d="M 80 120 A 120 120 0 0 1 320 120" fill="none" stroke="none"/>
+  <text fill="#dc2626" font-family="Arial, sans-serif" font-weight="bold" font-size="18">
+    <textPath href="#arcPath" startOffset="0%">
+      <tspan>THE INDIA PENTECOSTAL</tspan>
+    </textPath>
+  </text>
+  <path id="arcPath2" d="M 320 120 A 120 120 0 0 1 80 120" fill="none" stroke="none"/>
+  <text fill="#dc2626" font-family="Arial, sans-serif" font-weight="bold" font-size="18">
+    <textPath href="#arcPath2" startOffset="0%">
+      <tspan>CHURCH OF GOD</tspan>
+    </textPath>
+  </text>
+  
+  <!-- Map of India silhouette (simplified) -->
+  <path d="M 180 80 
+           L 200 75 L 220 80 L 230 90 L 235 110 L 240 130 L 245 150 
+           L 250 170 L 245 185 L 240 200 L 235 210 L 230 220 
+           L 220 230 L 210 235 L 200 240 L 190 235 L 180 230 
+           L 170 220 L 165 210 L 160 200 L 155 185 L 150 170 
+           L 155 150 L 160 130 L 165 110 L 170 90 
+           Z" 
+        fill="url(#redGrad)" stroke="#b91c1c" stroke-width="2"/>
+  
+  <!-- Northern region detail -->
+  <path d="M 195 75 L 205 70 L 210 75 L 205 80 Z" fill="url(#redGrad)"/>
+  
+  <!-- Green stylized elements (open pages/book) -->
+  <path d="M 160 220 Q 150 240 140 250 Q 150 245 160 240 Z" fill="url(#greenGrad)"/>
+  <path d="M 240 220 Q 250 240 260 250 Q 250 245 240 240 Z" fill="url(#greenGrad)"/>
+  
+  <!-- White flame/teardrop shape in center -->
+  <ellipse cx="200" cy="235" rx="8" ry="12" fill="#ffffff" opacity="0.9"/>
+  <path d="M 200 223 Q 195 228 200 235 Q 205 228 200 223 Z" fill="#ffffff"/>
+  
+  <!-- Bottom text: "KUMBANAD, KERALA" -->
+  <text x="200" y="270" fill="#16a34a" font-family="Arial, sans-serif" font-weight="bold" font-size="16" text-anchor="middle">
+    KUMBANAD, KERALA
+  </text>
+</svg>
