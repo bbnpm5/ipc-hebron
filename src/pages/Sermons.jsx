@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import { Play, Calendar, User, Download } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 const Sermons = () => {
+  const { t } = useTranslation()
   // Sample sermon data - in production, this would come from an API
   const [sermons] = useState([
     {
@@ -77,6 +79,25 @@ const Sermons = () => {
 
   return (
     <div>
+      {/* Page Banner */}
+      <section className="relative bg-gradient-to-r from-primary-600 to-primary-700 text-white py-16 md:py-24 overflow-hidden">
+        {/* Background Image - Sermons Theme */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1920&h=600&fit=crop&q=80)',
+            filter: 'brightness(0.35) contrast(1.15) saturate(1.1)'
+          }}
+        ></div>
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-900/80 via-primary-800/70 to-primary-900/80"></div>
+        {/* Content */}
+        <div className="container-custom text-center relative z-10">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold drop-shadow-2xl">{t('pageTitles.sermons')}</h1>
+          <p className="mt-4 text-lg md:text-xl text-primary-100 drop-shadow-lg">{t('home.listenMessages')}</p>
+        </div>
+      </section>
+
       {/* Sermons List */}
       <section className="section-padding bg-gray-50">
         <div className="container-custom">

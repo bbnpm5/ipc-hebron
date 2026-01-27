@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import { Heart, CreditCard, Building2, QrCode, CheckCircle, Currency } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 const Giving = () => {
+  const { t } = useTranslation()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -44,6 +46,25 @@ const Giving = () => {
 
   return (
     <div>
+      {/* Page Banner */}
+      <section className="relative bg-gradient-to-r from-primary-600 to-primary-700 text-white py-16 md:py-24 overflow-hidden">
+        {/* Background Image - Giving Theme */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=1920&h=600&fit=crop&q=80)',
+            filter: 'brightness(0.35) contrast(1.15) saturate(1.1)'
+          }}
+        ></div>
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-900/80 via-primary-800/70 to-primary-900/80"></div>
+        {/* Content */}
+        <div className="container-custom text-center relative z-10">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold drop-shadow-2xl">{t('pageTitles.giving')}</h1>
+          <p className="mt-4 text-lg md:text-xl text-primary-100 drop-shadow-lg">Supporting God's Work Through Generous Giving</p>
+        </div>
+      </section>
+
       {/* Giving Information */}
       <section className="section-padding bg-gray-50">
         <div className="container-custom max-w-4xl">

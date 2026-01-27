@@ -3,6 +3,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import WhatsAppButton from './components/WhatsAppButton'
 import ScrollToTop from './components/ScrollToTop'
+import ScrollToTopButton from './components/ScrollToTopButton'
 import Home from './pages/Home'
 import About from './pages/About'
 import Services from './pages/Services'
@@ -13,6 +14,8 @@ import Giving from './pages/Giving'
 import Gallery from './pages/Gallery'
 import Contact from './pages/Contact'
 import Ministries from './pages/Ministries'
+import StatementOfFaith from './pages/StatementOfFaith'
+import OurStory from './pages/OurStory'
 
 function App() {
   return (
@@ -24,6 +27,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/our-story" element={<OurStory />} />
             <Route path="/services" element={<Services />} />
             <Route path="/sermons" element={<Sermons />} />
             <Route path="/events" element={<Events />} />
@@ -32,10 +36,12 @@ function App() {
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/ministries" element={<Ministries />} />
+            <Route path="/statement-of-faith" element={<StatementOfFaith />} />
           </Routes>
         </main>
         <Footer />
         <WhatsAppButton />
+        <ScrollToTopButton />
       </div>
     </Router>
   )

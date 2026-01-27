@@ -1,15 +1,50 @@
-import { Users, Heart, BookOpen, Cross } from 'lucide-react'
+import { Users, Heart, BookOpen, Cross, Sparkles } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 const About = () => {
+  const { t } = useTranslation()
   return (
     <div>
-      {/* Mission Statement */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom max-w-4xl">
-          <div className="text-center mb-12">
-            <Cross className="w-16 h-16 text-primary-600 mx-auto mb-6" />
-            <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
-            <p className="text-lg text-gray-700 leading-relaxed font-serif italic">
+      {/* Page Banner */}
+      <section className="relative bg-gradient-to-r from-primary-600 to-primary-700 text-white py-16 md:py-24 overflow-hidden">
+        {/* Background Image - Church Community Theme */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: 'url(https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=1920&h=600&fit=crop&q=80)',
+            filter: 'brightness(0.35) contrast(1.15) saturate(1.1)'
+          }}
+        ></div>
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-r from-primary-900/80 via-primary-800/70 to-primary-900/80"></div>
+        {/* Content */}
+        <div className="container-custom text-center relative z-10">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold drop-shadow-2xl">{t('pageTitles.about')}</h1>
+          <p className="mt-4 text-lg md:text-xl text-primary-100 drop-shadow-lg">{t('about.subtitle')}</p>
+        </div>
+      </section>
+
+      {/* Enhanced Mission Statement with UI/UX Pro Max */}
+      <section className="section-padding bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundSize: '60px 60px'
+          }}></div>
+        </div>
+        
+        <div className="container-custom max-w-5xl relative z-10">
+          <div className="card-gradient p-8 md:p-12 text-center animate-fade-in">
+            <div className="inline-block mb-6">
+              <div className="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-700 rounded-2xl flex items-center justify-center mx-auto shadow-glow-lg">
+                <Cross className="w-10 h-10 text-white" strokeWidth={2.5} />
+              </div>
+            </div>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 text-gradient">
+              Our Mission
+            </h2>
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-serif italic max-w-3xl mx-auto">
               "Our mission is to glorify God by proclaiming the Gospel of Jesus Christ, 
               being led by the Holy Spirit, making disciples, and demonstrating God's love 
               through worship, word, and works."
@@ -18,301 +53,64 @@ const About = () => {
         </div>
       </section>
 
-      {/* About Content */}
-      <section className="section-padding bg-white">
-        <div className="container-custom max-w-4xl">
-          <div className="prose prose-lg mx-auto">
-            <h2 className="text-3xl font-bold mb-6">Who We Are</h2>
-            <p className="text-gray-700 leading-relaxed mb-6">
-              India Pentecostal Church Hebron (IPC Hebron) is a vibrant Pentecostal 
-              congregation located in Neria, Belthangady Taluk, Dakshina Kannada, Karnataka, India. 
-              We are a community of believers committed to following Jesus Christ and 
-              spreading His message of love, hope, and salvation.
-            </p>
-            <p className="text-gray-700 leading-relaxed mb-6">
-              As a Pentecostal church, we believe in the power and presence of the Holy 
-              Spirit in our lives and worship. We emphasize the importance of prayer, 
-              worship, and the study of God's Word as foundational to our faith journey.
-            </p>
-          </div>
+      {/* Enhanced Core Values with UI/UX Pro Max */}
+      <section className="section-padding bg-gradient-to-b from-gray-50 via-white to-gray-50 relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundSize: '60px 60px'
+          }}></div>
         </div>
-      </section>
-
-      {/* Leadership - Current Pastor */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom max-w-4xl">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Leadership</h2>
-          <div className="bg-primary-50 rounded-lg p-8 text-center">
-            <div className="w-32 h-32 bg-primary-600 rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop" 
-                alt="Pastor Suresh" 
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <h3 className="text-2xl font-bold mb-2">Pastor Suresh</h3>
-            <p className="text-gray-700 text-lg mb-2">Senior Pastor (2018 - Present)</p>
-            <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-              Pastor Suresh leads our congregation with dedication and passion, 
-              guiding us in our walk with Christ and serving our community with 
-              love and compassion. Under his leadership, the church continues to 
-              grow in faith and impact.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Past Pastors */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our History</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              IPC Hebron was blessed and started in 1990. We honor the faithful 
-              pastors who have served our congregation throughout the years.
+        
+        <div className="container-custom max-w-6xl relative z-10">
+          <div className="text-center mb-12 md:mb-16 animate-fade-in">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 text-gradient">
+              Our Core Values
+            </h2>
+            <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto">
+              The foundational principles that guide our faith and ministry
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
-            {/* Pr K P Babu - Founder */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="h-64 bg-gray-200 overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" 
-                  alt="Pr K P Babu" 
-                  className="w-full h-full object-cover"
-                />
+          <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+            {/* Word of God */}
+            <div className="card-gradient group hover:shadow-glow-lg transition-all duration-300 hover:-translate-y-2 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+              <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-700 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-large group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 group-hover:shadow-glow">
+                <BookOpen className="w-8 h-8 text-white" strokeWidth={2.5} />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">Pr K P Babu</h3>
-                <p className="text-primary-600 font-semibold mb-3">1990 - 1997 (7 years)</p>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Pr K P Babu was the founding pastor who established IPC Hebron in 1990. 
-                  His vision and dedication laid the foundation for our church, and his 
-                  faithful service for 7 years set the course for our ministry.
-                </p>
-              </div>
-            </div>
-
-            {/* Pr P P Daniel */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="h-64 bg-gray-200 overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" 
-                  alt="Pr P P Daniel" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">Pr P P Daniel</h3>
-                <p className="text-primary-600 font-semibold mb-3">1997 - 2001 (4 years)</p>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Pr P P Daniel served our church with great commitment for 4 years. 
-                  His leadership strengthened our congregation and continued the work 
-                  of building a strong foundation in faith and community.
-                </p>
-              </div>
-            </div>
-
-            {/* Pr Raju KJ */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="h-64 bg-gray-200 overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" 
-                  alt="Pr Raju KJ" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">Pr Raju KJ</h3>
-                <p className="text-primary-600 font-semibold mb-3">2001 - 2006 (5 years)</p>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Pr Raju KJ led our church for 5 years with wisdom and grace. During 
-                  his tenure, the church experienced significant growth in membership 
-                  and expanded its ministry outreach to the community.
-                </p>
-              </div>
-            </div>
-
-            {/* Pr Raju CS */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="h-64 bg-gray-200 overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" 
-                  alt="Pr Raju CS" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">Pr Raju CS</h3>
-                <p className="text-primary-600 font-semibold mb-3">2006 - 2009 (3 years)</p>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Pr Raju CS served our congregation for 3 years with passion and 
-                  dedication. His teaching ministry and pastoral care blessed many 
-                  families and strengthened the spiritual foundation of our church.
-                </p>
-              </div>
-            </div>
-
-            {/* Pr Jose Paul */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="h-64 bg-gray-200 overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" 
-                  alt="Pr Jose Paul" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">Pr Jose Paul</h3>
-                <p className="text-primary-600 font-semibold mb-3">2009 - 2012 (3 years)</p>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Pr Jose Paul ministered to our church for 3 years with faithfulness 
-                  and love. His emphasis on prayer and worship brought renewal to our 
-                  congregation and deepened our relationship with God.
-                </p>
-              </div>
-            </div>
-
-            {/* Pr Aby */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="h-64 bg-gray-200 overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" 
-                  alt="Pr Aby" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">Pr Aby</h3>
-                <p className="text-primary-600 font-semibold mb-3">2012 - 2015 (3 years)</p>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Pr Aby served our church for 3 years with great commitment. His 
-                  leadership focused on discipleship and community building, leaving 
-                  a lasting impact on the spiritual growth of our members.
-                </p>
-              </div>
-            </div>
-
-            {/* Pr Roy */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="h-64 bg-gray-200 overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" 
-                  alt="Pr Roy" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">Pr Roy</h3>
-                <p className="text-primary-600 font-semibold mb-3">2015 - 2018 (3 years)</p>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Pr Roy led our congregation for 3 years with wisdom and compassion. 
-                  His ministry emphasized evangelism and outreach, bringing many new 
-                  souls to Christ and expanding our church's impact in the community.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Current Governing Body */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Current Governing Body</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {/* Senior Pastor */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden text-center">
-              <div className="h-64 bg-gray-200 overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" 
-                  alt="Pastor Suresh" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">Pastor Suresh</h3>
-                <p className="text-primary-600 font-semibold mb-3">Senior Pastor</p>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Leading the congregation with vision and dedication, Pastor Suresh 
-                  continues to guide IPC Hebron in its mission to serve God and the community.
-                </p>
-              </div>
-            </div>
-
-            {/* Deacon/Elder 1 */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden text-center">
-              <div className="h-64 bg-gray-200 overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" 
-                  alt="Church Elder" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">Church Elder</h3>
-                <p className="text-primary-600 font-semibold mb-3">Board Member</p>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Serving faithfully in church governance and providing spiritual 
-                  guidance to support the ministry and vision of IPC Hebron.
-                </p>
-              </div>
-            </div>
-
-            {/* Deacon/Elder 2 */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden text-center">
-              <div className="h-64 bg-gray-200 overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" 
-                  alt="Church Deacon" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">Church Deacon</h3>
-                <p className="text-primary-600 font-semibold mb-3">Board Member</p>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  Committed to serving the church community and supporting the pastoral 
-                  leadership in administrative and spiritual matters.
-                </p>
-              </div>
-            </div>
-          </div>
-          
-          <div className="mt-8 text-center">
-            <p className="text-gray-600 italic">
-              Note: Please update with actual names and photos of current governing body members.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Core Values */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Core Values</h2>
-          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <div className="bg-white rounded-lg p-6 shadow-md text-center">
-              <BookOpen className="w-12 h-12 text-primary-600 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-3">Word of God</h3>
-              <p className="text-gray-600">
+              <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">
+                Word of God
+              </h3>
+              <p className="text-gray-700 leading-relaxed text-base md:text-lg">
                 We believe the Bible is the inspired Word of God and the foundation 
                 for our faith and practice.
               </p>
             </div>
-            <div className="bg-white rounded-lg p-6 shadow-md text-center">
-              <Heart className="w-12 h-12 text-primary-600 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-3">Love & Community</h3>
-              <p className="text-gray-600">
+            
+            {/* Love & Community */}
+            <div className="card-gradient group hover:shadow-glow-lg transition-all duration-300 hover:-translate-y-2 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              <div className="w-16 h-16 bg-gradient-to-br from-accent-500 to-accent-700 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-large group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 group-hover:shadow-glow">
+                <Heart className="w-8 h-8 text-white" fill="currentColor" strokeWidth={2.5} />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-accent-600 transition-colors">
+                Love & Community
+              </h3>
+              <p className="text-gray-700 leading-relaxed text-base md:text-lg">
                 We demonstrate God's love through our relationships and service to 
                 one another and our community.
               </p>
             </div>
-            <div className="bg-white rounded-lg p-6 shadow-md text-center">
-              <Users className="w-12 h-12 text-primary-600 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-3">Discipleship</h3>
-              <p className="text-gray-600">
+            
+            {/* Discipleship */}
+            <div className="card-gradient group hover:shadow-glow-lg transition-all duration-300 hover:-translate-y-2 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+              <div className="w-16 h-16 bg-gradient-to-br from-gold-500 to-gold-700 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-large group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 group-hover:shadow-glow">
+                <Users className="w-8 h-8 text-white" strokeWidth={2.5} />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-gold-600 transition-colors">
+                Discipleship
+              </h3>
+              <p className="text-gray-700 leading-relaxed text-base md:text-lg">
                 We are committed to making disciples who follow Jesus and share 
                 His message with others.
               </p>
@@ -321,25 +119,223 @@ const About = () => {
         </div>
       </section>
 
-      {/* Denomination Info */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom max-w-4xl">
-          <h2 className="text-3xl font-bold text-center mb-8">Pentecostal Faith</h2>
-          <div className="bg-primary-50 rounded-lg p-8">
-            <p className="text-gray-700 leading-relaxed mb-4">
-              As a Pentecostal church, we embrace the full work of the Holy Spirit 
-              in the life of the believer. We believe in:
-            </p>
-            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
-              <li>The baptism of the Holy Spirit with the evidence of speaking in tongues</li>
-              <li>The gifts of the Spirit for the edification of the church</li>
-              <li>Divine healing and miracles through faith in Jesus Christ</li>
-              <li>The importance of prayer and intercession</li>
-              <li>Worship that is vibrant, Spirit-led, and heartfelt</li>
-            </ul>
+      {/* Message from Pastor Suresh */}
+      <section className="section-padding bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundSize: '60px 60px'
+          }}></div>
+        </div>
+        
+        <div className="container-custom max-w-6xl relative z-10">
+          <div className="card-gradient p-8 md:p-12 animate-fade-in">
+            <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-start">
+              {/* Pastor Photo */}
+              <div className="flex justify-center md:justify-start">
+                <div className="relative group">
+                  <div className="w-64 h-80 md:w-72 md:h-96 rounded-2xl overflow-hidden shadow-large group-hover:shadow-glow-lg transition-all duration-300">
+                    <img 
+                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop" 
+                      alt="Pastor Suresh" 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  {/* Decorative Gradient Overlay */}
+                  <div className="absolute -inset-2 bg-gradient-to-br from-primary-500/20 to-accent-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
+                </div>
+              </div>
+              
+              {/* Message Content */}
+              <div className="space-y-6">
+                <div>
+                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2 text-gradient">
+                    Message
+                  </h2>
+                  <div className="mb-4">
+                    <h3 className="text-xl md:text-2xl font-bold text-primary-600 mb-1">
+                      Pr. Suresh
+                    </h3>
+                    <p className="text-gray-600 font-medium">
+                      Senior Pastor, IPC Hebron Neria
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="space-y-4 text-gray-700 leading-relaxed text-base md:text-lg">
+                  <p className="font-semibold text-primary-700">
+                    Greetings in the precious name of our Lord and Savior Jesus Christ!
+                  </p>
+                  
+                  <p>
+                    I thank God for the amazing ways He has been leading us since the inception of the church in 1990. As a church, let us give thanks to the Lord for His faithfulness He has shown to us throughout these years.
+                  </p>
+                  
+                  <p>
+                    It gives me great pleasure to introduce you to the Church Website of IPC Hebron Neria. IPC Hebron is a spirit-filled Pentecostal church affiliated to Indian Pentecostal Church of God (IPC), Karnataka and serves as a healing community. We are committed to helping our church family gain victory over the daily concerns and challenges of life.
+                  </p>
+                  
+                  <p>
+                    Every human being seeks a place of fellowship, a place where he/she feels loved, a place where he/she can experience peace and joy. Here is a place where you can find the love of God and have fellowship of His chosen people.
+                  </p>
+                  
+                  <p>
+                    Jesus said, "Come to me, all you who are weary and burdened, and I will give you rest". In Jesus, you will find peace and the answers to all your worries and questions. So, let us stand together and worship the Lord in Truth and Spirit. I am hopeful that this website will be useful and will be a means of collaboration.
+                  </p>
+                  
+                  <p className="mt-6 font-semibold text-gray-900">
+                    Yours In Christ,
+                  </p>
+                  <p className="font-semibold text-primary-600">
+                    Pr. Suresh<br />
+                    Senior Pastor
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
+
+
+      {/* Enhanced Governing Board Members with UI/UX Pro Max */}
+      <section className="section-padding bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundSize: '60px 60px'
+          }}></div>
+        </div>
+        
+        <div className="container-custom relative z-10">
+          <div className="text-center mb-12 md:mb-16 animate-fade-in">
+            <div className="inline-block mb-6">
+              <div className="w-20 h-20 bg-gradient-to-br from-primary-500 to-primary-700 rounded-2xl flex items-center justify-center mx-auto shadow-glow-lg">
+                <Users className="w-10 h-10 text-white" strokeWidth={2.5} />
+              </div>
+            </div>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 text-gradient uppercase tracking-wide">
+              Governing Board Members
+            </h2>
+            <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto">
+              Our dedicated leaders serving the church with vision and commitment
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
+            {/* Senior Pastor */}
+            <div className="card-gradient group relative overflow-hidden hover:shadow-glow-lg transition-all duration-300 hover:-translate-y-2 animate-fade-in" style={{ animationDelay: '0.1s' }}>
+              {/* Decorative Background Glow */}
+              <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-br from-primary-500 to-primary-700 rounded-full blur-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 -translate-y-1/2 translate-x-1/2"></div>
+              
+              <div className="relative z-10">
+                <div className="relative mb-6 overflow-hidden rounded-xl">
+                  <div className="aspect-square w-full bg-gradient-to-br from-gray-200 to-gray-300 overflow-hidden">
+                    <img 
+                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" 
+                      alt="Pastor Suresh" 
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                  </div>
+                  {/* Gradient Overlay on Hover */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div className="text-center">
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">
+                    Pastor Suresh
+                  </h3>
+                  <div className="mb-3">
+                    <span className="px-4 py-1 bg-gradient-to-r from-primary-500 to-primary-700 text-white text-sm font-bold rounded-full shadow-medium">
+                      Senior Pastor
+                    </span>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed text-sm md:text-base">
+                    Leading the congregation with vision and dedication, Pastor Suresh 
+                    continues to guide IPC Hebron in its mission to serve God and the community.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Deacon/Elder 1 */}
+            <div className="card-gradient group relative overflow-hidden hover:shadow-glow-lg transition-all duration-300 hover:-translate-y-2 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              {/* Decorative Background Glow */}
+              <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-br from-accent-500 to-accent-700 rounded-full blur-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 -translate-y-1/2 translate-x-1/2"></div>
+              
+              <div className="relative z-10">
+                <div className="relative mb-6 overflow-hidden rounded-xl">
+                  <div className="aspect-square w-full bg-gradient-to-br from-gray-200 to-gray-300 overflow-hidden">
+                    <img 
+                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" 
+                      alt="Church Elder" 
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                  </div>
+                  {/* Gradient Overlay on Hover */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div className="text-center">
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2 group-hover:text-accent-600 transition-colors">
+                    Church Elder
+                  </h3>
+                  <div className="mb-3">
+                    <span className="px-4 py-1 bg-gradient-to-r from-accent-500 to-accent-700 text-white text-sm font-bold rounded-full shadow-medium">
+                      Board Member
+                    </span>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed text-sm md:text-base">
+                    Serving faithfully in church governance and providing spiritual 
+                    guidance to support the ministry and vision of IPC Hebron.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Deacon/Elder 2 */}
+            <div className="card-gradient group relative overflow-hidden hover:shadow-glow-lg transition-all duration-300 hover:-translate-y-2 animate-fade-in" style={{ animationDelay: '0.3s' }}>
+              {/* Decorative Background Glow */}
+              <div className="absolute top-0 right-0 w-48 h-48 bg-gradient-to-br from-gold-500 to-gold-700 rounded-full blur-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-500 -translate-y-1/2 translate-x-1/2"></div>
+              
+              <div className="relative z-10">
+                <div className="relative mb-6 overflow-hidden rounded-xl">
+                  <div className="aspect-square w-full bg-gradient-to-br from-gray-200 to-gray-300 overflow-hidden">
+                    <img 
+                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" 
+                      alt="Church Deacon" 
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                  </div>
+                  {/* Gradient Overlay on Hover */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div className="text-center">
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2 group-hover:text-gold-600 transition-colors">
+                    Church Deacon
+                  </h3>
+                  <div className="mb-3">
+                    <span className="px-4 py-1 bg-gradient-to-r from-gold-500 to-gold-700 text-white text-sm font-bold rounded-full shadow-medium">
+                      Board Member
+                    </span>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed text-sm md:text-base">
+                    Committed to serving the church community and supporting the pastoral 
+                    leadership in administrative and spiritual matters.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div className="mt-8 text-center animate-fade-in">
+            <p className="text-gray-600 italic text-sm">
+              Note: Please update with actual names and photos of current governing board members.
+            </p>
+          </div>
+        </div>
+      </section>
+
     </div>
   )
 }
