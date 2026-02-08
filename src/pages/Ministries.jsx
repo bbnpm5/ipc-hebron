@@ -94,9 +94,9 @@ const Ministries = () => {
   return (
     <div>
       {/* Page Banner */}
-      <section className="relative bg-gradient-to-r from-primary-600 to-primary-700 text-white py-16 md:py-24 overflow-hidden">
+      <section className="relative bg-gradient-to-r from-primary-600 to-primary-700 text-white py-8 md:py-12 overflow-hidden">
         {/* Background Image - Ministries Theme */}
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
             backgroundImage: 'url(https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=1920&h=600&fit=crop&q=80)',
@@ -107,51 +107,93 @@ const Ministries = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-primary-900/80 via-primary-800/70 to-primary-900/80"></div>
         {/* Content */}
         <div className="container-custom text-center relative z-10">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold drop-shadow-2xl">{t('pageTitles.ministries')}</h1>
-          <p className="mt-4 text-lg md:text-xl text-primary-100 drop-shadow-lg">Serving God and Community Together</p>
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold drop-shadow-2xl">{t('pageTitles.ministries')}</h1>
         </div>
       </section>
 
       {/* Ministries Grid */}
-      <section className="section-padding bg-gray-50">
+      <section className="section-padding bg-gradient-to-b from-white via-gray-50 to-white">
         <div className="container-custom">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {ministries.map((ministry) => {
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+            {ministries.map((ministry, index) => {
               const Icon = ministry.icon
-              const bgGradient = ministry.color === 'primary' 
-                ? 'from-primary-600 to-primary-700' 
+              const bgGradient = ministry.color === 'primary'
+                ? 'from-primary-600 to-primary-700'
                 : 'from-accent-600 to-accent-700'
-              const textColor = ministry.color === 'primary' 
-                ? 'text-primary-600' 
+              const textColor = ministry.color === 'primary'
+                ? 'text-primary-600'
                 : 'text-accent-600'
-              
+              const hoverBorderColor = ministry.color === 'primary'
+                ? 'group-hover:border-primary-200'
+                : 'group-hover:border-accent-200'
+
               return (
-                <div key={ministry.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                  <div className={`bg-gradient-to-r ${bgGradient} text-white p-6`}>
-                    <div className="flex items-center space-x-4">
-                      <div className="bg-white bg-opacity-20 rounded-lg p-3">
-                        <Icon className="w-8 h-8" />
+                <div
+                  key={ministry.id}
+                  className="group relative animate-fade-in"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  {/* Main Card Container */}
+                  <div className={`relative bg-white rounded-3xl shadow-soft hover:shadow-large transition-all duration-500 overflow-hidden border border-gray-100 ${hoverBorderColor} h-full flex flex-col`}>
+                    {/* Animated Background Gradient */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${bgGradient} opacity-0 group-hover:opacity-5 transition-opacity duration-700`}></div>
+                    <div className={`absolute -top-32 -right-32 w-96 h-96 bg-gradient-to-br ${bgGradient} rounded-full blur-3xl opacity-0 group-hover:opacity-10 transition-opacity duration-700`}></div>
+
+                    {/* Card Content */}
+                    <div className="relative z-10 p-6 md:p-8 flex flex-col h-full">
+                      {/* Icon and Title */}
+                      <div className="flex flex-col items-center text-center mb-6">
+                        {/* Icon Circle */}
+                        <div className="relative mb-4">
+                          <div className={`absolute inset-0 bg-gradient-to-r ${bgGradient} rounded-full blur-md opacity-0 group-hover:opacity-40 transition-opacity duration-500`}></div>
+                          <div className={`relative w-20 h-20 bg-gradient-to-br ${bgGradient} rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:-rotate-6 transition-all duration-500`}>
+                            <div className="absolute inset-2 bg-white/20 rounded-full backdrop-blur-sm"></div>
+                            <Icon className="relative w-10 h-10 text-white drop-shadow-lg" />
+                          </div>
+                        </div>
+
+                        {/* Title */}
+                        <h2 className={`text-xl md:text-2xl font-bold text-gray-900 group-hover:${textColor} transition-colors duration-300`}>
+                          {ministry.title}
+                        </h2>
+
+                        {/* Divider */}
+                        <div className="relative h-1 w-16 bg-gradient-to-r from-gray-200 to-transparent rounded-full overflow-hidden mt-3">
+                          <div className={`absolute inset-0 bg-gradient-to-r ${bgGradient} transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700`}></div>
+                        </div>
                       </div>
-                      <h2 className="text-2xl font-bold">{ministry.title}</h2>
+
+                      {/* Description */}
+                      <p className="text-gray-700 leading-relaxed text-sm md:text-base mb-5 flex-grow">
+                        {ministry.description}
+                      </p>
+
+                      {/* Features */}
+                      <div className="space-y-3 mb-6">
+                        {ministry.features.slice(0, 3).map((feature, idx) => (
+                          <div key={idx} className="flex items-start gap-3">
+                            <div className={`flex-shrink-0 w-6 h-6 bg-gradient-to-br ${bgGradient} rounded-lg flex items-center justify-center shadow-sm`}>
+                              <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                              </svg>
+                            </div>
+                            <span className="text-sm text-gray-600 leading-relaxed">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* Learn More Link */}
+                      <Link
+                        to="/contact"
+                        className={`inline-flex items-center justify-center font-semibold ${textColor} hover:opacity-80 transition-all duration-300 group/link`}
+                      >
+                        <span>Learn More</span>
+                        <ArrowRight className="ml-2 w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-300" />
+                      </Link>
                     </div>
-                  </div>
-                  <div className="p-6">
-                    <p className="text-gray-700 leading-relaxed mb-4">{ministry.description}</p>
-                    <ul className="space-y-2 mb-6">
-                      {ministry.features.slice(0, 3).map((feature, index) => (
-                        <li key={index} className="flex items-start space-x-2 text-sm text-gray-600">
-                          <span className={`${textColor} mt-1`}>•</span>
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <Link 
-                      to="/contact" 
-                      className={`inline-flex items-center font-semibold ${textColor} hover:opacity-80 transition-opacity`}
-                    >
-                      Learn More
-                      <ArrowRight className="ml-2 w-4 h-4" />
-                    </Link>
+
+                    {/* Bottom Accent Line */}
+                    <div className={`h-1 bg-gradient-to-r ${bgGradient} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left`}></div>
                   </div>
                 </div>
               )
@@ -161,7 +203,7 @@ const Ministries = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="section-padding bg-white">
+      <section className="pt-4 pb-16 md:pt-6 md:pb-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="container-custom max-w-4xl mx-auto">
           <div className="bg-gradient-to-br from-primary-600 to-primary-800 text-white rounded-2xl p-8 md:p-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Get Involved</h2>
@@ -185,35 +227,62 @@ const Ministries = () => {
       </section>
 
       {/* Ministry Values */}
-      <section className="section-padding bg-gray-50">
+      <section className="pb-16 md:pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-gray-50 to-white">
         <div className="container-custom max-w-5xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why We Serve</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Why We Serve</h2>
             <p className="text-xl text-gray-600">
               Our ministries are built on biblical principles and a heart for service
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-lg p-6 text-center shadow-md">
-              <Target className="w-12 h-12 text-primary-600 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-3">Purpose</h3>
-              <p className="text-gray-600">
-                Every ministry has a clear purpose aligned with God's Word and our mission
-              </p>
+            <div className="group relative bg-white rounded-2xl p-8 text-center shadow-soft hover:shadow-large transition-all duration-500 border border-gray-100 hover:border-primary-200">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-primary-700 opacity-0 group-hover:opacity-5 transition-opacity duration-700 rounded-2xl"></div>
+              <div className="relative z-10">
+                <div className="relative mx-auto mb-6 w-16 h-16">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary-600 to-primary-700 rounded-2xl blur-md opacity-0 group-hover:opacity-40 transition-opacity duration-500"></div>
+                  <div className="relative w-16 h-16 bg-gradient-to-br from-primary-600 to-primary-700 rounded-2xl flex items-center justify-center shadow-medium group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
+                    <Target className="w-8 h-8 text-white" />
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-primary-600 transition-colors">Purpose</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Every ministry has a clear purpose aligned with God's Word and our mission
+                </p>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-600 to-primary-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left rounded-b-2xl"></div>
             </div>
-            <div className="bg-white rounded-lg p-6 text-center shadow-md">
-              <Heart className="w-12 h-12 text-primary-600 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-3">Passion</h3>
-              <p className="text-gray-600">
-                We serve with passion, dedication, and a heart to see lives transformed
-              </p>
+            <div className="group relative bg-white rounded-2xl p-8 text-center shadow-soft hover:shadow-large transition-all duration-500 border border-gray-100 hover:border-accent-200">
+              <div className="absolute inset-0 bg-gradient-to-br from-accent-500 to-accent-700 opacity-0 group-hover:opacity-5 transition-opacity duration-700 rounded-2xl"></div>
+              <div className="relative z-10">
+                <div className="relative mx-auto mb-6 w-16 h-16">
+                  <div className="absolute inset-0 bg-gradient-to-br from-accent-600 to-accent-700 rounded-2xl blur-md opacity-0 group-hover:opacity-40 transition-opacity duration-500"></div>
+                  <div className="relative w-16 h-16 bg-gradient-to-br from-accent-600 to-accent-700 rounded-2xl flex items-center justify-center shadow-medium group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
+                    <Heart className="w-8 h-8 text-white" />
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-accent-600 transition-colors">Passion</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  We serve with passion, dedication, and a heart to see lives transformed
+                </p>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-accent-600 to-accent-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left rounded-b-2xl"></div>
             </div>
-            <div className="bg-white rounded-lg p-6 text-center shadow-md">
-              <Users className="w-12 h-12 text-primary-600 mx-auto mb-4" />
-              <h3 className="text-xl font-semibold mb-3">People</h3>
-              <p className="text-gray-600">
-                Our ministries are about people - loving, serving, and building relationships
-              </p>
+            <div className="group relative bg-white rounded-2xl p-8 text-center shadow-soft hover:shadow-large transition-all duration-500 border border-gray-100 hover:border-primary-200">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-primary-700 opacity-0 group-hover:opacity-5 transition-opacity duration-700 rounded-2xl"></div>
+              <div className="relative z-10">
+                <div className="relative mx-auto mb-6 w-16 h-16">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary-600 to-primary-700 rounded-2xl blur-md opacity-0 group-hover:opacity-40 transition-opacity duration-500"></div>
+                  <div className="relative w-16 h-16 bg-gradient-to-br from-primary-600 to-primary-700 rounded-2xl flex items-center justify-center shadow-medium group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
+                    <Users className="w-8 h-8 text-white" />
+                  </div>
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-primary-600 transition-colors">People</h3>
+                <p className="text-gray-600 leading-relaxed">
+                  Our ministries are about people - loving, serving, and building relationships
+                </p>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-600 to-primary-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left rounded-b-2xl"></div>
             </div>
           </div>
         </div>

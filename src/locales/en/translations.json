@@ -16,17 +16,18 @@
     "giving": "Online Giving"
   },
   "nav": {
-    "home": "HOME",
+    "home": "Home",
     "about": "ABOUT US",
     "aboutUs": "About Us",
     "ourStory": "Our Story",
     "statementOfFaith": "Statement of Faith",
     "ministries": "Ministries",
-    "events": "EVENTS",
-    "services": "SERVICES",
-    "counseling": "COUNSELING",
-    "gallery": "GALLERY",
-    "contact": "CONTACT US"
+    "events": "Events",
+    "services": "Services",
+    "counseling": "Counseling",
+    "prayerRequest": "Prayer Request",
+    "gallery": "Gallery",
+    "contact": "Contact Us"
   },
   "home": {
     "heroWelcome": "WELCOME TO",
@@ -63,7 +64,7 @@
     "whoWeAreText2": "As a Pentecostal church, we believe in the power and presence of the Holy Spirit in our lives and worship. We emphasize the importance of prayer, worship, and the study of God's Word as foundational to our faith journey.",
     "leadership": "Our Leadership",
     "history": "Our History",
-    "historyText": "IPC Hebron was blessed and started in 1990. We honor the faithful pastors who have served our congregation throughout the years.",
+    "historyText": "IPC Hebron was blessed and started in 1989. We honor the faithful pastors who have served our congregation throughout the years.",
     "governingBody": "Current Governing Body",
     "coreValues": "Our Core Values",
     "wordOfGod": "Word of God",
@@ -323,17 +324,19 @@
   },
   "ourStory": {
     "title": "Our Story",
-    "subtitle": "A journey of faith, dedication, and God's faithfulness since 1990",
+    "subtitle": "A journey of faith, dedication, and God's faithfulness since 1989",
     "beginning": {
-      "title": "The Beginning",
-      "paragraph1": "IPC Hebron Neria was blessed and established in the year 1990, founded by the visionary leadership of Pr K P Babu.",
-      "paragraph2": "With a heart for God and a passion for ministry, Pr K P Babu laid the cornerstone of our church, creating a place where the Gospel could be proclaimed and lives transformed.",
-      "paragraph3": "From humble beginnings, our church has grown into a vibrant community of believers, dedicated to serving God and reaching out to our neighbors with the love of Christ.",
-      "paragraph4": "Through the years, we have remained committed to our mission of making disciples, building community, and advancing God's kingdom in Neria and beyond."
+      "title": "",
+      "paragraph1": "The ministry in Neria began in the year **1989**. During this time, **Pr. K. J. Raju**, who was ministering at IPC Mardhala, took leadership, and **Pr. K. P. Babu** began the ministry work in Neria. In the early days, God used Pr. K. J. Raju to spread the Gospel in this area. Later, God mightily used Pr. K. P. Babu, and many people came to faith in Jesus Christ through his ministry.",
+      "paragraph2": "**Pr. Paul Verghese**, who was the Centre Pastor, gave tremendous support to this ministry during the initial years. On **March 10, 1990**, the first baptism service was conducted here, and the IPC church at Neria was officially established.",
+      "paragraph3": "Pastors such as **Pr. V. D. John** and **Pr. N. C. Philip** faithfully visited and ministered to the congregation **during the early days of the church**. Their ministry was a great blessing, and we thank God for their faithful service.",
+      "paragraph4": "Over the years, many pastors and their families have served in this church. God used each one powerfully, and their ministry has been a great blessing to the church.",
+      "paragraph5": "More than **20 members from this church have gone into mission work**, serving the Lord both **in India and abroad**. IPC Hebron Neria continues to stand strong spiritually in this land.",
+      "paragraph6": "In 2025, the church was blessed with a **new building**. We give all the glory, honour, and praise to **Almighty God** for His faithfulness and guidance throughout these years."
     },
     "history": {
-      "title": "Our History",
-      "description": "IPC Hebron was blessed and started in 1990. We honor the faithful pastors who have served our congregation throughout the years."
+      "title": "Pastors Who Have Served",
+      "description": "We honor the faithful pastors who have served our congregation throughout the years."
     },
     "badges": {
       "founder": "Founder",
@@ -341,58 +344,58 @@
     },
     "pastors": {
       "kPBabu": {
-        "name": "Pr K P Babu",
-        "tenure": "1990 - 1997",
-        "years": "7 years",
-        "description": "Pr K P Babu was the founding pastor who established IPC Hebron in 1990. His vision and dedication laid the foundation for our church, and his faithful service for 7 years set the course for our ministry."
+        "name": "Pr K.P Babu",
+        "tenure": "1989 - 1997",
+        "years": "8 years",
+        "description": "Pr K.P Babu was the founding pastor who established IPC Hebron in 1989. His vision and dedication laid the foundation for our church, and his faithful service for 8 years set the course for our ministry."
       },
       "pPDaniel": {
-        "name": "Pr P P Daniel",
+        "name": "Pr P.P Daniel",
         "tenure": "1997 - 2001",
         "years": "4 years",
-        "description": "Pr P P Daniel served our church with great commitment for 4 years. His leadership strengthened our congregation and continued the work of building a strong foundation in faith and community."
+        "description": "Pr P.P Daniel served our church with great commitment for 4 years. His leadership strengthened our congregation and continued the work of building a strong foundation in faith and community."
       },
       "rajuKJ": {
-        "name": "Pr Raju KJ",
-        "tenure": "2001 - 2006",
-        "years": "5 years",
-        "description": "Pr Raju KJ led our church for 5 years with wisdom and grace. During his tenure, the church experienced significant growth in membership and expanded its ministry outreach to the community."
+        "name": "Pr K.J Raju",
+        "tenure": "2001 - 2007",
+        "years": "6 years",
+        "description": "Pr K.J Raju led our church for 6 years with wisdom and grace. During his tenure, the church experienced significant growth in membership and expanded its ministry outreach to the community."
       },
       "rajuCS": {
-        "name": "Pr Raju CS",
-        "tenure": "2006 - 2009",
+        "name": "Pr C.S Raju",
+        "tenure": "2007 - 2010",
         "years": "3 years",
-        "description": "Pr Raju CS served our congregation for 3 years with passion and dedication. His teaching ministry and pastoral care blessed many families and strengthened the spiritual foundation of our church."
+        "description": "Pr C.S Raju served our congregation for 3 years with passion and dedication. His teaching ministry and pastoral care blessed many families and strengthened the spiritual foundation of our church."
       },
       "josePaul": {
         "name": "Pr Jose Paul",
-        "tenure": "2009 - 2012",
+        "tenure": "2010 - 2013",
         "years": "3 years",
         "description": "Pr Jose Paul ministered to our church for 3 years with faithfulness and love. His emphasis on prayer and worship brought renewal to our congregation and deepened our relationship with God."
       },
       "matthai": {
-        "name": "Pr Matthai",
-        "tenure": "2012 - 2016",
+        "name": "Pr M.V Matthai",
+        "tenure": "2013 - 2017",
         "years": "4 years",
-        "description": "Pr Matthai served our church with dedication and commitment for 4 years. His leadership brought stability and growth to our congregation, strengthening our faith and community bonds."
+        "description": "Pr M.V Matthai served our church with dedication and commitment for 4 years. His leadership brought stability and growth to our congregation, strengthening our faith and community bonds."
       },
       "aby": {
         "name": "Pr Aby",
-        "tenure": "2016 - 2021",
-        "years": "5 years",
-        "description": "Pr Aby served our church for 5 years with great commitment. His leadership focused on discipleship and community building, leaving a lasting impact on the spiritual growth of our members."
+        "tenure": "2017 - 2020",
+        "years": "3 years",
+        "description": "Pr Aby served our church for 3 years with great commitment. His leadership focused on discipleship and community building, leaving a lasting impact on the spiritual growth of our members."
       },
       "roy": {
-        "name": "Pr Roy",
-        "tenure": "2021 - 2023",
-        "years": "2 years",
-        "description": "Pr Roy led our congregation for 2 years with wisdom and compassion. His ministry emphasized evangelism and outreach, bringing many new souls to Christ and expanding our church's impact in the community."
+        "name": "Pr Roy T Philip",
+        "tenure": "2020 - 2023",
+        "years": "3 years",
+        "description": "Pr Roy T Philip led our congregation for 3 years with wisdom and compassion. His ministry emphasized evangelism and outreach, bringing many new souls to Christ and expanding our church's impact in the community."
       },
       "suresh": {
-        "name": "Pr Suresh",
+        "name": "Pr K.E Suresh",
         "tenure": "2023 - Present",
-        "years": "Currently Serving",
-        "description": "Pr Suresh is currently serving as our Senior Pastor, leading the congregation with vision and dedication. Under his leadership, the church continues to grow in faith, impact, and service to God and the community."
+        "years": "2023 - Present",
+        "description": "Pr K.E Suresh is currently serving as our Senior Pastor, leading the congregation with vision and dedication. Under his leadership, the church continues to grow in faith, impact, and service to God and the community."
       }
     }
   },

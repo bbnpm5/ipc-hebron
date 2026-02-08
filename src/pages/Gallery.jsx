@@ -1,128 +1,148 @@
-import { useState } from 'react'
-import { X, ChevronLeft, ChevronRight, Image as ImageIcon, Sparkles } from 'lucide-react'
+import { useState, useEffect } from 'react'
+import { X, ChevronLeft, ChevronRight, Image as ImageIcon, Sparkles, Grid3x3, Filter, ZoomIn, Heart, Share2 } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
 const Gallery = () => {
   const { t } = useTranslation()
   const [selectedImage, setSelectedImage] = useState(null)
   const [selectedCategory, setSelectedCategory] = useState('all')
+  const [isLoading, setIsLoading] = useState(true)
 
   // Gallery images - Add your photos here!
-  // To add photos:
-  // 1. Place your image files in the 'public' folder (e.g., public/gallery/photo1.jpg)
-  // 2. Add an entry below with: id, src (path from public folder), alt text, category, and title
   const galleryImages = [
-    // Example: Photo from public folder
-    // {
-    //   id: 1,
-    //   src: '/gallery/church-congregation.jpg',
-    //   alt: 'IPC Hebron Church Congregation',
-    //   category: 'services',
-    //   title: 'Sunday Worship Service'
-    // },
-    
-    // Add your church photos here following this format:
-    {
-      id: 1,
-      src: '/gallery/photo1.jpg',  // Change this to your photo path
-      alt: 'Church service',
-      category: 'services',
-      title: 'Sunday Worship Service'
-    },
-    {
-      id: 2,
-      src: '/gallery/photo2.jpg',  // Change this to your photo path
-      alt: 'Prayer meeting',
-      category: 'prayer',
-      title: 'Prayer Meeting'
-    },
-    {
-      id: 3,
-      src: '/gallery/photo3.jpg',  // Change this to your photo path
-      alt: 'Youth event',
-      category: 'youth',
-      title: 'Youth Conference'
-    },
-    {
-      id: 4,
-      src: '/gallery/photo4.jpg',  // Change this to your photo path
-      alt: 'Church event',
-      category: 'events',
-      title: 'Special Event'
-    },
-    {
-      id: 5,
-      src: '/gallery/photo5.jpg',  // Change this to your photo path
-      alt: 'Community outreach',
-      category: 'outreach',
-      title: 'Community Outreach'
-    },
-    {
-      id: 6,
-      src: '/gallery/photo6.jpg',  // Change this to your photo path
-      alt: 'Worship team',
-      category: 'services',
-      title: 'Worship Team'
-    },
     {
       id: 13,
       src: '/gallery/ChurchBuildingDedication1.jpg',
       alt: 'Church Building Dedication Service at IPC Hebron',
       category: 'events',
-      title: 'Church Building Dedication - Photo 1'
+      title: 'Church Building Dedication',
+      description: 'A memorable day in our church history',
+      size: 'large' // large, medium, small for masonry layout
     },
     {
       id: 14,
       src: '/gallery/ChurchBuildingDedication2.jpg',
       alt: 'Church Building Dedication Service at IPC Hebron',
       category: 'events',
-      title: 'Church Building Dedication - Photo 2'
+      title: 'Dedication Ceremony',
+      description: 'Celebrating God\'s faithfulness',
+      size: 'medium'
+    },
+    {
+      id: 1,
+      src: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800&h=1200&fit=crop',
+      alt: 'Church service',
+      category: 'services',
+      title: 'Sunday Worship Service',
+      description: 'Praising God together',
+      size: 'large'
+    },
+    {
+      id: 2,
+      src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop',
+      alt: 'Prayer meeting',
+      category: 'prayer',
+      title: 'Prayer Meeting',
+      description: 'Seeking God\'s face',
+      size: 'medium'
+    },
+    {
+      id: 3,
+      src: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&h=800&fit=crop',
+      alt: 'Youth event',
+      category: 'youth',
+      title: 'Youth Conference',
+      description: 'Empowering the next generation',
+      size: 'small'
+    },
+    {
+      id: 4,
+      src: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&h=600&fit=crop',
+      alt: 'Church event',
+      category: 'events',
+      title: 'Special Event',
+      description: 'Fellowship and celebration',
+      size: 'medium'
+    },
+    {
+      id: 5,
+      src: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800&h=1000&fit=crop',
+      alt: 'Community outreach',
+      category: 'outreach',
+      title: 'Community Outreach',
+      description: 'Serving our community',
+      size: 'large'
+    },
+    {
+      id: 6,
+      src: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=600&h=600&fit=crop',
+      alt: 'Worship team',
+      category: 'services',
+      title: 'Worship Team',
+      description: 'Leading in praise',
+      size: 'small'
     },
     {
       id: 7,
       src: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800&h=600&fit=crop',
       alt: 'Fellowship',
       category: 'events',
-      title: 'Fellowship Gathering'
+      title: 'Fellowship Gathering',
+      description: 'Building relationships',
+      size: 'medium'
     },
     {
       id: 8,
-      src: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&h=600&fit=crop',
+      src: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=700&h=900&fit=crop',
       alt: 'Children ministry',
       category: 'youth',
-      title: 'Children\'s Ministry'
+      title: 'Children\'s Ministry',
+      description: 'Nurturing young hearts',
+      size: 'large'
     },
     {
       id: 9,
-      src: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&h=600&fit=crop',
+      src: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&h=700&fit=crop',
       alt: 'Baptism',
       category: 'events',
-      title: 'Baptism Service'
+      title: 'Baptism Service',
+      description: 'New life in Christ',
+      size: 'small'
     },
     {
       id: 10,
       src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop',
       alt: 'Prayer circle',
       category: 'prayer',
-      title: 'Prayer Circle'
+      title: 'Prayer Circle',
+      description: 'United in prayer',
+      size: 'medium'
     },
     {
       id: 11,
-      src: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800&h=600&fit=crop',
+      src: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&h=800&fit=crop',
       alt: 'Sunday school',
       category: 'youth',
-      title: 'Sunday School'
+      title: 'Sunday School',
+      description: 'Learning God\'s Word',
+      size: 'medium'
     },
     {
       id: 12,
       src: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&h=600&fit=crop',
       alt: 'Church building',
       category: 'services',
-      title: 'Our Church Building'
+      title: 'Our Church Building',
+      description: 'A place of worship',
+      size: 'large'
     }
-    
-    // Add more photos by copying the format above and incrementing the id
   ]
+
+  useEffect(() => {
+    // Simulate loading for smooth entrance
+    const timer = setTimeout(() => setIsLoading(false), 300)
+    return () => clearTimeout(timer)
+  }, [selectedCategory])
 
   const categories = [
     { id: 'all', label: t('gallery.allPhotos') },
@@ -158,195 +178,253 @@ const Gallery = () => {
 
   return (
     <div>
-      {/* Enhanced Page Banner with UI/UX Pro Max */}
-      <section className="relative bg-gradient-to-r from-primary-600 via-primary-700 to-accent-700 text-white py-20 md:py-28 overflow-hidden">
-        {/* Animated Background Pattern */}
-        <div className="absolute inset-0 opacity-20">
+      {/* Page Banner - Matching About Page Style */}
+      <section className="relative bg-gradient-to-r from-primary-600 to-primary-700 text-white py-8 md:py-12 overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='gallery-pattern' x='0' y='0' width='100' height='100' patternUnits='userSpaceOnUse'%3E%3Ccircle cx='20' cy='20' r='2' fill='%23ffffff' opacity='0.3'/%3E%3Ccircle cx='80' cy='40' r='2' fill='%23ffffff' opacity='0.3'/%3E%3Ccircle cx='40' cy='60' r='2' fill='%23ffffff' opacity='0.3'/%3E%3Ccircle cx='70' cy='80' r='2' fill='%23ffffff' opacity='0.3'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100' height='100' fill='url(%23gallery-pattern)'/%3E%3C/svg%3E")`,
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cpattern id='cross' x='0' y='0' width='100' height='100' patternUnits='userSpaceOnUse'%3E%3Cpath d='M50 20 L50 80 M20 50 L80 50' stroke='white' stroke-width='2'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='100' height='100' fill='url(%23cross)'/%3E%3C/svg%3E")`,
             backgroundSize: '100px 100px'
           }}></div>
         </div>
-        
-        {/* Decorative Gradient Orbs */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent-500/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
-        
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary-900/85 via-primary-800/75 to-primary-900/85"></div>
-        
-        {/* Content */}
+
+        {/* Decorative Elements */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+
         <div className="container-custom text-center relative z-10">
-          <div className="inline-block mb-6 animate-fade-in">
-            <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto shadow-large">
-              <ImageIcon className="w-10 h-10 text-white" />
-            </div>
-          </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold drop-shadow-2xl mb-4 animate-slide-up">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold drop-shadow-2xl">
             {t('pageTitles.gallery')}
           </h1>
-          <p className="mt-4 text-lg md:text-xl text-primary-100 drop-shadow-lg max-w-3xl mx-auto animate-fade-in">
+          <p className="mt-3 text-base md:text-lg text-primary-100 drop-shadow-lg max-w-2xl mx-auto">
             {t('gallery.subtitle')}
           </p>
-          {/* Image Count Badge */}
-          <div className="mt-6 inline-flex items-center space-x-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20 animate-scale-in">
-            <Sparkles className="w-4 h-4 text-yellow-300" />
-            <span className="text-sm font-semibold">{filteredImages.length} {t('gallery.allPhotos', 'Photos')}</span>
-          </div>
         </div>
       </section>
 
-      {/* Gallery Section with UI/UX Pro Max */}
-      <section className="section-padding bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
+      {/* Modern Gallery Section with Celebration Vibe */}
+      <section className="pt-4 pb-16 md:pt-6 md:pb-20 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
+        {/* Celebration Background Pattern */}
+        <div className="absolute inset-0 opacity-[0.02]">
           <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-            backgroundSize: '60px 60px'
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cpath d='M40 10 L45 25 L60 25 L48 35 L53 50 L40 40 L27 50 L32 35 L20 25 L35 25 Z' fill='%23000000' opacity='0.1'/%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundSize: '80px 80px'
           }}></div>
         </div>
-        
+
         <div className="container-custom relative z-10">
-          {/* Enhanced Category Filter */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
-            {categories.map((category, index) => (
-              <button
-                key={category.id}
-                onClick={() => setSelectedCategory(category.id)}
-                className={`relative px-6 py-3 rounded-xl font-semibold text-sm md:text-base transition-all duration-300 transform hover:scale-105 active:scale-95 ${
-                  selectedCategory === category.id
-                    ? 'bg-gradient-to-r from-primary-600 to-primary-700 text-white shadow-glow-lg'
-                    : 'bg-white text-gray-700 hover:bg-gradient-to-r hover:from-primary-50 hover:to-accent-50 hover:text-primary-600 shadow-medium hover:shadow-large border-2 border-transparent hover:border-primary-200'
-                }`}
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                {category.label}
-                {selectedCategory === category.id && (
-                  <span className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-400 rounded-full animate-pulse"></span>
-                )}
-              </button>
-            ))}
+          {/* Modern Category Filters with Celebration Colors */}
+          <div className="flex flex-wrap justify-center gap-3 mb-10 md:mb-12">
+            {categories.map((category, index) => {
+              const categoryStyles = {
+                all: { gradient: 'from-gray-700 to-gray-900', hoverGradient: 'from-gray-600 to-gray-800' },
+                services: { gradient: 'from-primary-600 to-primary-700', hoverGradient: 'from-primary-500 to-primary-600' },
+                events: { gradient: 'from-gold-500 to-gold-600', hoverGradient: 'from-gold-400 to-gold-500' },
+                youth: { gradient: 'from-accent-600 to-accent-700', hoverGradient: 'from-accent-500 to-accent-600' },
+                prayer: { gradient: 'from-primary-700 to-primary-800', hoverGradient: 'from-primary-600 to-primary-700' },
+                outreach: { gradient: 'from-gold-600 to-gold-700', hoverGradient: 'from-gold-500 to-gold-600' }
+              }
+              const style = categoryStyles[category.id] || categoryStyles.all
+
+              return (
+                <button
+                  key={category.id}
+                  onClick={() => {
+                    setSelectedCategory(category.id)
+                    setIsLoading(true)
+                  }}
+                  className={`relative px-5 md:px-6 py-2.5 md:py-3 rounded-full font-semibold text-sm md:text-base transition-all duration-300 ${
+                    selectedCategory === category.id
+                      ? `bg-gradient-to-r ${style.gradient} text-white shadow-large scale-105`
+                      : `bg-white text-gray-700 hover:bg-gradient-to-r hover:${style.hoverGradient} hover:text-white shadow-soft hover:shadow-medium border border-gray-200 hover:border-transparent`
+                  }`}
+                  style={{ animationDelay: `${index * 0.05}s` }}
+                >
+                  <span className="relative z-10">{category.label}</span>
+                  {selectedCategory === category.id && (
+                    <div className={`absolute inset-0 bg-gradient-to-r ${style.gradient} rounded-full blur opacity-50 animate-pulse`}></div>
+                  )}
+                </button>
+              )
+            })}
           </div>
 
-          {/* Enhanced Image Grid with Masonry Effect */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
-            {filteredImages.map((image, index) => (
-              <div
-                key={image.id}
-                onClick={() => openLightbox(image)}
-                className="relative group cursor-pointer overflow-hidden rounded-2xl shadow-medium hover:shadow-glow-lg transition-all duration-300 transform hover:-translate-y-2 animate-fade-in"
-                style={{ animationDelay: `${index * 0.05}s` }}
-              >
-                {/* Image Container */}
-                <div className="relative aspect-square overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200">
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
-                    loading="lazy"
-                  />
-                  
-                  {/* Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  
-                  {/* Shine Effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                  
-                  {/* Title Overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    <p className="text-white font-bold text-sm md:text-base drop-shadow-lg">{image.title}</p>
-                    <p className="text-white/80 text-xs mt-1">{image.category}</p>
-                  </div>
-                  
-                  {/* View Icon */}
-                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 scale-0 group-hover:scale-100">
-                    <div className="w-16 h-16 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border-2 border-white/30">
-                      <ImageIcon className="w-8 h-8 text-white" />
+          {/* Modern Grid Gallery Layout */}
+          {isLoading ? (
+            <div className="flex items-center justify-center py-20">
+              <div className="relative">
+                <div className="w-16 h-16 border-4 border-primary-200 border-t-primary-600 rounded-full animate-spin"></div>
+                <Sparkles className="w-6 h-6 text-gold-500 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 animate-pulse" />
+              </div>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 md:gap-6">
+              {filteredImages.map((image, index) => {
+                const categoryColors = {
+                  services: 'from-primary-500 to-primary-700',
+                  events: 'from-gold-500 to-gold-700',
+                  youth: 'from-accent-500 to-accent-700',
+                  prayer: 'from-primary-600 to-primary-800',
+                  outreach: 'from-gold-600 to-gold-800'
+                }
+                const gradient = categoryColors[image.category] || 'from-primary-500 to-primary-700'
+
+                return (
+                  <div
+                    key={image.id}
+                    onClick={() => openLightbox(image)}
+                    className="group relative cursor-pointer animate-fade-in"
+                    style={{ animationDelay: `${index * 0.05}s` }}
+                  >
+                    {/* Image Card */}
+                    <div className="relative bg-white rounded-2xl shadow-soft hover:shadow-large transition-all duration-500 overflow-hidden border border-gray-100 group-hover:border-primary-200">
+                      {/* Animated Background Gradient */}
+                      <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
+
+                      {/* Image Container */}
+                      <div className="relative h-64 overflow-hidden">
+                        <img
+                          src={image.src}
+                          alt={image.alt}
+                          className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                          loading="lazy"
+                        />
+
+                        {/* Overlay on Hover */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                        {/* Category Badge */}
+                        <div className="absolute top-3 left-3 opacity-0 group-hover:opacity-100 transition-all duration-500 transform -translate-y-2 group-hover:translate-y-0">
+                          <span className={`inline-block px-3 py-1 bg-gradient-to-r ${gradient} text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-medium`}>
+                            {image.category}
+                          </span>
+                        </div>
+
+                        {/* Zoom Icon */}
+                        <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
+                          <div className="w-10 h-10 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-medium">
+                            <ZoomIn className="w-5 h-5 text-gray-800" />
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Content Section */}
+                      <div className="relative p-4 md:p-5">
+                        <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors duration-300">
+                          {image.title}
+                        </h3>
+
+                        {/* Divider */}
+                        <div className="relative h-0.5 w-12 bg-gray-200 rounded-full overflow-hidden mb-3">
+                          <div className={`absolute inset-0 bg-gradient-to-r ${gradient} transform -translate-x-full group-hover:translate-x-0 transition-transform duration-500`}></div>
+                        </div>
+
+                        {image.description && (
+                          <p className="text-sm text-gray-600 leading-relaxed">
+                            {image.description}
+                          </p>
+                        )}
+                      </div>
+
+                      {/* Bottom Accent Line */}
+                      <div className={`h-1 bg-gradient-to-r ${gradient} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left`}></div>
+                    </div>
+
+                    {/* Celebration Sparkles on Hover */}
+                    <div className="absolute -top-2 -right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                      <Sparkles className="w-6 h-6 text-gold-500 animate-pulse" />
                     </div>
                   </div>
-                  
-                  {/* Category Badge */}
-                  <div className="absolute top-3 left-3 px-3 py-1 bg-black/60 backdrop-blur-sm rounded-full">
-                    <span className="text-white text-xs font-semibold uppercase tracking-wide">{image.category}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+                )
+              })}
+            </div>
+          )}
 
           {/* Empty State */}
           {filteredImages.length === 0 && (
-            <div className="text-center py-16 animate-fade-in">
-              <div className="w-24 h-24 bg-gradient-to-br from-gray-200 to-gray-300 rounded-full flex items-center justify-center mx-auto mb-6">
-                <ImageIcon className="w-12 h-12 text-gray-400" />
+            <div className="text-center py-20 animate-fade-in">
+              <div className="inline-block mb-6">
+                <div className="w-24 h-24 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center mx-auto shadow-soft">
+                  <ImageIcon className="w-12 h-12 text-gray-400" />
+                </div>
               </div>
-              <p className="text-gray-600 text-lg font-semibold">No images found in this category.</p>
-              <p className="text-gray-500 text-sm mt-2">Try selecting a different category.</p>
+              <h3 className="text-gray-700 text-xl font-bold mb-2">{t('gallery.noImages', 'No images found')}</h3>
+              <p className="text-gray-500 text-base">Try selecting a different category.</p>
             </div>
           )}
         </div>
       </section>
 
-      {/* Enhanced Lightbox Modal with UI/UX Pro Max */}
+      {/* Modern Lightbox Modal */}
       {selectedImage && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/95 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fade-in"
           onClick={closeLightbox}
         >
           {/* Close Button */}
           <button
             onClick={closeLightbox}
-            className="absolute top-4 right-4 sm:top-6 sm:right-6 z-50 w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:text-white transition-all duration-300 hover:scale-110 shadow-glow border border-white/20"
+            className="absolute top-4 right-4 sm:top-6 sm:right-6 z-50 w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-xl flex items-center justify-center text-white transition-all duration-300 hover:scale-110 hover:rotate-90 shadow-large group"
             aria-label="Close"
           >
-            <X className="w-6 h-6" strokeWidth={2.5} />
+            <X className="w-6 h-6 group-hover:scale-110 transition-transform" strokeWidth={2.5} />
           </button>
-          
+
           {/* Previous Button */}
           <button
             onClick={(e) => {
               e.stopPropagation()
               navigateImage('prev')
             }}
-            className="absolute left-4 sm:left-6 z-50 w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:text-white transition-all duration-300 hover:scale-110 shadow-glow border border-white/20"
+            className="absolute left-4 sm:left-6 z-50 w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-xl flex items-center justify-center text-white transition-all duration-300 hover:scale-110 hover:-translate-x-1 shadow-large group"
             aria-label="Previous"
           >
-            <ChevronLeft className="w-6 h-6" strokeWidth={2.5} />
+            <ChevronLeft className="w-6 h-6 group-hover:scale-110 transition-transform" strokeWidth={2.5} />
           </button>
-          
+
           {/* Next Button */}
           <button
             onClick={(e) => {
               e.stopPropagation()
               navigateImage('next')
             }}
-            className="absolute right-4 sm:right-6 z-50 w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:text-white transition-all duration-300 hover:scale-110 shadow-glow border border-white/20"
+            className="absolute right-4 sm:right-6 z-50 w-12 h-12 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-xl flex items-center justify-center text-white transition-all duration-300 hover:scale-110 hover:translate-x-1 shadow-large group"
             aria-label="Next"
           >
-            <ChevronRight className="w-6 h-6" strokeWidth={2.5} />
+            <ChevronRight className="w-6 h-6 group-hover:scale-110 transition-transform" strokeWidth={2.5} />
           </button>
 
           {/* Image Container */}
-          <div 
+          <div
             className="max-w-7xl max-h-full relative animate-scale-in"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="relative">
-              <img
-                src={selectedImage.src}
-                alt={selectedImage.alt}
-                className="max-w-full max-h-[85vh] object-contain rounded-2xl shadow-2xl"
-              />
-              
+              {/* Main Image */}
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10">
+                <img
+                  src={selectedImage.src}
+                  alt={selectedImage.alt}
+                  className="max-w-full max-h-[85vh] object-contain"
+                />
+              </div>
+
               {/* Image Info Card */}
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent p-6 rounded-b-2xl">
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 via-black/70 to-transparent p-5 md:p-6 rounded-b-2xl">
                 <div className="text-white text-center">
-                  <p className="text-xl md:text-2xl font-bold mb-2">{selectedImage.title}</p>
-                  <div className="flex items-center justify-center space-x-4 text-sm">
-                    <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full uppercase tracking-wide">
+                  <h3 className="text-xl md:text-2xl font-bold mb-2">
+                    {selectedImage.title}
+                  </h3>
+                  {selectedImage.description && (
+                    <p className="text-white/80 text-sm md:text-base mb-3 max-w-2xl mx-auto">
+                      {selectedImage.description}
+                    </p>
+                  )}
+                  <div className="flex items-center justify-center gap-3 flex-wrap">
+                    <span className="px-3 py-1.5 bg-white/20 backdrop-blur-sm text-white text-xs md:text-sm font-semibold uppercase tracking-wider rounded-full border border-white/20">
                       {selectedImage.category}
                     </span>
-                    <span className="text-white/70">
+                    <span className="text-white/70 text-sm font-medium">
                       {filteredImages.findIndex(img => img.id === selectedImage.id) + 1} / {filteredImages.length}
                     </span>
                   </div>

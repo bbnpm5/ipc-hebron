@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import { Church, Users, HeartHandshake } from 'lucide-react'
 import DailyVerse from '../components/DailyVerse'
 import Testimonials from '../components/Testimonials'
 
@@ -33,8 +32,38 @@ const Home = () => {
               {t('home.heroWelcome')}
             </h2>
           </div>
-          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-6 sm:mb-8 md:mb-10 leading-[1.1] drop-shadow-2xl animate-slide-up px-2">
-            <span className="block">{t('home.heroTitle')}</span>
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-8 md:mb-10 leading-[1.1] animate-slide-up px-2 relative group">
+            <span className="block relative">
+              {/* Main Gradient Text */}
+              <span
+                className="relative inline-block bg-gradient-to-r from-white via-primary-200 to-white bg-clip-text text-transparent animate-gradient-x"
+                style={{
+                  backgroundSize: '200% auto',
+                }}
+              >
+                {t('home.heroTitle')}
+              </span>
+
+              {/* Shimmer Overlay Effect */}
+              <span
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent bg-clip-text text-transparent animate-shimmer pointer-events-none"
+                style={{
+                  backgroundSize: '200% auto',
+                }}
+              >
+                {t('home.heroTitle')}
+              </span>
+
+              {/* Glow Effect */}
+              <span
+                className="absolute inset-0 blur-xl opacity-50 bg-gradient-to-r from-primary-400 via-accent-400 to-primary-400 bg-clip-text text-transparent"
+                style={{
+                  backgroundSize: '200% auto',
+                }}
+              >
+                {t('home.heroTitle')}
+              </span>
+            </span>
           </h1>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center animate-scale-in px-4">
             <Link 
@@ -62,7 +91,7 @@ const Home = () => {
       </section>
 
       {/* Daily Verse Section */}
-      <section className="section-padding-sm bg-white relative overflow-hidden">
+      <section className="py-6 md:py-8 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
@@ -78,7 +107,7 @@ const Home = () => {
       </section>
 
       {/* Service Times Quick View */}
-      <section className="section-padding bg-white relative overflow-hidden">
+      <section className="py-6 md:py-8 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
@@ -87,20 +116,17 @@ const Home = () => {
           }}></div>
         </div>
         <div className="container-custom relative z-10">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-10">
             <h2 className="section-title">{t('home.serviceSchedule')}</h2>
             <p className="section-subtitle">Join us for worship, fellowship, and spiritual growth</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
             {/* Sunday Service */}
             <div className="card group relative overflow-hidden">
               <div className="absolute top-0 right-0 w-40 h-40 bg-primary-100 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="relative z-10">
-                <div className="w-20 h-20 bg-gradient-to-br from-primary-500 via-primary-600 to-primary-700 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-large group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 group-hover:shadow-glow">
-                  <Church className="w-10 h-10 text-white" strokeWidth={2.5} />
-                </div>
+              <div className="relative z-10 text-center">
                 <h3 className="text-2xl font-bold mb-3 text-gray-900 group-hover:text-primary-600 transition-colors">{t('home.sundayService')}</h3>
-                <p className="text-lg text-primary-600 font-semibold mb-2">10:00 AM - 12:30 PM</p>
+                <p className="text-lg text-primary-600 font-semibold mb-2">09:30 AM - 12:00 PM</p>
                 <p className="text-gray-600">Main worship service</p>
               </div>
             </div>
@@ -108,26 +134,30 @@ const Home = () => {
             {/* Wednesday Cottage Meeting */}
             <div className="card group relative overflow-hidden">
               <div className="absolute top-0 right-0 w-40 h-40 bg-accent-100 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="relative z-10">
-                <div className="w-20 h-20 bg-gradient-to-br from-accent-500 via-accent-600 to-accent-700 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-large group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 group-hover:shadow-glow">
-                  <Users className="w-10 h-10 text-white" strokeWidth={2.5} />
-                </div>
+              <div className="relative z-10 text-center">
                 <h3 className="text-2xl font-bold mb-3 text-gray-900 group-hover:text-accent-600 transition-colors">{t('home.wednesday')}</h3>
-                <p className="text-lg text-accent-600 font-semibold mb-2">{t('home.cottageMeeting')}</p>
-                <p className="text-gray-600">Home fellowship</p>
+                <p className="text-lg text-accent-600 font-semibold mb-2">7:00 PM - 9:00 PM</p>
+                <p className="text-gray-600">{t('home.cottageMeeting')}</p>
               </div>
             </div>
 
             {/* Friday Fasting Prayer */}
             <div className="card group relative overflow-hidden">
               <div className="absolute top-0 right-0 w-40 h-40 bg-gold-100 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="relative z-10">
-                <div className="w-20 h-20 bg-gradient-to-br from-gold-500 via-gold-600 to-gold-700 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-large group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 group-hover:shadow-glow">
-                  <HeartHandshake className="w-10 h-10 text-white" strokeWidth={2.5} />
-                </div>
+              <div className="relative z-10 text-center">
                 <h3 className="text-2xl font-bold mb-3 text-gray-900 group-hover:text-gold-600 transition-colors">{t('home.friday')}</h3>
-                <p className="text-lg text-gold-600 font-semibold mb-2">{t('home.fastingPrayer')}</p>
-                <p className="text-gray-600">Prayer & fasting</p>
+                <p className="text-lg text-gold-600 font-semibold mb-2">11:00 AM - 1:00 PM</p>
+                <p className="text-gray-600">{t('home.fastingPrayer')}</p>
+              </div>
+            </div>
+
+            {/* Monthly Fasting & Prayer */}
+            <div className="card group relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-40 h-40 bg-primary-100 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative z-10 text-center">
+                <h3 className="text-2xl font-bold mb-3 text-gray-900 group-hover:text-primary-600 transition-colors">Month End</h3>
+                <p className="text-lg text-primary-600 font-semibold mb-2">Last Fri, Sat & Sunday</p>
+                <p className="text-gray-600">Fasting & Prayer</p>
               </div>
             </div>
           </div>
@@ -135,7 +165,7 @@ const Home = () => {
       </section>
 
       {/* Quick Links */}
-      <section className="section-padding bg-white relative overflow-hidden">
+      <section className="py-6 md:py-8 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
@@ -145,7 +175,7 @@ const Home = () => {
         </div>
         
         <div className="container-custom relative z-10">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-10">
             <h2 className="section-title">{t('home.getInvolved')}</h2>
             <p className="section-subtitle">Explore ways to connect, serve, and grow with our community</p>
           </div>

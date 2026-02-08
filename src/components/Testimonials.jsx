@@ -47,7 +47,7 @@ const Testimonials = () => {
   }
 
   return (
-    <section className="section-padding bg-white relative overflow-hidden">
+    <section className="py-6 md:py-8 px-4 sm:px-6 lg:px-8 bg-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -58,7 +58,7 @@ const Testimonials = () => {
       
       <div className="container-custom max-w-5xl relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 md:mb-10">
           <h2 className="section-title text-gradient mb-4">
             {t('testimonials.title', 'Testimonials')}
           </h2>

@@ -114,7 +114,7 @@ const StatementOfFaith = () => {
   return (
     <div>
       {/* Page Banner */}
-      <section className="relative bg-gradient-to-r from-primary-600 to-primary-700 text-white py-16 md:py-20 overflow-hidden">
+      <section className="relative bg-gradient-to-r from-primary-600 to-primary-700 text-white py-8 md:py-12 overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
@@ -122,69 +122,90 @@ const StatementOfFaith = () => {
             backgroundSize: '100px 100px'
           }}></div>
         </div>
-        
+
         {/* Decorative Elements */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
-        
+
         <div className="container-custom text-center relative z-10">
-          <div className="inline-block mb-6">
-            <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto shadow-large">
-              <BookOpen className="w-10 h-10 text-white" />
-            </div>
-          </div>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 drop-shadow-2xl">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold drop-shadow-2xl">
             {t('statementOfFaith.title')}
           </h1>
-          <p className="text-lg md:text-xl text-primary-100 max-w-3xl mx-auto drop-shadow-lg">
-            {t('statementOfFaith.subtitle')}
-          </p>
         </div>
       </section>
 
       {/* Statement of Faith Content */}
       <section className="section-padding bg-gradient-to-b from-white via-gray-50 to-white">
         <div className="container-custom max-w-6xl">
-          <div className="grid gap-6 md:gap-8">
+          <div className="grid gap-8 md:gap-10">
             {statements.map((statement, index) => {
-              const IconComponent = statement.icon
               return (
                 <div
                   key={statement.id}
-                  className="card group relative overflow-hidden animate-fade-in"
-                  style={{ animationDelay: `${index * 0.1}s` }}
+                  className="group relative animate-fade-in"
+                  style={{ animationDelay: `${index * 0.05}s` }}
                 >
-                  {/* Gradient Background on Hover */}
-                  <div className={`absolute top-0 right-0 w-64 h-64 bg-gradient-to-br ${statement.gradient} rounded-full blur-3xl opacity-0 group-hover:opacity-10 transition-opacity duration-500`}></div>
-                  
-                  <div className="relative z-10">
-                    <div className="flex items-start space-x-4 md:space-x-6">
-                      {/* Icon */}
-                      <div className={`flex-shrink-0 w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br ${statement.gradient} rounded-2xl flex items-center justify-center shadow-medium group-hover:scale-110 transition-transform duration-300`}>
-                        <IconComponent className="w-8 h-8 md:w-10 md:h-10 text-white" />
-                      </div>
-                      
-                      {/* Content */}
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center space-x-3 mb-3">
-                          <span className="text-2xl md:text-3xl font-bold text-gray-300 group-hover:text-primary-600 transition-colors">
-                            {statement.id}
-                          </span>
-                          <h2 className="text-xl md:text-2xl font-bold text-gray-900 group-hover:text-primary-600 transition-colors">
+                  {/* Main Card Container */}
+                  <div className="relative bg-white rounded-3xl shadow-soft hover:shadow-large transition-all duration-500 overflow-hidden border border-gray-100 group-hover:border-primary-200">
+                    {/* Animated Background Gradient */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${statement.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-700`}></div>
+                    <div className={`absolute -top-32 -right-32 w-96 h-96 bg-gradient-to-br ${statement.gradient} rounded-full blur-3xl opacity-0 group-hover:opacity-10 transition-opacity duration-700`}></div>
+
+                    {/* Card Content */}
+                    <div className="relative z-10 p-6 md:p-8 lg:p-10">
+                      <div className="flex flex-col md:flex-row md:items-start gap-6">
+                        {/* Left Side - Number Badge */}
+                        <div className="flex-shrink-0">
+                          {/* Number Badge */}
+                          <div className="relative">
+                            <div className={`absolute inset-0 bg-gradient-to-br ${statement.gradient} rounded-2xl blur-lg opacity-0 group-hover:opacity-50 transition-opacity duration-500`}></div>
+                            <div className={`relative w-14 h-14 md:w-16 md:h-16 bg-gradient-to-br ${statement.gradient} rounded-2xl flex items-center justify-center shadow-medium group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
+                              <span className="text-2xl md:text-3xl font-bold text-white drop-shadow-lg">
+                                {statement.id}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Right Side - Content */}
+                        <div className="flex-1 min-w-0 space-y-4">
+                          {/* Title */}
+                          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 group-hover:text-primary-600 transition-colors duration-300 leading-tight">
                             {statement.title}
                           </h2>
-                        </div>
-                        <p className="text-gray-700 leading-relaxed mb-4 text-base md:text-lg">
-                          {statement.content}
-                        </p>
-                        <div className="flex items-start space-x-2">
-                          <BookOpen className="w-4 h-4 text-primary-500 flex-shrink-0 mt-1" />
-                          <p className="text-sm md:text-base text-primary-600 font-medium italic">
-                            {statement.verses}
+
+                          {/* Divider */}
+                          <div className="relative h-1 w-20 bg-gradient-to-r from-gray-200 to-transparent rounded-full overflow-hidden">
+                            <div className={`absolute inset-0 bg-gradient-to-r ${statement.gradient} transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700`}></div>
+                          </div>
+
+                          {/* Content Text */}
+                          <p className="text-gray-700 leading-relaxed text-base md:text-lg">
+                            {statement.content}
                           </p>
+
+                          {/* Bible Verses */}
+                          <div className="relative mt-5 pt-5 border-t border-gray-100">
+                            <div className="flex items-start gap-3">
+                              <div className={`flex-shrink-0 w-8 h-8 bg-gradient-to-br ${statement.gradient} rounded-lg flex items-center justify-center shadow-sm`}>
+                                <BookOpen className="w-4 h-4 text-white" />
+                              </div>
+                              <div className="flex-1">
+                                <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">
+                                  Scripture Reference
+                                </p>
+                                <p className="text-sm md:text-base text-primary-700 font-medium leading-relaxed">
+                                  {statement.verses}
+                                </p>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
+
+                    {/* Bottom Accent Line */}
+                    <div className={`h-1 bg-gradient-to-r ${statement.gradient} transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left`}></div>
                   </div>
                 </div>
               )
