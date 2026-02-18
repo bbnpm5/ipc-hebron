@@ -15,49 +15,57 @@ const OurStory = () => {
       id: 2,
       name: t('ourStory.pastors.pPDaniel.name'),
       tenure: t('ourStory.pastors.pPDaniel.tenure'),
-      years: t('ourStory.pastors.pPDaniel.years')
+      years: t('ourStory.pastors.pPDaniel.years'),
+      image: '/P.P Daniel.png'
     },
     {
       id: 3,
       name: t('ourStory.pastors.rajuKJ.name'),
       tenure: t('ourStory.pastors.rajuKJ.tenure'),
-      years: t('ourStory.pastors.rajuKJ.years')
+      years: t('ourStory.pastors.rajuKJ.years'),
+      image: '/K.J Raju.png'
     },
     {
       id: 4,
       name: t('ourStory.pastors.rajuCS.name'),
       tenure: t('ourStory.pastors.rajuCS.tenure'),
-      years: t('ourStory.pastors.rajuCS.years')
+      years: t('ourStory.pastors.rajuCS.years'),
+      image: '/C.S Raju.png'
     },
     {
       id: 5,
       name: t('ourStory.pastors.josePaul.name'),
       tenure: t('ourStory.pastors.josePaul.tenure'),
-      years: t('ourStory.pastors.josePaul.years')
+      years: t('ourStory.pastors.josePaul.years'),
+      image: '/Jose Paul.png'
     },
     {
       id: 6,
       name: t('ourStory.pastors.matthai.name'),
       tenure: t('ourStory.pastors.matthai.tenure'),
-      years: t('ourStory.pastors.matthai.years')
+      years: t('ourStory.pastors.matthai.years'),
+      image: '/M.V Matthai.png'
     },
     {
       id: 7,
       name: t('ourStory.pastors.aby.name'),
       tenure: t('ourStory.pastors.aby.tenure'),
-      years: t('ourStory.pastors.aby.years')
+      years: t('ourStory.pastors.aby.years'),
+      image: '/Aby.png'
     },
     {
       id: 8,
       name: t('ourStory.pastors.roy.name'),
       tenure: t('ourStory.pastors.roy.tenure'),
-      years: t('ourStory.pastors.roy.years')
+      years: t('ourStory.pastors.roy.years'),
+      image: '/Roy T Philip.jpg'
     },
     {
       id: 9,
       name: t('ourStory.pastors.suresh.name'),
       tenure: t('ourStory.pastors.suresh.tenure'),
       years: t('ourStory.pastors.suresh.years'),
+      image: '/Pr.Suresh.jpg',
       isCurrent: true
     }
   ]
@@ -361,7 +369,7 @@ const OurStory = () => {
                       {/* Image Container */}
                       <div className="relative rounded-full overflow-hidden border-4 border-white shadow-xl z-10 w-full h-full bg-gradient-to-br from-gray-200 to-gray-300">
                         <img
-                          src={pastor.isCurrent ? "/Pr.Suresh.jpg" : "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop"}
+                          src={pastor.image || 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop'}
                           alt={pastor.name}
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                         />

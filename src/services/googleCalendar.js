@@ -52,10 +52,19 @@ export const fetchGoogleCalendarEvents = async (calendarId, apiKey, maxResults =
     const response = await fetch(url.toString())
 
     if (!response.ok) {
-      throw new Error(`Google Calendar API error: ${response.status} ${response.statusText}`)
+      const errorData = await response.json().catch(() => ({}))
+      const errorMessage = errorData?.error?.message || response.statusText
+      throw new Error(`Google Calendar API error (${response.status}): ${errorMessage}`)
     }
 
     const data = await response.json()
+
+    // Check if calendar only has free/busy access (no event details)
+    if (data.accessRole === 'freeBusyReader') {
+      throw new Error(
+        'Calendar sharing is set to "free/busy" only. Please go to Google Calendar Settings > your calendar > "Access permissions for events" > change to "See all event details" and make sure "Make available to public" is checked.'
+      )
+    }
 
     if (!data.items || data.items.length === 0) {
       return []
@@ -189,7 +198,6 @@ export const getEvents = async () => {
     return events
   } catch (error) {
     console.error('Failed to fetch Google Calendar events:', error)
-    // Return empty array on error - component can show error message
-    return []
+    throw error
   }
 }

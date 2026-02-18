@@ -53,7 +53,9 @@ const Footer = () => {
                   <Instagram className="w-4 h-4 text-gray-300 group-hover:text-white transition-colors" />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.youtube.com/channel/UCV8KN0AvDRbh763WkN7FWvg"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group relative w-9 h-9 bg-gradient-to-br from-gray-800/80 to-gray-900/80 hover:from-red-600 hover:to-red-700 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-[0_0_20px_rgba(239,68,68,0.4)] border border-gray-700/50 hover:border-red-500/80"
                   aria-label="YouTube"
                   title="YouTube"
@@ -161,8 +163,8 @@ const Footer = () => {
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-white font-semibold mb-1 text-sm uppercase tracking-wide">{t('contact.email')}</p>
-                    <a href="mailto:ipchebronneria@gmail.com" className="text-gray-400 hover:text-primary-400 transition-colors break-all text-sm hover:underline">
-                      ipchebronneria@gmail.com
+                    <a href="mailto:reachipcneria@gmail.com" className="text-gray-400 hover:text-primary-400 transition-colors break-all text-sm hover:underline">
+                      reachipcneria@gmail.com
                     </a>
                   </div>
                 </div>

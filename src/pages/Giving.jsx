@@ -312,7 +312,7 @@ const Giving = () => {
             </div>
             <p className="text-sm text-gray-600 mt-4">
               For bank transfer, please include your name and phone number in the transaction 
-              remarks. After transfer, email us at ipchebronneria@gmail.com with the 
+              remarks. After transfer, email us at reachipcneria@gmail.com with the 
               transaction details for receipt.
             </p>
           </div>

@@ -287,9 +287,11 @@ const Events = () => {
                           <div className={`absolute inset-0 ${categoryColors.bg} transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700`}></div>
                         </div>
 
-                        <p className="text-gray-700 leading-relaxed mb-6 text-base">
-                          {event.description}
-                        </p>
+                        {event.description && event.description.trim().toLowerCase() !== event.title.trim().toLowerCase() && (
+                          <p className="text-gray-700 leading-relaxed mb-6 text-base">
+                            {event.description}
+                          </p>
+                        )}
 
                         {/* Info Grid */}
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">

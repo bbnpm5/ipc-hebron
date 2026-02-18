@@ -185,10 +185,10 @@ const Contact = () => {
                         {t('contact.email')}
                       </h3>
                       <a
-                        href="mailto:ipchebronneria@gmail.com"
+                        href="mailto:reachipcneria@gmail.com"
                         className="text-primary-600 hover:text-primary-700 font-semibold text-sm transition-colors inline-flex items-center group/link break-all"
                       >
-                        <span>ipchebronneria@gmail.com</span>
+                        <span>reachipcneria@gmail.com</span>
                         <ArrowRight className="w-4 h-4 ml-2 opacity-0 group-hover/link:opacity-100 group-hover/link:translate-x-1 transition-all duration-300" />
                       </a>
                     </div>
