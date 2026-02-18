@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Mail, Phone, MapPin, Send, CheckCircle, Facebook, Instagram, Youtube, MessageSquare, Sparkle, User, FileText, ArrowRight, Loader2, AlertCircle } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { sendContactEmail } from '../config/emailjs'
+import { CONTACT_PHONE, CONTACT_PHONE_LINK } from '../config/contact'
 
 const Contact = () => {
   const { t } = useTranslation()
@@ -153,10 +154,10 @@ const Contact = () => {
                         {t('contact.phone')}
                       </h3>
                       <a
-                        href="tel:8075029739"
+                        href={CONTACT_PHONE_LINK}
                         className="text-primary-600 hover:text-primary-700 font-semibold text-base transition-colors inline-flex items-center group/link"
                       >
-                        <span>8075029739</span>
+                        <span>{CONTACT_PHONE}</span>
                         <ArrowRight className="w-4 h-4 ml-2 opacity-0 group-hover/link:opacity-100 group-hover/link:translate-x-1 transition-all duration-300" />
                       </a>
                     </div>

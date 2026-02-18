@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Heart, Send, CheckCircle, Sparkles, User, Mail, Phone, FileText, Loader2, AlertCircle } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { sendPrayerRequestEmail } from '../config/emailjs'
@@ -15,6 +15,13 @@ const PrayerRequest = () => {
   const [submitted, setSubmitted] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState(null)
+  const successRef = useRef(null)
+
+  useEffect(() => {
+    if (submitted && successRef.current) {
+      successRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }, [submitted])
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target
@@ -81,7 +88,10 @@ const PrayerRequest = () => {
       <section className="section-padding bg-gradient-to-b from-white via-gray-50 to-white">
         <div className="container-custom max-w-4xl">
           {submitted ? (
-            <div className="relative bg-white rounded-3xl shadow-large p-12 md:p-16 text-center animate-fade-in border border-green-200">
+            <div
+              ref={successRef}
+              className="relative bg-white rounded-3xl shadow-large p-12 md:p-16 text-center animate-fade-in border border-green-200"
+            >
               {/* Animated Background Gradient */}
               <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-green-700 opacity-5 rounded-3xl"></div>
 

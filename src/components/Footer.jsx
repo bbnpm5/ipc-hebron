@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { MapPin, Phone, Mail, Facebook, Instagram, Youtube, ArrowRight } from 'lucide-react'
+import { CONTACT_PHONE, CONTACT_PHONE_LINK } from '../config/contact'
 
 const Footer = () => {
   const { t } = useTranslation()
@@ -150,8 +151,8 @@ const Footer = () => {
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-white font-semibold mb-1 text-sm uppercase tracking-wide">{t('contact.phone')}</p>
-                    <a href="tel:8075029739" className="text-gray-400 hover:text-primary-400 transition-colors inline-block text-sm font-medium hover:underline">
-                      8075029739
+                    <a href={CONTACT_PHONE_LINK} className="text-gray-400 hover:text-primary-400 transition-colors inline-block text-sm font-medium hover:underline">
+                      {CONTACT_PHONE}
                     </a>
                   </div>
                 </div>

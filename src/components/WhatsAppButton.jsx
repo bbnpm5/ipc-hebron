@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { X, MessageCircle } from 'lucide-react'
+import { CONTACT_PHONE_WHATSAPP } from '../config/contact'
 
 const WhatsAppButton = () => {
   const { t } = useTranslation()
   const [isOpen, setIsOpen] = useState(false)
-  const phoneNumber = '8075029739'
   const message = encodeURIComponent('Hello, I would like to know more about IPC Hebron.')
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`
+  const whatsappUrl = `https://wa.me/${CONTACT_PHONE_WHATSAPP}?text=${message}`
 
   const handleStartChat = () => {
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer')

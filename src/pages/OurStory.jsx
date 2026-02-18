@@ -9,6 +9,8 @@ const OurStory = () => {
       name: t('ourStory.pastors.kPBabu.name'),
       tenure: t('ourStory.pastors.kPBabu.tenure'),
       years: t('ourStory.pastors.kPBabu.years'),
+      image: '/K.P Babu.png',
+      imagePosition: 'center top',
       isFounder: true
     },
     {
@@ -58,7 +60,8 @@ const OurStory = () => {
       name: t('ourStory.pastors.roy.name'),
       tenure: t('ourStory.pastors.roy.tenure'),
       years: t('ourStory.pastors.roy.years'),
-      image: '/Roy T Philip.jpg'
+      image: '/Roy T Philip.jpg',
+      imagePosition: 'center top'
     },
     {
       id: 9,
@@ -67,6 +70,16 @@ const OurStory = () => {
       years: t('ourStory.pastors.suresh.years'),
       image: '/Pr.Suresh.jpg',
       isCurrent: true
+    }
+  ]
+
+  const earlyLeaders = [
+    {
+      id: 1,
+      name: 'Pr. Paul Verghese',
+      //role: 'Centre Pastor',
+      image: '/Pr. Paul Verghese.png',
+      imagePosition: 'center 20%'
     }
   ]
 
@@ -153,12 +166,12 @@ const OurStory = () => {
               </div>
             </div>
 
-            {/* Establishment - 1990 */}
+            {/* Land Purchase & Temporary Shed - 1990 */}
             <div className="group relative animate-fade-in" style={{ animationDelay: '0.2s' }}>
               <div className="relative bg-white rounded-3xl shadow-soft hover:shadow-large transition-all duration-500 border border-gray-100 hover:border-accent-200 overflow-hidden">
                 {/* Decorative Year Badge */}
                 <div className="absolute top-6 right-6 z-10">
-                  <div className="bg-gradient-to-br from-accent-600 to-accent-800 text-white px-6 py-3 rounded-2xl shadow-lg font-bold text-xl transform group-hover:scale-110 transition-transform duration-300">
+                  <div className="bg-gradient-to-br from-accent-600 to-accent-800 text-white px-5 py-2 rounded-2xl shadow-lg font-bold text-sm md:text-base transform group-hover:scale-110 transition-transform duration-300">
                     1990
                   </div>
                 </div>
@@ -185,9 +198,16 @@ const OurStory = () => {
               </div>
             </div>
 
-            {/* Early Ministry */}
+            {/* Church Building - 1992 */}
             <div className="group relative animate-fade-in" style={{ animationDelay: '0.3s' }}>
               <div className="relative bg-white rounded-3xl shadow-soft hover:shadow-large transition-all duration-500 border border-gray-100 hover:border-gold-200 overflow-hidden">
+                {/* Decorative Year Badge */}
+                <div className="absolute top-6 right-6 z-10">
+                  <div className="bg-gradient-to-br from-gold-500 to-gold-700 text-white px-6 py-3 rounded-2xl shadow-lg font-bold text-xl transform group-hover:scale-110 transition-transform duration-300">
+                    1992
+                  </div>
+                </div>
+
                 {/* Gradient Background */}
                 <div className="absolute inset-0 bg-gradient-to-br from-gold-50 via-white to-primary-50 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
 
@@ -202,7 +222,6 @@ const OurStory = () => {
 
                   <div className="text-lg md:text-xl text-gray-700 leading-relaxed space-y-4">
                     <p dangerouslySetInnerHTML={{ __html: t('ourStory.beginning.paragraph3').replace(/\*\*(.*?)\*\*/g, '<strong class="text-gold-700 font-bold">$1</strong>') }} />
-                    <p dangerouslySetInnerHTML={{ __html: t('ourStory.beginning.paragraph4').replace(/\*\*(.*?)\*\*/g, '<strong class="text-gold-700 font-bold">$1</strong>') }} />
                   </div>
                 </div>
 
@@ -211,9 +230,41 @@ const OurStory = () => {
               </div>
             </div>
 
+            {/* Parsonage - 1997 */}
+            <div className="group relative animate-fade-in" style={{ animationDelay: '0.4s' }}>
+              <div className="relative bg-white rounded-3xl shadow-soft hover:shadow-large transition-all duration-500 border border-gray-100 hover:border-primary-200 overflow-hidden">
+                {/* Decorative Year Badge */}
+                <div className="absolute top-6 right-6 z-10">
+                  <div className="bg-gradient-to-br from-primary-500 to-primary-700 text-white px-6 py-3 rounded-2xl shadow-lg font-bold text-xl transform group-hover:scale-110 transition-transform duration-300">
+                    1997
+                  </div>
+                </div>
+
+                {/* Gradient Background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-accent-50 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+
+                <div className="relative p-8 md:p-12">
+                  {/* Chapter Number */}
+                  <div className="flex items-center gap-3 mb-6">
+                    <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-700 rounded-xl flex items-center justify-center shadow-medium">
+                      <span className="text-white font-bold text-xl">4</span>
+                    </div>
+                    <div className="flex-1 h-px bg-gradient-to-r from-primary-300 to-transparent"></div>
+                  </div>
+
+                  <div className="text-lg md:text-xl text-gray-700 leading-relaxed">
+                    <p dangerouslySetInnerHTML={{ __html: t('ourStory.beginning.paragraph4').replace(/\*\*(.*?)\*\*/g, '<strong class="text-primary-700 font-bold">$1</strong>') }} />
+                  </div>
+                </div>
+
+                {/* Bottom Accent */}
+                <div className="h-1 bg-gradient-to-r from-primary-500 to-accent-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left"></div>
+              </div>
+            </div>
+
             {/* Mission Work */}
             {t('ourStory.beginning.paragraph5') && (
-              <div className="group relative animate-fade-in" style={{ animationDelay: '0.4s' }}>
+              <div className="group relative animate-fade-in" style={{ animationDelay: '0.5s' }}>
                 <div className="relative bg-white rounded-3xl shadow-soft hover:shadow-large transition-all duration-500 border border-gray-100 hover:border-primary-200 overflow-hidden">
                   {/* Icon Badge */}
                   <div className="absolute top-6 right-6 z-10">
@@ -231,7 +282,7 @@ const OurStory = () => {
                     {/* Chapter Number */}
                     <div className="flex items-center gap-3 mb-6">
                       <div className="w-12 h-12 bg-gradient-to-br from-primary-500 to-primary-700 rounded-xl flex items-center justify-center shadow-medium">
-                        <span className="text-white font-bold text-xl">4</span>
+                        <span className="text-white font-bold text-xl">5</span>
                       </div>
                       <div className="flex-1 h-px bg-gradient-to-r from-primary-300 to-transparent"></div>
                     </div>
@@ -249,7 +300,7 @@ const OurStory = () => {
 
             {/* New Building - 2025 */}
             {t('ourStory.beginning.paragraph6') && (
-              <div className="group relative animate-fade-in" style={{ animationDelay: '0.5s' }}>
+              <div className="group relative animate-fade-in" style={{ animationDelay: '0.6s' }}>
                 <div className="relative bg-gradient-to-br from-primary-600 to-accent-700 rounded-3xl shadow-large hover:shadow-glow-lg transition-all duration-500 overflow-hidden">
                   {/* Decorative Year Badge */}
                   <div className="absolute top-6 right-6 z-10">
@@ -270,7 +321,7 @@ const OurStory = () => {
                     {/* Chapter Number */}
                     <div className="flex items-center gap-3 mb-6">
                       <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center shadow-medium border-2 border-white/30">
-                        <span className="text-white font-bold text-xl">5</span>
+                        <span className="text-white font-bold text-xl">6</span>
                       </div>
                       <div className="flex-1 h-px bg-gradient-to-r from-white/40 to-transparent"></div>
                     </div>
@@ -288,7 +339,7 @@ const OurStory = () => {
           </div>
 
           {/* Closing Flourish */}
-          <div className="text-center mt-12 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+          <div className="text-center mt-12 animate-fade-in" style={{ animationDelay: '0.7s' }}>
             <div className="inline-flex items-center gap-3">
               <div className="h-px w-12 bg-gradient-to-r from-transparent to-primary-300"></div>
               <svg className="w-6 h-6 text-primary-500" fill="currentColor" viewBox="0 0 24 24">
@@ -296,6 +347,66 @@ const OurStory = () => {
               </svg>
               <div className="h-px w-12 bg-gradient-to-l from-transparent to-primary-300"></div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Early Leaders */}
+      <section className="pt-8 md:pt-10 pb-8 md:pb-10 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundSize: '60px 60px'
+          }}></div>
+        </div>
+
+        <div className="container-custom relative z-10">
+          <div className="text-center mb-6 md:mb-8 animate-fade-in">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 text-gradient">
+              Early Leader
+            </h2>
+          </div>
+
+          <div className="flex justify-center">
+            {earlyLeaders.map((supporter, index) => (
+              <div
+                key={supporter.id}
+                className="group relative animate-fade-in w-full max-w-md"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100">
+                  {/* Decorative Corner Accent */}
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary-500/10 to-transparent rounded-bl-full"></div>
+
+                  {/* Photo */}
+                  <div className="relative pt-8 pb-4 px-6">
+                    <div className="relative mx-auto w-40 h-40 md:w-44 md:h-44">
+                      <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary-500 via-accent-500 to-primary-500 p-1 group-hover:scale-110 transition-transform duration-500">
+                        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary-600 via-accent-600 to-primary-600 opacity-0 group-hover:opacity-100 animate-spin-slow"></div>
+                      </div>
+                      <div className="relative rounded-full overflow-hidden border-4 border-white shadow-xl z-10 w-full h-full bg-gradient-to-br from-gray-200 to-gray-300">
+                        <img
+                          src={supporter.image || 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop'}
+                          alt={supporter.name}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                          style={{ objectPosition: supporter.imagePosition || 'center' }}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      </div>
+                      <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary-500 to-accent-500 blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500 -z-10"></div>
+                    </div>
+                  </div>
+
+                  {/* Info */}
+                  <div className="relative px-6 pb-6 text-center z-10">
+                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">
+                      {supporter.name}
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -372,6 +483,7 @@ const OurStory = () => {
                           src={pastor.image || 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop'}
                           alt={pastor.name}
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                          style={{ objectPosition: pastor.imagePosition || 'center' }}
                         />
                         {/* Subtle Overlay */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
