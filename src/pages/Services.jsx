@@ -14,7 +14,7 @@ const Services = () => {
     },
     {
       day: 'Wednesday',
-      time: '07:00 PM - 09:00 PM',
+      time: '07:00 PM - 08:30 PM',
       title: 'Cottage Meeting',
       description: 'Small group gatherings in homes for Bible study, prayer, and fellowship. These intimate meetings provide an opportunity for deeper connection and spiritual growth.',
       icon: Users,
@@ -22,7 +22,7 @@ const Services = () => {
     },
     {
       day: 'Friday',
-      time: '11:00 AM - 01:00 PM',
+      time: '10:30 AM - 12:30 PM',
       title: 'Fasting Prayer',
       description: 'A dedicated time of fasting and prayer where we seek God\'s face, intercede for our community, and experience the power of corporate prayer.',
       icon: Heart,

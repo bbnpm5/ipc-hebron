@@ -136,7 +136,7 @@ const Home = () => {
               <div className="absolute top-0 right-0 w-40 h-40 bg-accent-100 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative z-10 text-center">
                 <h3 className="text-2xl font-bold mb-3 text-gray-900 group-hover:text-accent-600 transition-colors">{t('home.wednesday')}</h3>
-                <p className="text-lg text-accent-600 font-semibold mb-2">7:00 PM - 9:00 PM</p>
+                <p className="text-lg text-accent-600 font-semibold mb-2">7:00 PM - 8:30 PM</p>
                 <p className="text-gray-600">{t('home.cottageMeeting')}</p>
               </div>
             </div>
@@ -146,7 +146,7 @@ const Home = () => {
               <div className="absolute top-0 right-0 w-40 h-40 bg-gold-100 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative z-10 text-center">
                 <h3 className="text-2xl font-bold mb-3 text-gray-900 group-hover:text-gold-600 transition-colors">{t('home.friday')}</h3>
-                <p className="text-lg text-gold-600 font-semibold mb-2">11:00 AM - 1:00 PM</p>
+                <p className="text-lg text-gold-600 font-semibold mb-2">10:30 AM - 12:30 PM</p>
                 <p className="text-gray-600">{t('home.fastingPrayer')}</p>
               </div>
             </div>
