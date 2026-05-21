@@ -37,16 +37,17 @@ const Header = () => {
 
   // Scroll detection
   useEffect(() => {
+    let rafId
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true)
-      } else {
-        setIsScrolled(false)
-      }
+      rafId = requestAnimationFrame(() => {
+        setIsScrolled(window.scrollY > 50)
+      })
     }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      cancelAnimationFrame(rafId)
+    }
   }, [])
 
   return (
