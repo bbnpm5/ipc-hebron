@@ -54,7 +54,7 @@ const Footer = () => {
                   <Instagram className="w-4 h-4 text-gray-300 group-hover:text-white transition-colors" />
                 </a>
                 <a
-                  href="https://www.youtube.com/channel/UCV8KN0AvDRbh763WkN7FWvg"
+                  href="https://www.youtube.com/@IPCHebronNeria"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group relative w-9 h-9 bg-gradient-to-br from-gray-800/80 to-gray-900/80 hover:from-red-600 hover:to-red-700 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 hover:shadow-[0_0_20px_rgba(239,68,68,0.4)] border border-gray-700/50 hover:border-red-500/80"

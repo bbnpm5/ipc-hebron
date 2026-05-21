@@ -231,7 +231,9 @@ const Contact = () => {
                       <Instagram className="w-5 h-5 text-gray-400 group-hover/social:text-white transition-colors" />
                     </a>
                     <a
-                      href="#"
+                      href="https://www.youtube.com/@IPCHebronNeria"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="group/social w-11 h-11 bg-gray-100 hover:bg-red-600 rounded-xl flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-sm border border-gray-200 hover:border-transparent"
                       aria-label="YouTube"
                       title="YouTube"
