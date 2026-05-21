@@ -3,34 +3,45 @@ import { useTranslation } from 'react-i18next'
 import { ChevronLeft, ChevronRight, Quote } from 'lucide-react'
 
 const Testimonials = () => {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const [currentIndex, setCurrentIndex] = useState(0)
+  const isKannada = i18n.language?.startsWith('kn')
 
   const testimonials = [
     {
       id: 1,
-      name: t('testimonials.testimonial1.name', 'Srini Sham'),
-      text: t('testimonials.testimonial1.text', 'Really blessed to be part of the church family where focus is on Jesus. God has anointed and transformed my life. The word of God shared here enriches me. Glad to be here. Praise God.')
+      name: isKannada ? 'ಎಂ ಜೆ ಜಾಕೋಬ್' : 'M J Jacob',
+      text: isKannada
+        ? 'ಯೇಸುವಿನ ಮೇಲೆ ಕೇಂದ್ರೀಕೃತವಾದ ಚರ್ಚ್ ಕುಟುಂಬದ ಭಾಗವಾಗಿ ದೇವರು ನನ್ನ ಜೀವನವನ್ನು ಪರಿವರ್ತಿಸಿದ್ದಾನೆ, ಮತ್ತು ಇಲ್ಲಿ ಕೇಳ್ಪಡುವ ಸಂದೇಶವು ನನ್ನನ್ನು ಆತ್ಮಿಕವಾಗಿ ಆಶಿರ್ವಾದಿಸುತಿದೆ. ಈ ಸಭೆಯಲ್ಲಿರಿವುದಕ್ಕೆ ಕೃತಜ್ಞನಾಗಿದ್ದೇನೆ. ದೇವರಿಗೆ ಮಹಿಮೆ!'
+        : 'Blessed to be part of a church family focused on Jesus. God has transformed my life, and every message here builds me up. Grateful to be here. Praise God!'
     },
     {
       id: 2,
-      name: t('testimonials.testimonial2.name', 'Sarah Johnson'),
-      text: t('testimonials.testimonial2.text', 'IPC Hebron has been a blessing in my life. The worship services are powerful, and the teaching of God\'s word has helped me grow spiritually. I\'m grateful for this church family.')
+      name: isKannada ? 'ಸಿಬಿನ್ ಪಿ ಎಂ' : 'Sibin P.M',
+      text: isKannada
+        ? 'ಐಪಿಸಿ ಹೆಬ್ರಾನ್ ದೇವರ ಸಭೆಯು ನನ್ನ ಜೀವನದಲ್ಲಿ ಒಂದು ಆಶೀರ್ವಾದವಾಗಿದೆ. ಆರಾಧನೆ ಶಕ್ತಿಯುತವಾಗಿವೆ ಮತ್ತು ದೇವರ ವಾಕ್ಯದ ಬೋಧನೆಯು ನನಗೆ ಆಧ್ಯಾತ್ಮಿಕವಾಗಿ ಬೆಳೆಯಲು ಸಹಾಯ ಮಾಡಿದೆ. ಈ ಚರ್ಚ್ ಕುಟುಂಬಕ್ಕಾಗಿ ನಾನು ಕೃತಜ್ಞನಾಗಿದ್ದೇನೆ.'
+        : 'IPC Hebron has been a blessing in my life. The worship services are powerful, and the teaching of God\'s word has helped me grow spiritually. I\'m grateful for this church family.'
     },
     {
       id: 3,
-      name: t('testimonials.testimonial3.name', 'David Kumar'),
-      text: t('testimonials.testimonial3.text', 'The love and fellowship I\'ve experienced here is amazing. The prayers and support from the church community have been instrumental in my spiritual journey. Thank you, IPC Hebron!')
+      name: isKannada ? 'ಸಾಲು ಜೋಸೆಫ್' : 'Salu Joseph',
+      text: isKannada
+        ? 'ನಾನು ಇಲ್ಲಿ ಅನುಭವಿಸಿದ ಪ್ರೀತಿ ಮತ್ತು ಸಹಭಾಗಿತ್ವ ಅದ್ಭುತವಾಗಿದೆ. ಚರ್ಚ್ ಸಮುದಾಯದ ಪ್ರಾರ್ಥನೆಗಳು ಮತ್ತು ಬೆಂಬಲ ನನ್ನ ಆಧ್ಯಾತ್ಮಿಕ ಪ್ರಯಾಣದಲ್ಲಿ ಪ್ರಮುಖ ಪಾತ್ರ ವಹಿಸಿವೆ. ಧನ್ಯವಾದಗಳು, ಐಪಿಸಿ ಹೆಬ್ರಾನ್!'
+        : 'The love and fellowship I\'ve experienced here is amazing. The prayers and support from the church community have been instrumental in my spiritual journey. Thank you, IPC Hebron!'
     },
     {
       id: 4,
-      name: t('testimonials.testimonial4.name', 'Priya Menon'),
-      text: t('testimonials.testimonial4.text', 'Being part of IPC Hebron has transformed my relationship with God. The Holy Spirit moves powerfully here, and I\'ve seen God\'s faithfulness in every area of my life.')
+      name: isKannada ? 'ಸುಜಾ ಟಾಮಿ' : 'Suja Tomy',
+      text: isKannada
+        ? 'ಐಪಿಸಿ ಹೆಬ್ರಾನ್ ನ ಭಾಗವಾಗಿರುವುದರಿಂದ ದೇವರೊಂದಿಗಿನ ನನ್ನ ಸಂಬಂಧವು ರೂಪಾಂತರಗೊಂಡಿದೆ. ಪವಿತ್ರಾತ್ಮವು ಇಲ್ಲಿ ಶಕ್ತಿಯುತವಾಗಿ ಚಲಿಸುತ್ತದೆ ಮತ್ತು ನನ್ನ ಜೀವನದ ಪ್ರತಿಯೊಂದು ಕ್ಷೇತ್ರದಲ್ಲೂ ದೇವರ ನಂಬಿಗಸ್ತಿಕೆಯನ್ನು ನಾನು ನೋಡಿದ್ದೇನೆ.'
+        : 'Being part of IPC Hebron has transformed my relationship with God. The Holy Spirit moves powerfully here, and I\'ve seen God\'s faithfulness in every area of my life.'
     },
     {
       id: 5,
-      name: t('testimonials.testimonial5.name', 'Michael Thomas'),
-      text: t('testimonials.testimonial5.text', 'This church is truly a place where God\'s presence is felt. The ministry, worship, and fellowship have been life-changing. I\'m blessed to call IPC Hebron my home church.')
+      name: isKannada ? 'ಕೆ ರಾಜು' : 'K Raju',
+      text: isKannada
+        ? 'ಈ ಚರ್ಚ್ ನಿಜವಾಗಿಯೂ ದೇವರ ಸಾನಿಧ್ಯವನ್ನು ಅನುಭವಿಸುವ ಸ್ಥಳವಾಗಿದೆ. ಸೇವೆ, ಆರಾಧನೆ ಮತ್ತು ಫೆಲೋಶಿಪ್ ಜೀವನವನ್ನು ಬದಲಾಯಿಸುತ್ತಿದೆ. ಐಪಿಸಿ ಹೆಬ್ರಾನ್ ಅನ್ನು ನನ್ನ ಮನೆ ಚರ್ಚ್ ಎಂದು ಕರೆಯಲು ನಾನು ಧನ್ಯನಾಗಿದ್ದೇನೆ.'
+        : 'This church is truly a place where God\'s presence is felt. The ministry, worship, and fellowship have been life-changing. I\'m blessed to call IPC Hebron my home church.'
     }
   ]
 

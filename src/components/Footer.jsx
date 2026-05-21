@@ -28,14 +28,14 @@ const Footer = () => {
                 />
               </div>
               <div className="flex-1 min-w-0">
-                <h3 className="text-lg font-bold text-white mb-0.5 leading-tight bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">IPC Hebron</h3>
-                <p className="text-xs text-gray-400 leading-tight">Neria, Karnataka</p>
+                <h3 className="text-lg font-bold text-white mb-0.5 leading-tight bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">{t('footer.churchName')}</h3>
+                <p className="text-xs text-gray-400 leading-tight">{t('footer.location')}</p>
               </div>
             </div>
 
             {/* Social Media */}
             <div>
-              <p className="text-xs font-semibold text-white mb-2 uppercase tracking-wider">Connect With Us</p>
+              <p className="text-xs font-semibold text-white mb-2 uppercase tracking-wider">{t('footer.connectWithUs')}</p>
               <div className="flex space-x-2.5">
                 <a
                   href="#"
@@ -140,7 +140,11 @@ const Footer = () => {
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-white font-semibold mb-1 text-sm uppercase tracking-wide">{t('contact.address')}</p>
-                    <p className="text-gray-400 leading-relaxed text-sm">IPC Hebron, Basthi,<br />Neria Post, Belthangady TQ<br />D.K, Karnataka, India</p>
+                    <p className="text-gray-400 leading-relaxed text-sm">
+                      {t('footer.addressLine1')}<br />
+                      {t('footer.addressLine2')}<br />
+                      {t('footer.addressLine3')}
+                    </p>
                   </div>
                 </div>
               </li>
@@ -180,12 +184,12 @@ const Footer = () => {
         <div className="container-custom py-3">
           <div className="flex flex-col md:flex-row items-center justify-between gap-2">
             <p className="text-xs text-gray-400">
-              © {currentYear} IPC Hebron, Neria. All Rights Reserved.
+              {t('footer.copyright', { year: currentYear })}
             </p>
             <div className="flex items-center space-x-3 text-xs text-gray-500">
-              <Link to="/privacy" className="hover:text-primary-400 transition-colors">Privacy Policy</Link>
+              <Link to="/privacy" className="hover:text-primary-400 transition-colors">{t('footer.privacyPolicy')}</Link>
               <span>•</span>
-              <Link to="/terms" className="hover:text-primary-400 transition-colors">Terms of Service</Link>
+              <Link to="/terms" className="hover:text-primary-400 transition-colors">{t('footer.termsOfService')}</Link>
             </div>
           </div>
         </div>

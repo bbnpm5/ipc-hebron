@@ -76,7 +76,7 @@ const OurStory = () => {
   const earlyLeaders = [
     {
       id: 1,
-      name: 'Pr. Paul Verghese',
+      name: 'Pr. Paul Varkey',
       //role: 'Centre Pastor',
       image: '/Pr. Paul Verghese.png',
       imagePosition: 'center 20%'
@@ -126,7 +126,7 @@ const OurStory = () => {
                 <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
               </svg>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 text-gradient">
-                Our Journey Begins
+                {t('ourStory.beginning.title')}
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto rounded-full"></div>
             </div>
@@ -305,7 +305,7 @@ const OurStory = () => {
                   {/* Decorative Year Badge */}
                   <div className="absolute top-6 right-6 z-10">
                     <div className="bg-white text-primary-700 px-6 py-3 rounded-2xl shadow-lg font-bold text-xl transform group-hover:scale-110 transition-transform duration-300">
-                      2025
+                      2024
                     </div>
                   </div>
 

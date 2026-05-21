@@ -32,7 +32,7 @@ const Home = () => {
               {t('home.heroWelcome')}
             </h2>
           </div>
-          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-8 md:mb-10 leading-[1.1] animate-slide-up px-2 relative group">
+          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6 sm:mb-8 md:mb-10 leading-[1.1] animate-slide-up px-2 relative group">
             <span className="block relative">
               {/* Main Gradient Text */}
               <span
@@ -118,7 +118,7 @@ const Home = () => {
         <div className="container-custom relative z-10">
           <div className="text-center mb-8 md:mb-10">
             <h2 className="section-title">{t('home.serviceSchedule')}</h2>
-            <p className="section-subtitle">Join us for worship, fellowship, and spiritual growth</p>
+            <p className="section-subtitle">{t('home.serviceScheduleSubtitle')}</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
             {/* Sunday Service */}
@@ -127,7 +127,7 @@ const Home = () => {
               <div className="relative z-10 text-center">
                 <h3 className="text-2xl font-bold mb-3 text-gray-900 group-hover:text-primary-600 transition-colors">{t('home.sundayService')}</h3>
                 <p className="text-lg text-primary-600 font-semibold mb-2">09:30 AM - 12:00 PM</p>
-                <p className="text-gray-600">Main worship service</p>
+                <p className="text-gray-600">{t('home.mainWorshipService')}</p>
               </div>
             </div>
 
@@ -155,9 +155,9 @@ const Home = () => {
             <div className="card group relative overflow-hidden">
               <div className="absolute top-0 right-0 w-40 h-40 bg-primary-100 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative z-10 text-center">
-                <h3 className="text-2xl font-bold mb-3 text-gray-900 group-hover:text-primary-600 transition-colors">Month End</h3>
-                <p className="text-lg text-primary-600 font-semibold mb-2">Last Fri, Sat & Sunday</p>
-                <p className="text-gray-600">Fasting & Prayer</p>
+                <h3 className="text-2xl font-bold mb-3 text-gray-900 group-hover:text-primary-600 transition-colors">{t('home.monthEnd')}</h3>
+                <p className="text-lg text-primary-600 font-semibold mb-2">{t('home.monthEndSchedule')}</p>
+                <p className="text-gray-600">{t('home.monthEndFastingPrayer')}</p>
               </div>
             </div>
           </div>
@@ -177,7 +177,7 @@ const Home = () => {
         <div className="container-custom relative z-10">
           <div className="text-center mb-8 md:mb-10">
             <h2 className="section-title">{t('home.getInvolved')}</h2>
-            <p className="section-subtitle">Explore ways to connect, serve, and grow with our community</p>
+            <p className="section-subtitle">{t('home.getInvolvedSubtitle')}</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
             <Link to="/sermons" className="group card-gradient text-center hover:shadow-large transition-all duration-300 hover:-translate-y-2">

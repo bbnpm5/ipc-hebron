@@ -9,14 +9,7 @@ const Ministries = () => {
       id: 1,
       title: 'Youth Ministry (PYPA)',
       icon: Sparkles,
-      description: 'The Pentecostal Young People\'s Association (PYPA) is the dynamic youth wing of IPC Hebron, empowering young believers (ages 15-35) to live passionately for God. Through vibrant worship, discipleship programs, and mission-driven initiatives, we help youth discover their purpose and impact their generation for Christ.',
-      features: [
-        'Weekly youth meetings and Bible studies',
-        'Worship and prayer gatherings',
-        'Mission trips and outreach programs',
-        'Leadership development training',
-        'Fellowship and community building'
-      ],
+      description: 'The Pentecostal Young People\'s Association (PYPA) is the dynamic youth wing of IPC Hebron, empowering young believers to live passionately for God. Through vibrant worship, discipleship programs, and mission-driven initiatives, we help youth discover their purpose and impact their generation for Christ.',
       color: 'primary'
     },
     {
@@ -24,27 +17,13 @@ const Ministries = () => {
       title: 'Sunday School',
       icon: BookOpen,
       description: 'The Sunday School Ministry of IPC Hebron is committed to nurturing the faith of children and young believers by grounding them in biblical teachings from an early age. Our goal is to train up a child in the way they should go (Proverbs 22:6) and help them grow in faith, wisdom, and Christian values.',
-      features: [
-        'Age-appropriate Bible lessons',
-        'Interactive learning activities',
-        'Scripture memorization',
-        'Character building programs',
-        'Special events and competitions'
-      ],
       color: 'accent'
     },
     {
       id: 3,
       title: 'Women\'s Fellowship (Sodari Samajam)',
       icon: Heart,
-      description: 'The Sodari Samajam is the women\'s ministry of IPC Hebron, uniting sisters across our church to grow spiritually, serve passionately, and impact families for Christ. Through weekly prayer circles, Bible studies, and outreach initiatives, we support and encourage one another in our walk with God.',
-      features: [
-        'Weekly prayer meetings',
-        'Bible study groups',
-        'Fellowship gatherings',
-        'Community service projects',
-        'Encouragement and support network'
-      ],
+      description: 'The Sodari Samajam is the women\'s ministry of IPC Hebron, uniting sisters across our church to grow spiritually, serve passionately, and impact families for Christ. Through monthly prayer circles, Bible studies, and outreach initiatives, we support and encourage one another in our walk with God.',
       color: 'primary'
     },
     {
@@ -52,13 +31,6 @@ const Ministries = () => {
       title: 'Prayer Ministry',
       icon: Flame,
       description: 'Our Prayer Ministry is dedicated to interceding for the church, community, and the world. We believe in the power of prayer and gather regularly to seek God\'s face, intercede for needs, and experience breakthrough through corporate prayer.',
-      features: [
-        'Weekly prayer meetings',
-        'Intercessory prayer teams',
-        '24/7 prayer chain',
-        'Prayer request handling',
-        'Fasting and prayer events'
-      ],
       color: 'accent'
     },
     {
@@ -66,28 +38,7 @@ const Ministries = () => {
       title: 'Evangelism & Outreach',
       icon: Target,
       description: 'Our Evangelism and Outreach Ministry is committed to sharing the Gospel with our community and beyond. Through various programs and initiatives, we reach out to those who don\'t know Christ and demonstrate God\'s love through practical service.',
-      features: [
-        'Community outreach programs',
-        'Street evangelism',
-        'Hospital visits',
-        'Food distribution',
-        'Disaster relief efforts'
-      ],
       color: 'primary'
-    },
-    {
-      id: 6,
-      title: 'Worship Ministry',
-      icon: Sparkles,
-      description: 'The Worship Ministry leads our congregation in Spirit-filled worship, creating an atmosphere where God\'s presence is welcomed and experienced. Our team of musicians and singers is dedicated to excellence in worship and leading others into God\'s presence.',
-      features: [
-        'Weekly worship team practice',
-        'Music and vocal training',
-        'Special worship events',
-        'Youth worship teams',
-        'Technical support team'
-      ],
-      color: 'accent'
     }
   ]
 
@@ -117,12 +68,11 @@ const Ministries = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
             {ministries.map((ministry, index) => {
               const Icon = ministry.icon
+              const isSecondLastInShortLastRow = ministries.length % 3 === 2 && index === ministries.length - 2
+              const isLastInShortLastRow = ministries.length % 3 === 2 && index === ministries.length - 1
               const bgGradient = ministry.color === 'primary'
                 ? 'from-primary-600 to-primary-700'
                 : 'from-accent-600 to-accent-700'
-              const textColor = ministry.color === 'primary'
-                ? 'text-primary-600'
-                : 'text-accent-600'
               const hoverBorderColor = ministry.color === 'primary'
                 ? 'group-hover:border-primary-200'
                 : 'group-hover:border-accent-200'
@@ -130,7 +80,9 @@ const Ministries = () => {
               return (
                 <div
                   key={ministry.id}
-                  className="group relative animate-fade-in"
+                  className={`group relative animate-fade-in ${
+                    isSecondLastInShortLastRow ? 'lg:col-start-1' : ''
+                  } ${isLastInShortLastRow ? 'lg:col-start-3' : ''}`}
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   {/* Main Card Container */}
@@ -153,7 +105,11 @@ const Ministries = () => {
                         </div>
 
                         {/* Title */}
-                        <h2 className={`text-xl md:text-2xl font-bold text-gray-900 group-hover:${textColor} transition-colors duration-300`}>
+                        <h2
+                          className={`text-xl md:text-2xl font-bold text-gray-900 transition-colors duration-300 ${
+                            ministry.color === 'primary' ? 'group-hover:text-primary-600' : 'group-hover:text-accent-600'
+                          }`}
+                        >
                           {ministry.title}
                         </h2>
 
@@ -164,32 +120,9 @@ const Ministries = () => {
                       </div>
 
                       {/* Description */}
-                      <p className="text-gray-700 leading-relaxed text-sm md:text-base mb-5 flex-grow">
+                      <p className="text-gray-700 leading-relaxed text-sm md:text-base flex-grow">
                         {ministry.description}
                       </p>
-
-                      {/* Features */}
-                      <div className="space-y-3 mb-6">
-                        {ministry.features.slice(0, 3).map((feature, idx) => (
-                          <div key={idx} className="flex items-start gap-3">
-                            <div className={`flex-shrink-0 w-6 h-6 bg-gradient-to-br ${bgGradient} rounded-lg flex items-center justify-center shadow-sm`}>
-                              <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                              </svg>
-                            </div>
-                            <span className="text-sm text-gray-600 leading-relaxed">{feature}</span>
-                          </div>
-                        ))}
-                      </div>
-
-                      {/* Learn More Link */}
-                      <Link
-                        to="/contact"
-                        className={`inline-flex items-center justify-center font-semibold ${textColor} hover:opacity-80 transition-all duration-300 group/link`}
-                      >
-                        <span>Learn More</span>
-                        <ArrowRight className="ml-2 w-4 h-4 group-hover/link:translate-x-1 transition-transform duration-300" />
-                      </Link>
                     </div>
 
                     {/* Bottom Accent Line */}

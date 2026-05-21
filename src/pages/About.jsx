@@ -1,8 +1,8 @@
-import { Users, Heart, BookOpen } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
 const About = () => {
   const { t } = useTranslation()
+
   return (
     <div>
       {/* Page Banner */}
@@ -36,7 +36,7 @@ const About = () => {
         <div className="container-custom max-w-7xl relative z-10">
           <div className="text-center mb-8 md:mb-12 animate-fade-in">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 text-gradient">
-              Message from Our Pastor
+              {t('about.pastorMessageTitle')}
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto rounded-full"></div>
           </div>
@@ -63,15 +63,15 @@ const About = () => {
               <div className="space-y-4 md:space-y-5">
                 <div className="space-y-4 md:space-y-5 text-gray-700 leading-relaxed font-serif italic text-base sm:text-lg md:text-xl lg:text-2xl">
                   <p className="text-primary-700 text-lg md:text-xl lg:text-2xl">
-                    "Greetings in the precious name of our Lord and Savior Jesus Christ!
+                    {t('about.pastorGreeting')}
                   </p>
 
                   <p>
-                  We're delighted that you've found your way to our website! This is where we share the latest happenings in our church family—from worship services to community gatherings and special events. No matter where you are on your faith journey—whether you've been with us for years, you're visiting for the first time, or you're simply exploring what it means to walk with God—you have a place here with us.
+                    {t('about.pastorParagraph1')}
                   </p>
 
                   <p>
-                  Our hope is that IPC Hebron Neria serves as a source of hope, strength, and community for everyone who desires to grow closer to God and build meaningful relationships with others.
+                    {t('about.pastorParagraph2')}
                   </p>
                 </div>
               </div>
@@ -80,19 +80,19 @@ const About = () => {
             {/* Bottom Section: Full Width Remaining Text */}
             <div className="space-y-4 md:space-y-5 text-gray-700 leading-relaxed font-serif italic text-base sm:text-lg md:text-xl lg:text-2xl">
               <p>
-              Take some time to browse through our site. You'll find inspiring messages, thoughtful reflections, and plenty of ways to connect with others and be refreshed in your faith. We invite you to join us for worship and discover the ministries that speak to you. Our desire is to walk alongside you, offering support and friendship as you continue your journey with Christ.
+                {t('about.pastorParagraph3')}
               </p>
 
               <p>
-              We're grateful you're here. May we grow together in faith as the Holy Spirit leads and guides us.
+                {t('about.pastorParagraph4')}
               </p>
 
               <p className="mt-6 text-gray-900 text-base md:text-lg">
-                Yours In Christ,
+                {t('about.pastorSignOff')}
               </p>
               <p className="text-primary-600 text-lg md:text-xl lg:text-2xl">
-                Pr. K.E. Suresh<br />
-                Senior Pastor"
+                {t('about.pastorName')}<br />
+                {t('about.pastorRole')}
               </p>
             </div>
           </div>
@@ -112,84 +112,15 @@ const About = () => {
         <div className="container-custom max-w-7xl relative z-10">
           <div className="text-center mb-8 md:mb-12 animate-fade-in">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 text-gradient">
-              Our Mission
+              {t('about.mission')}
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto rounded-full"></div>
           </div>
 
           <div className="card-gradient p-8 sm:p-10 md:p-12 lg:p-16 text-center animate-fade-in">
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 leading-relaxed font-serif italic max-w-5xl mx-auto">
-              "Our mission is to glorify God by proclaiming the Gospel of Jesus Christ,
-              being led by the Holy Spirit, making disciples, and demonstrating God's love
-              through worship, word, and works."
+              "{t('about.missionText')}"
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Enhanced Core Values with UI/UX Pro Max */}
-      <section className="py-8 md:py-12 lg:py-14 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-            backgroundSize: '60px 60px'
-          }}></div>
-        </div>
-
-        <div className="container-custom max-w-7xl relative z-10">
-          <div className="text-center mb-8 md:mb-12 animate-fade-in">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 text-gradient">
-              Our Core Values
-            </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto rounded-full mb-4"></div>
-            <p className="text-gray-600 text-base md:text-lg max-w-3xl mx-auto">
-              The foundational principles that guide our faith and ministry
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10 lg:gap-12">
-            {/* Word of God */}
-            <div className="card-gradient group hover:shadow-glow-lg transition-all duration-300 hover:-translate-y-2 animate-fade-in p-6 sm:p-8" style={{ animationDelay: '0.1s' }}>
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-primary-500 to-primary-700 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-large group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 group-hover:shadow-glow">
-                <BookOpen className="w-8 h-8 sm:w-10 sm:h-10 text-white" strokeWidth={2.5} />
-              </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors text-center">
-                Word of God
-              </h3>
-              <p className="text-gray-700 leading-relaxed text-sm sm:text-base text-center">
-                We believe the Bible is the inspired Word of God and the foundation
-                for our faith and practice.
-              </p>
-            </div>
-
-            {/* Love & Community */}
-            <div className="card-gradient group hover:shadow-glow-lg transition-all duration-300 hover:-translate-y-2 animate-fade-in p-6 sm:p-8" style={{ animationDelay: '0.2s' }}>
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-accent-500 to-accent-700 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-large group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 group-hover:shadow-glow">
-                <Heart className="w-8 h-8 sm:w-10 sm:h-10 text-white" fill="currentColor" strokeWidth={2.5} />
-              </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 group-hover:text-accent-600 transition-colors text-center">
-                Love & Community
-              </h3>
-              <p className="text-gray-700 leading-relaxed text-sm sm:text-base text-center">
-                We demonstrate God's love through our relationships and service to
-                one another and our community.
-              </p>
-            </div>
-
-            {/* Discipleship */}
-            <div className="card-gradient group hover:shadow-glow-lg transition-all duration-300 hover:-translate-y-2 animate-fade-in p-6 sm:p-8 sm:col-span-2 lg:col-span-1" style={{ animationDelay: '0.3s' }}>
-              <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-gold-500 to-gold-700 rounded-2xl flex items-center justify-center mb-6 mx-auto shadow-large group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 group-hover:shadow-glow">
-                <Users className="w-8 h-8 sm:w-10 sm:h-10 text-white" strokeWidth={2.5} />
-              </div>
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 group-hover:text-gold-600 transition-colors text-center">
-                Discipleship
-              </h3>
-              <p className="text-gray-700 leading-relaxed text-sm sm:text-base text-center">
-                We are committed to making disciples who follow Jesus and share
-                His message with others.
-              </p>
-            </div>
           </div>
         </div>
       </section>
@@ -207,11 +138,11 @@ const About = () => {
         <div className="container-custom max-w-7xl relative z-10">
           <div className="text-center mb-8 md:mb-12 animate-fade-in">
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 text-gradient uppercase tracking-wide">
-              Governing Board Members
+              {t('about.governingBoardMembers')}
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto rounded-full mb-4"></div>
             <p className="text-gray-600 text-base md:text-lg max-w-3xl mx-auto">
-              Our dedicated leaders serving the church with vision and commitment
+              {t('about.governingBoardSubtitle')}
             </p>
           </div>
 

@@ -6,7 +6,7 @@ const Services = () => {
   const services = [
     {
       day: 'Sunday',
-      time: '09:30 AM - 12:30 PM',
+      time: '09:30 AM - 12:00 PM',
       title: 'Sunday Worship Service',
       description: 'Join us for our main worship service featuring praise and worship, prayer, and a message from God\'s Word. This is a time of fellowship, learning, and growing together in faith.',
       icon: Calendar,
