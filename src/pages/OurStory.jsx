@@ -1,6 +1,11 @@
 import { useTranslation } from 'react-i18next'
 import { Helmet } from 'react-helmet-async'
 
+const renderBold = (text, strongClass) =>
+  text.split(/\*\*(.*?)\*\*/g).map((part, i) =>
+    i % 2 === 1 ? <strong key={i} className={strongClass}>{part}</strong> : part
+  )
+
 const OurStory = () => {
   const { t } = useTranslation()
   
@@ -162,7 +167,7 @@ const OurStory = () => {
                   </div>
 
                   <div className="text-lg md:text-xl text-gray-700 leading-relaxed space-y-4">
-                    <p className="first-letter:text-6xl first-letter:font-bold first-letter:text-primary-600 first-letter:mr-2 first-letter:float-left first-letter:leading-none" dangerouslySetInnerHTML={{ __html: t('ourStory.beginning.paragraph1').replace(/\*\*(.*?)\*\*/g, '<strong class="text-primary-700 font-bold">$1</strong>') }} />
+                    <p className="first-letter:text-6xl first-letter:font-bold first-letter:text-primary-600 first-letter:mr-2 first-letter:float-left first-letter:leading-none">{renderBold(t('ourStory.beginning.paragraph1'), 'text-primary-700 font-bold')}</p>
                   </div>
                 </div>
 
@@ -194,7 +199,7 @@ const OurStory = () => {
                   </div>
 
                   <div className="text-lg md:text-xl text-gray-700 leading-relaxed">
-                    <p dangerouslySetInnerHTML={{ __html: t('ourStory.beginning.paragraph2').replace(/\*\*(.*?)\*\*/g, '<strong class="text-accent-700 font-bold">$1</strong>') }} />
+                    <p>{renderBold(t('ourStory.beginning.paragraph2'), 'text-accent-700 font-bold')}</p>
                   </div>
                 </div>
 
@@ -226,7 +231,7 @@ const OurStory = () => {
                   </div>
 
                   <div className="text-lg md:text-xl text-gray-700 leading-relaxed space-y-4">
-                    <p dangerouslySetInnerHTML={{ __html: t('ourStory.beginning.paragraph3').replace(/\*\*(.*?)\*\*/g, '<strong class="text-gold-700 font-bold">$1</strong>') }} />
+                    <p>{renderBold(t('ourStory.beginning.paragraph3'), 'text-gold-700 font-bold')}</p>
                   </div>
                 </div>
 
@@ -258,7 +263,7 @@ const OurStory = () => {
                   </div>
 
                   <div className="text-lg md:text-xl text-gray-700 leading-relaxed">
-                    <p dangerouslySetInnerHTML={{ __html: t('ourStory.beginning.paragraph4').replace(/\*\*(.*?)\*\*/g, '<strong class="text-primary-700 font-bold">$1</strong>') }} />
+                    <p>{renderBold(t('ourStory.beginning.paragraph4'), 'text-primary-700 font-bold')}</p>
                   </div>
                 </div>
 
@@ -293,7 +298,7 @@ const OurStory = () => {
                     </div>
 
                     <div className="text-lg md:text-xl text-gray-700 leading-relaxed">
-                      <p dangerouslySetInnerHTML={{ __html: t('ourStory.beginning.paragraph5').replace(/\*\*(.*?)\*\*/g, '<strong class="text-primary-700 font-bold">$1</strong>') }} />
+                      <p>{renderBold(t('ourStory.beginning.paragraph5'), 'text-primary-700 font-bold')}</p>
                     </div>
                   </div>
 
@@ -332,7 +337,7 @@ const OurStory = () => {
                     </div>
 
                     <div className="text-lg md:text-xl text-white leading-relaxed">
-                      <p dangerouslySetInnerHTML={{ __html: t('ourStory.beginning.paragraph6').replace(/\*\*(.*?)\*\*/g, '<strong class="text-yellow-200 font-bold">$1</strong>') }} />
+                      <p>{renderBold(t('ourStory.beginning.paragraph6'), 'text-yellow-200 font-bold')}</p>
                     </div>
                   </div>
 

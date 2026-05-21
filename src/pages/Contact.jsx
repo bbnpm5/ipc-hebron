@@ -17,6 +17,7 @@ const Contact = () => {
   const [submitted, setSubmitted] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState(null)
+  const [lastSentAt, setLastSentAt] = useState(0)
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -28,11 +29,16 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    if (Date.now() - lastSentAt < 30000) {
+      setError('Please wait 30 seconds before submitting again.')
+      return
+    }
     setIsLoading(true)
     setError(null)
 
     try {
       await sendContactEmail(formData)
+      setLastSentAt(Date.now())
       
       // Success - show success message and reset form
       setSubmitted(true)
@@ -326,6 +332,7 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
+                        maxLength={100}
                         className="w-full px-4 py-2.5 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent shadow-sm hover:border-primary-300 transition-all duration-200"
                         placeholder={t('contact.namePlaceholder')}
                       />
@@ -344,6 +351,7 @@ const Contact = () => {
                           value={formData.email}
                           onChange={handleChange}
                           required
+                          maxLength={254}
                           className="w-full px-4 py-2.5 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent shadow-sm hover:border-primary-300 transition-all duration-200"
                           placeholder={t('contact.emailPlaceholder')}
                         />
@@ -358,6 +366,7 @@ const Contact = () => {
                           name="phone"
                           value={formData.phone}
                           onChange={handleChange}
+                          maxLength={20}
                           className="w-full px-4 py-2.5 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent shadow-sm hover:border-primary-300 transition-all duration-200"
                           placeholder={t('contact.phonePlaceholder')}
                         />
@@ -376,6 +385,7 @@ const Contact = () => {
                         value={formData.subject}
                         onChange={handleChange}
                         required
+                        maxLength={150}
                         className="w-full px-4 py-2.5 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent shadow-sm hover:border-primary-300 transition-all duration-200"
                         placeholder={t('contact.subjectPlaceholder')}
                       />
@@ -393,6 +403,7 @@ const Contact = () => {
                         onChange={handleChange}
                         required
                         rows={5}
+                        maxLength={3000}
                         className="w-full px-4 py-2.5 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent shadow-sm hover:border-primary-300 transition-all duration-200 resize-none"
                         placeholder={t('contact.messagePlaceholder')}
                       />

@@ -26,8 +26,6 @@ const Giving = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // In production, this would integrate with a payment gateway
-    console.log('Donation submitted:', formData)
     setSubmitted(true)
     setTimeout(() => {
       setSubmitted(false)

@@ -16,6 +16,7 @@ const PrayerRequest = () => {
   const [submitted, setSubmitted] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState(null)
+  const [lastSentAt, setLastSentAt] = useState(0)
   const successRef = useRef(null)
 
   useEffect(() => {
@@ -34,11 +35,16 @@ const PrayerRequest = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    if (Date.now() - lastSentAt < 30000) {
+      setError('Please wait 30 seconds before submitting again.')
+      return
+    }
     setIsLoading(true)
     setError(null)
 
     try {
       await sendPrayerRequestEmail(formData)
+      setLastSentAt(Date.now())
       
       // Success - show success message and reset form
       setSubmitted(true)
@@ -188,6 +194,7 @@ const PrayerRequest = () => {
                         onChange={handleChange}
                         required={!formData.anonymous}
                         disabled={formData.anonymous}
+                        maxLength={100}
                         className="w-full px-4 py-3 pl-12 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-300 bg-white disabled:bg-gray-100 disabled:cursor-not-allowed shadow-soft hover:shadow-medium"
                         placeholder="Your name"
                       />
@@ -208,6 +215,7 @@ const PrayerRequest = () => {
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
+                        maxLength={254}
                         className="w-full px-4 py-3 pl-12 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-300 bg-white shadow-soft hover:shadow-medium"
                         placeholder="your.email@example.com"
                       />
@@ -228,6 +236,7 @@ const PrayerRequest = () => {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
+                        maxLength={20}
                         className="w-full px-4 py-3 pl-12 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-300 bg-white shadow-soft hover:shadow-medium"
                         placeholder="Your phone number"
                       />
@@ -249,6 +258,7 @@ const PrayerRequest = () => {
                         onChange={handleChange}
                         required
                         rows={6}
+                        maxLength={3000}
                         className="w-full px-4 py-3 pl-12 border-2 border-gray-200 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-300 bg-white shadow-soft hover:shadow-medium resize-none"
                         placeholder="Please share your prayer request..."
                       />
