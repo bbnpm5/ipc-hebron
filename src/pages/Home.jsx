@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { Helmet } from 'react-helmet-async'
 import DailyVerse from '../components/DailyVerse'
 import Testimonials from '../components/Testimonials'
 
@@ -8,6 +9,10 @@ const Home = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>IPC Hebron Neria | India Pentecostal Church, Wayanad</title>
+        <meta name="description" content="IPC Hebron Neria – India Pentecostal Church in Neria, Kalpetta, Wayanad. Join us for Sunday worship, Bible studies, prayer, and community. Also known as IBC Hebron." />
+      </Helmet>
       {/* Hero Section with Background Image */}
       <section className="relative w-full h-screen min-h-[500px] sm:min-h-[600px] md:min-h-[700px] flex items-center justify-center overflow-hidden">
         {/* Background Image with Parallax Effect */}

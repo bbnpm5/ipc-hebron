@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { HelmetProvider } from 'react-helmet-async'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import WhatsAppButton from './components/WhatsAppButton'
@@ -19,6 +20,7 @@ import OurStory from './pages/OurStory'
 
 function App() {
   return (
+    <HelmetProvider>
     <Router>
       <ScrollToTop />
       <div className="min-h-screen flex flex-col">
@@ -44,6 +46,7 @@ function App() {
         <ScrollToTopButton />
       </div>
     </Router>
+    </HelmetProvider>
   )
 }
 

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Heart, CreditCard, Building2, QrCode, CheckCircle, Currency } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
+import { Helmet } from 'react-helmet-async'
 
 const Giving = () => {
   const { t } = useTranslation()
@@ -46,6 +47,10 @@ const Giving = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Give | IPC Hebron Neria</title>
+        <meta name="description" content="Support the ministry of IPC Hebron Neria through your generous giving. Learn about ways to contribute to our church in Neria, Wayanad." />
+      </Helmet>
       {/* Page Banner */}
       <section className="relative bg-gradient-to-r from-primary-600 to-primary-700 text-white py-16 md:py-24 overflow-hidden">
         {/* Background Image - Giving Theme */}

@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next'
+import { Helmet } from 'react-helmet-async'
 
 const OurStory = () => {
   const { t } = useTranslation()
@@ -85,6 +86,10 @@ const OurStory = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Our Story | IPC Hebron Neria</title>
+        <meta name="description" content="The history and journey of IPC Hebron Neria – how God established and grew our church in Neria, Kalpetta, Wayanad." />
+      </Helmet>
       {/* Enhanced Page Banner with UI/UX Pro Max */}
       <section className="relative bg-gradient-to-r from-primary-600 via-primary-700 to-accent-700 text-white py-8 md:py-12 overflow-hidden">
         {/* Animated Background Pattern */}

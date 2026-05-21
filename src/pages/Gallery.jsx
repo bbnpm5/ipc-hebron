@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { X, ChevronLeft, ChevronRight, Sparkles } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
+import { Helmet } from 'react-helmet-async'
 
 const albums = [
   {
@@ -161,6 +162,10 @@ const Gallery = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Gallery | IPC Hebron Neria</title>
+        <meta name="description" content="Photo gallery of IPC Hebron Neria – Bible conventions, baptism services, church events, and community moments." />
+      </Helmet>
       {/* Page Banner */}
       <section className="relative bg-gradient-to-r from-primary-600 to-primary-700 text-white py-8 md:py-12 overflow-hidden">
         {/* Dark Overlay */}

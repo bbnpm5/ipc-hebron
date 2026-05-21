@@ -1,5 +1,6 @@
 import { Calendar, Clock, Users, Heart, Sparkles, ArrowRight } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
+import { Helmet } from 'react-helmet-async'
 
 const Services = () => {
   const { t } = useTranslation()
@@ -32,6 +33,10 @@ const Services = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Church Services | IPC Hebron Neria</title>
+        <meta name="description" content="Service times and details for IPC Hebron Neria – Sunday worship, mid-week Bible study, prayer meetings, and more in Neria, Wayanad." />
+      </Helmet>
       {/* Page Banner */}
       <section className="relative bg-gradient-to-r from-primary-600 to-primary-700 text-white py-8 md:py-12 overflow-hidden">
         {/* Background Image */}

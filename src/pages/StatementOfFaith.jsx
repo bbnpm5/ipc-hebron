@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next'
+import { Helmet } from 'react-helmet-async'
 import { BookOpen, Cross, Users, Heart, Shield, Star } from 'lucide-react'
 
 const StatementOfFaith = () => {
@@ -113,6 +114,10 @@ const StatementOfFaith = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Statement of Faith | IPC Hebron Neria</title>
+        <meta name="description" content="What we believe at IPC Hebron Neria – our statement of faith rooted in the Bible and the Pentecostal tradition." />
+      </Helmet>
       {/* Page Banner */}
       <section className="relative bg-gradient-to-r from-primary-600 to-primary-700 text-white py-8 md:py-12 overflow-hidden">
         {/* Background Pattern */}

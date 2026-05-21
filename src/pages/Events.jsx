@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Calendar, Clock, MapPin, Users, RefreshCw, AlertCircle, Sparkles, ArrowRight } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
+import { Helmet } from 'react-helmet-async'
 import { getEvents } from '../services/googleCalendar'
 
 const Events = () => {
@@ -163,6 +164,10 @@ const Events = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Events | IPC Hebron Neria</title>
+        <meta name="description" content="Upcoming events at IPC Hebron Neria – church gatherings, prayer nights, youth events, and special services in Neria, Wayanad." />
+      </Helmet>
       {/* Page Banner */}
       <section className="relative bg-gradient-to-r from-primary-600 to-primary-700 text-white py-8 md:py-12 overflow-hidden">
         {/* Background Image */}

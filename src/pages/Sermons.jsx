@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Play, Calendar, Clock, Youtube, RefreshCw, AlertCircle, ExternalLink, X } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
+import { Helmet } from 'react-helmet-async'
 import { getLatestVideos } from '../services/youtubeApi'
 import { extractYouTubeVideoId, getYouTubeThumbnailUrl } from '../utils/youtube'
 
@@ -97,6 +98,10 @@ const Sermons = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Sermons | IPC Hebron Neria</title>
+        <meta name="description" content="Watch and listen to sermons from IPC Hebron Neria – messages from the Word of God to inspire and strengthen your faith." />
+      </Helmet>
       {/* Page Banner */}
       <section className="relative bg-gradient-to-r from-primary-600 to-primary-700 text-white py-8 md:py-12 overflow-hidden">
         {/* Background Image - Sermons Theme */}

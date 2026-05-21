@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Heart, Send, CheckCircle, Sparkles, User, Mail, Phone, FileText, Loader2, AlertCircle } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
+import { Helmet } from 'react-helmet-async'
 import { sendPrayerRequestEmail } from '../config/emailjs'
 
 const PrayerRequest = () => {
@@ -64,6 +65,10 @@ const PrayerRequest = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Prayer Request | IPC Hebron Neria</title>
+        <meta name="description" content="Submit a prayer request to IPC Hebron Neria. We believe in the power of prayer and our church family will pray for you." />
+      </Helmet>
       {/* Page Banner */}
       <section className="relative bg-gradient-to-r from-primary-600 to-primary-700 text-white py-8 md:py-12 overflow-hidden">
         {/* Background Image */}

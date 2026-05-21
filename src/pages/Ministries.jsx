@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Users, BookOpen, Heart, ArrowRight, Sparkles, Target, Flame } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
+import { Helmet } from 'react-helmet-async'
 
 const Ministries = () => {
   const { t } = useTranslation()
@@ -44,6 +45,10 @@ const Ministries = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Ministries | IPC Hebron Neria</title>
+        <meta name="description" content="Explore the ministries of IPC Hebron Neria – youth, women, men, children, and outreach ministries serving Neria and Wayanad." />
+      </Helmet>
       {/* Page Banner */}
       <section className="relative bg-gradient-to-r from-primary-600 to-primary-700 text-white py-8 md:py-12 overflow-hidden">
         {/* Background Image - Ministries Theme */}
