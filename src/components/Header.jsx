@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { Menu, X, ChevronDown } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import LanguageSwitcher from './LanguageSwitcher'
+import { SHOW_LANGUAGE_SWITCHER } from '../i18n'
 
 const Header = () => {
   const { t, i18n } = useTranslation()
@@ -268,13 +269,15 @@ const Header = () => {
               </div>
             ))}
             {/* Language Switcher next to Contact Us */}
-            <div className={`border-l border-primary-500/30 flex-shrink-0 ${
-              isMalayalam 
-                ? 'ml-2 pl-2' 
-                : 'ml-3 md:ml-4 pl-3 md:pl-4'
-            }`}>
-              <LanguageSwitcher />
-            </div>
+            {SHOW_LANGUAGE_SWITCHER && (
+              <div className={`border-l border-primary-500/30 flex-shrink-0 ${
+                isMalayalam
+                  ? 'ml-2 pl-2'
+                  : 'ml-3 md:ml-4 pl-3 md:pl-4'
+              }`}>
+                <LanguageSwitcher />
+              </div>
+            )}
           </div>
 
           {/* Mobile Menu Button with Enhanced Styling */}
@@ -340,9 +343,11 @@ const Header = () => {
                 </div>
               ))}
               {/* Language Switcher in mobile menu */}
-              <div className="px-4 py-3 border-t border-gray-800 mt-4 pt-4">
-                <LanguageSwitcher />
-              </div>
+              {SHOW_LANGUAGE_SWITCHER && (
+                <div className="px-4 py-3 border-t border-gray-800 mt-4 pt-4">
+                  <LanguageSwitcher />
+                </div>
+              )}
             </div>
           </div>
         )}
