@@ -130,43 +130,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Enhanced Governing Board Members with UI/UX Pro Max */}
-      <section className="py-8 md:py-12 lg:py-14 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 via-white to-gray-50 relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-            backgroundSize: '60px 60px'
-          }}></div>
-        </div>
-
-        <div className="container-custom max-w-7xl relative z-10">
-          <div className="text-center mb-8 md:mb-12 animate-fade-in">
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 text-gradient uppercase tracking-wide">
-              {t('about.governingBoardMembers')}
-            </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-primary-500 to-accent-500 mx-auto rounded-full mb-4"></div>
-            <p className="text-gray-600 text-base md:text-lg max-w-3xl mx-auto">
-              {t('about.governingBoardSubtitle')}
-            </p>
-          </div>
-
-          <div className="max-w-6xl mx-auto">
-            <div className="card-gradient p-6 sm:p-8 md:p-10 lg:p-12 animate-fade-in">
-              <div className="relative group overflow-hidden rounded-2xl">
-                <img
-                  src="/IPCNeriaBoardMembers.png"
-                  alt="IPC Hebron Neria Governing Board Members"
-                  className="w-full h-auto object-contain rounded-xl shadow-large group-hover:scale-105 transition-transform duration-500"
-                />
-                {/* Decorative Gradient Overlay on Hover */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
     </div>
   )
 }
