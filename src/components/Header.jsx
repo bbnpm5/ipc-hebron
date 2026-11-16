@@ -93,7 +93,7 @@ const Header = () => {
         }`}></div>
       </div>
       
-      <nav className="container-custom relative z-10">
+      <nav className="max-w-7xl 2xl:max-w-screen-2xl mx-auto relative z-10">
         <div className={`flex items-center justify-between h-20 md:h-24 px-3 md:px-4 lg:px-6 w-full ${
           isKannada ? 'gap-2 md:gap-3' : 'gap-4'
         }`}>
@@ -157,7 +157,7 @@ const Header = () => {
               ? 'space-x-1 md:space-x-2 lg:space-x-2'
               : isKannada
                 ? 'space-x-0.5 md:space-x-1 lg:space-x-1.5'
-                : 'space-x-0.5 lg:space-x-1 xl:space-x-2'
+                : 'space-x-1 xl:space-x-2'
           }`}>
             {navLinks.map((link) => (
               <div key={link.path} className="relative group">
@@ -172,16 +172,16 @@ const Header = () => {
                         ? 'px-2 md:px-2.5 lg:px-3'
                         : isKannada
                           ? 'px-1.5 md:px-2 lg:px-2.5'
-                          : 'px-2 lg:px-3 xl:px-4'
+                          : 'px-3 xl:px-5'
                     }`}>
                       <Link
                         to={link.path}
-                        className={`relative font-semibold uppercase tracking-wide transition-all duration-300 flex items-center space-x-1 whitespace-nowrap group/link ${
+                        className={`relative font-semibold transition-all duration-300 flex items-center space-x-1 whitespace-nowrap group/link ${
                           isMalayalam
                             ? 'text-[10px] md:text-xs'
                             : isKannada
                               ? 'text-[9px] md:text-[10px] lg:text-xs'
-                              : 'text-xs md:text-sm'
+                              : 'text-sm xl:text-base 2xl:text-[17px]'
                         } ${
                           isActive(link.path) || location.pathname === '/ministries' || location.pathname === '/statement-of-faith'
                             ? 'text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]'
@@ -208,7 +208,7 @@ const Header = () => {
                               <Link
                                 key={item.path}
                                 to={item.path}
-                                className={`group/dropdown relative block px-4 py-3 text-sm transition-all duration-300 ${
+                                className={`group/dropdown relative block px-4 py-3 text-sm xl:text-base transition-all duration-300 ${
                                   index === 0 ? 'rounded-t-lg' : ''
                                 } ${
                                   index === link.dropdown.length - 1 ? 'rounded-b-lg' : 'border-b border-gray-800/50'
@@ -239,12 +239,12 @@ const Header = () => {
                 ) : (
                   <Link
                     to={link.path}
-                    className={`relative py-2 font-semibold uppercase tracking-wide transition-all duration-300 whitespace-nowrap group/link ${
+                    className={`relative py-2 font-semibold transition-all duration-300 whitespace-nowrap group/link ${
                       isMalayalam
                         ? 'px-2 md:px-2.5 lg:px-3 text-[10px] md:text-xs'
                         : isKannada
                           ? 'px-1.5 md:px-2 lg:px-2.5 text-[9px] md:text-[10px] lg:text-xs'
-                          : 'px-2 lg:px-3 xl:px-4 text-xs md:text-sm'
+                          : 'px-3 xl:px-5 text-sm xl:text-base 2xl:text-[17px]'
                     } ${
                       isActive(link.path)
                         ? 'text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.5)]'
@@ -304,7 +304,7 @@ const Header = () => {
                     <div>
                       <button
                         onClick={() => setIsAboutOpen(!isAboutOpen)}
-                        className="w-full flex items-center justify-between px-4 py-3 text-sm font-semibold uppercase text-gray-100 hover:text-white hover:drop-shadow-[0_0_6px_rgba(255,255,255,0.3)] transition-all duration-300 rounded-lg hover:bg-gradient-to-r hover:from-primary-600/25 hover:to-accent-600/25 border border-transparent hover:border-primary-500/40"
+                        className="w-full flex items-center justify-between px-4 py-3 text-base font-semibold text-gray-100 hover:text-white hover:drop-shadow-[0_0_6px_rgba(255,255,255,0.3)] transition-all duration-300 rounded-lg hover:bg-gradient-to-r hover:from-primary-600/25 hover:to-accent-600/25 border border-transparent hover:border-primary-500/40"
                       >
                         <span className="text-left">{link.label}</span>
                         <ChevronDown className={`w-4 h-4 transition-all duration-300 flex-shrink-0 ${isAboutOpen ? 'rotate-180' : ''}`} />
@@ -319,7 +319,7 @@ const Header = () => {
                                 setIsMenuOpen(false)
                                 setIsAboutOpen(false)
                               }}
-                              className="block px-4 py-2.5 text-sm text-gray-200 hover:text-white hover:drop-shadow-[0_0_6px_rgba(255,255,255,0.3)] transition-all duration-300 rounded-md hover:bg-gradient-to-r hover:from-primary-600/25 hover:to-accent-600/25 border border-transparent hover:border-primary-500/40"
+                              className="block px-4 py-2.5 text-base text-gray-200 hover:text-white hover:drop-shadow-[0_0_6px_rgba(255,255,255,0.3)] transition-all duration-300 rounded-md hover:bg-gradient-to-r hover:from-primary-600/25 hover:to-accent-600/25 border border-transparent hover:border-primary-500/40"
                             >
                               {item.label}
                             </Link>
@@ -331,7 +331,7 @@ const Header = () => {
                     <Link
                       to={link.path}
                       onClick={() => setIsMenuOpen(false)}
-                      className={`block px-4 py-3 text-sm font-semibold uppercase transition-all duration-300 rounded-lg border ${
+                      className={`block px-4 py-3 text-base font-semibold transition-all duration-300 rounded-lg border ${
                         isActive(link.path)
                           ? 'text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] bg-gradient-to-r from-primary-600/40 to-accent-600/40 border-primary-400/60 shadow-[0_0_20px_rgba(124,58,237,0.4)]'
                           : 'text-gray-100 hover:text-white hover:drop-shadow-[0_0_6px_rgba(255,255,255,0.3)] hover:bg-gradient-to-r hover:from-primary-600/25 hover:to-accent-600/25 border-transparent hover:border-primary-500/40'

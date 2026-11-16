@@ -33,18 +33,19 @@ const Events = () => {
     return () => clearInterval(interval)
   }, [])
 
+  // event.date is the church's calendar date ("YYYY-MM-DD", India time).
+  // Format it as a plain date in UTC so the day never shifts with the
+  // visitor's own time zone.
   const formatDate = (dateString) => {
-    const date = new Date(dateString)
+    const [y, m, d] = dateString.split('-').map(Number)
+    const date = new Date(Date.UTC(y, m - 1, d))
+    const fmt = (options) => date.toLocaleDateString('en-US', { timeZone: 'UTC', ...options })
     return {
-      day: date.getDate(),
-      month: date.toLocaleDateString('en-US', { month: 'short' }),
-      year: date.getFullYear(),
-      weekday: date.toLocaleDateString('en-US', { weekday: 'long' }),
-      full: date.toLocaleDateString('en-US', { 
-        year: 'numeric', 
-        month: 'long', 
-        day: 'numeric' 
-      })
+      day: d,
+      month: fmt({ month: 'short' }),
+      year: y,
+      weekday: fmt({ weekday: 'long' }),
+      full: fmt({ year: 'numeric', month: 'long', day: 'numeric' })
     }
   }
 

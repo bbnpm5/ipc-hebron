@@ -17,6 +17,9 @@
  * 8. Add VITE_GOOGLE_CALENDAR_API_KEY and VITE_GOOGLE_CALENDAR_ID to .env file
  */
 
+// Event dates and times are always shown in the church's local time
+const CHURCH_TIME_ZONE = 'Asia/Kolkata'
+
 /**
  * Fetch events from Google Calendar (next 30 days only)
  * @param {string} calendarId - Google Calendar ID
@@ -126,13 +129,20 @@ const formatGoogleCalendarEvent = (googleEvent) => {
   const startDate = new Date(start)
   const endDate = new Date(end)
 
-  // Extract time if it's a datetime event
+  // Show dates and times in the church's time zone (India), not the
+  // visitor's, so members abroad see the same day and time as locals.
+  let date
   let time = 'All Day'
   if (googleEvent.start?.dateTime) {
-    const timeOptions = { hour: 'numeric', minute: '2-digit', hour12: true }
+    // 'en-CA' formats as YYYY-MM-DD
+    date = startDate.toLocaleDateString('en-CA', { timeZone: CHURCH_TIME_ZONE })
+    const timeOptions = { hour: 'numeric', minute: '2-digit', hour12: true, timeZone: CHURCH_TIME_ZONE }
     const startTime = startDate.toLocaleTimeString('en-US', timeOptions)
     const endTime = endDate.toLocaleTimeString('en-US', timeOptions)
-    time = `${startTime} - ${endTime}`
+    time = `${startTime} - ${endTime} IST`
+  } else {
+    // All-day events already come as a plain YYYY-MM-DD date
+    date = googleEvent.start?.date
   }
 
   // Extract location from event or description
@@ -167,7 +177,7 @@ const formatGoogleCalendarEvent = (googleEvent) => {
   return {
     id: googleEvent.id,
     title: googleEvent.summary || 'Untitled Event',
-    date: startDate.toISOString().split('T')[0], // YYYY-MM-DD format
+    date, // YYYY-MM-DD in India time
     time: time,
     location: location,
     description: googleEvent.description || googleEvent.summary || '',
