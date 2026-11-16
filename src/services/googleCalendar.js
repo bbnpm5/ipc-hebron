@@ -179,17 +179,17 @@ const formatGoogleCalendarEvent = (googleEvent) => {
 }
 
 /**
- * Get events with fallback to sample data
- * @returns {Promise<Array>} Array of events
+ * Get upcoming events from the configured Google Calendar
+ * @returns {Promise<Array>} Array of events (empty if not configured)
  */
 export const getEvents = async () => {
   const apiKey = import.meta.env.VITE_GOOGLE_CALENDAR_API_KEY
   const calendarId = import.meta.env.VITE_GOOGLE_CALENDAR_ID
 
-  // If API credentials are not configured, return empty array
-  // The component will handle showing a message or fallback data
+  // If API credentials are not configured, return empty array;
+  // the Events page then shows its "no upcoming events" message.
   if (!apiKey || !calendarId) {
-    console.warn('Google Calendar API credentials not configured. Using fallback data.')
+    console.warn('Google Calendar API credentials not configured. See GOOGLE_CALENDAR_SETUP.md.')
     return []
   }
 

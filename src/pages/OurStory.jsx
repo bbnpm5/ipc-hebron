@@ -93,7 +93,7 @@ const OurStory = () => {
     <div>
       <Helmet>
         <title>Our Story | IPC Hebron Neria</title>
-        <meta name="description" content="The history and journey of IPC Hebron Neria – how God established and grew our church in Neria, Kalpetta, Wayanad." />
+        <meta name="description" content="The history and journey of IPC Hebron Neria – how God established and grew our church in Neria, Belthangady, Dakshina Kannada." />
       </Helmet>
       {/* Enhanced Page Banner with UI/UX Pro Max */}
       <section className="relative bg-gradient-to-r from-primary-600 via-primary-700 to-accent-700 text-white py-8 md:py-12 overflow-hidden">

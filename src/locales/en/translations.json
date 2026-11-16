@@ -5,11 +5,8 @@
   },
   "pageTitles": {
     "about": "About Us",
-    "ourStory": "Our Story",
     "ministries": "Our Ministries",
     "events": "Events Calendar",
-    "services": "Service Times",
-    "counseling": "Prayer Request",
     "gallery": "Photo Gallery",
     "contact": "Contact Us",
     "sermons": "Sermon Archive",
@@ -24,7 +21,6 @@
     "ministries": "Ministries",
     "events": "Events",
     "services": "Services",
-    "counseling": "Counseling",
     "prayerRequest": "Prayer Request",
     "gallery": "Gallery",
     "contact": "Contact Us"
@@ -57,8 +53,6 @@
     "viewGallery": "View our photo gallery"
   },
   "about": {
-    "title": "About IPC Hebron",
-    "subtitle": "Neria, Belthangady TQ, D.K, Karnataka, India",
     "mission": "Our Mission",
     "missionText": "Our mission is to glorify God by proclaiming the Gospel of Jesus Christ, being led by the Holy Spirit, making disciples, and demonstrating God's love through worship, word, and works.",
     "pastorMessageTitle": "Message from Our Pastor",
@@ -69,43 +63,9 @@
     "pastorParagraph4": "We're grateful you're here. May we grow together in faith as the Holy Spirit leads and guides us.",
     "pastorSignOff": "Yours In Christ,",
     "pastorName": "Pr. K.E. Suresh",
-    "pastorRole": "Senior Pastor",
-    "whoWeAre": "Who We Are",
-    "whoWeAreText1": "India Pentecostal Church Hebron (IPC Hebron) is a vibrant Pentecostal congregation located in Neria, Belthangady Taluk, Dakshina Kannada, Karnataka, India. We are a community of believers committed to following Jesus Christ and spreading His message of love, hope, and salvation.",
-    "whoWeAreText2": "As a Pentecostal church, we believe in the power and presence of the Holy Spirit in our lives and worship. We emphasize the importance of prayer, worship, and the study of God's Word as foundational to our faith journey.",
-    "leadership": "Our Leadership",
-    "history": "Our History",
-    "historyText": "IPC Hebron was blessed and started in 1989. We honor the faithful pastors who have served our congregation throughout the years.",
-    "coreValues": "Our Core Values",
-    "wordOfGod": "Word of God",
-    "wordOfGodText": "We believe the Bible is the inspired Word of God and the foundation for our faith and practice.",
-    "loveCommunity": "Love & Community",
-    "loveCommunityText": "We demonstrate God's love through our relationships and service to one another and our community.",
-    "discipleship": "Discipleship",
-    "discipleshipText": "We are committed to making disciples who follow Jesus and share His message with others.",
-    "pentecostalFaith": "Pentecostal Faith",
-    "pentecostalFaithText": "As a Pentecostal church, we embrace the full work of the Holy Spirit in the life of the believer. We believe in:",
-    "pentecostalBeliefs": [
-      "The baptism of the Holy Spirit with the evidence of speaking in tongues",
-      "The gifts of the Spirit for the edification of the church",
-      "Divine healing and miracles through faith in Jesus Christ",
-      "The importance of prayer and intercession",
-      "Worship that is vibrant, Spirit-led, and heartfelt"
-    ]
+    "pastorRole": "Senior Pastor"
   },
   "services": {
-    "title": "Service Times",
-    "subtitle": "Join us for worship and fellowship",
-    "sundayService": "Sunday Service",
-    "sundayTime": "10:00 AM - 12:30 PM",
-    "sundayDesc": "Join us for our main worship service featuring praise and worship, prayer, and a message from God's Word. This is a time of fellowship, learning, and growing together in faith.",
-    "wednesday": "Wednesday",
-    "wednesdayTitle": "Cottage Meeting",
-    "wednesdayDesc": "Small group gatherings in homes for Bible study, prayer, and fellowship. These intimate meetings provide an opportunity for deeper connection and spiritual growth.",
-    "friday": "Friday",
-    "fridayTitle": "Fasting Prayer",
-    "fridayDesc": "A dedicated time of fasting and prayer where we seek God's face, intercede for our community, and experience the power of corporate prayer.",
-    "location": "Location",
     "whatToExpect": "What to Expect",
     "worship": "Worship",
     "worshipText": "Experience vibrant, Spirit-led worship with contemporary and traditional songs that honor God and invite His presence.",
@@ -116,32 +76,13 @@
     "prayer": "Prayer",
     "prayerText": "Join in corporate prayer and receive personal prayer ministry from our prayer team."
   },
-  "events": {
-    "title": "Events Calendar",
-    "subtitle": "Join us for upcoming events and activities"
-  },
-  "gallery": {
-    "title": "Photo Gallery",
-    "subtitle": "Capturing moments of faith, fellowship, and worship",
-    "allPhotos": "All Photos",
-    "services": "Services",
-    "events": "Events",
-    "youth": "Youth",
-    "prayer": "Prayer",
-    "outreach": "Outreach",
-    "noImages": "No images found in this category."
-  },
   "contact": {
-    "title": "Contact Us",
-    "subtitle": "We'd love to hear from you",
     "getInTouch": "Get in Touch",
     "getInTouchText": "We're here to help and answer any questions you may have. Feel free to reach out to us through any of the following ways.",
     "address": "Address",
     "phone": "Phone",
     "email": "Email",
-    "serviceTimes": "Service Times",
     "followUs": "Follow Us",
-    "socialMediaComing": "Social media links will be added soon",
     "sendMessage": "Send us a Message",
     "fullName": "Full Name",
     "required": "*",
@@ -175,52 +116,6 @@
     "prayerMinistryText1": "Our prayer team is committed to interceding for every request we receive. We believe that prayer changes things and that God hears and answers the prayers of His people.",
     "prayerMinistryText2": "Note: In production, prayer requests would be sent to a secure backend system and can be managed through an admin panel. You may want to integrate with email services or a database to store and manage requests."
   },
-  "giving": {
-    "title": "Online Giving",
-    "subtitle": "Support our ministry and make a difference",
-    "whyWeGive": "Why We Give",
-    "whyWeGiveText1": "Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver. - 2 Corinthians 9:7",
-    "whyWeGiveText2": "Your generous giving helps us continue our mission of spreading the Gospel, supporting our community, and maintaining our church facilities. Every contribution, no matter the size, makes a difference in advancing God's kingdom.",
-    "makeDonation": "Make a Donation",
-    "donationAmount": "Donation Amount",
-    "paymentMethod": "Payment Method",
-    "upi": "UPI",
-    "card": "Card",
-    "bankTransfer": "Bank Transfer",
-    "donorInfo": "Donor Information",
-    "recurring": "Make this a recurring donation",
-    "messageOptional": "Message (Optional)",
-    "proceedPayment": "Proceed to Payment",
-    "thankYou": "Thank You!",
-    "donationReceived": "Your donation has been received. We appreciate your generous support of our ministry.",
-    "bankDetails": "Bank Transfer Details",
-    "accountName": "Account Name",
-    "accountNumber": "Account Number",
-    "ifscCode": "IFSC Code",
-    "bankName": "Bank Name",
-    "branch": "Branch",
-    "bankNote": "For bank transfer, please include your name and phone number in the transaction remarks. After transfer, email us at reachipcneria@gmail.com with the transaction details for receipt."
-  },
-  "sermons": {
-    "title": "Sermon Archive",
-    "subtitle": "Listen to messages from our services"
-  },
-  "ministries": {
-    "title": "Our Ministries",
-    "subtitle": "Discover opportunities to grow, serve, and make a difference in our church and community",
-    "getInvolved": "Get Involved",
-    "getInvolvedText": "There's a place for everyone in our church family. Whether you're interested in youth ministry, children's programs, worship, or outreach, we'd love to help you find your place to serve.",
-    "contactUs": "Contact Us",
-    "viewEvents": "View Events",
-    "whyWeServe": "Why We Serve",
-    "whyWeServeText": "Our ministries are built on biblical principles and a heart for service",
-    "purpose": "Purpose",
-    "purposeText": "Every ministry has a clear purpose aligned with God's Word and our mission",
-    "passion": "Passion",
-    "passionText": "We serve with passion, dedication, and a heart to see lives transformed",
-    "people": "People",
-    "peopleText": "Our ministries are about people - loving, serving, and building relationships"
-  },
   "dailyVerse": {
     "title": "Daily Bible Verse"
   },
@@ -234,15 +129,11 @@
     "copyright": "© {{year}} IPC Hebron, Neria. All Rights Reserved.",
     "quickLinks": "Quick Links",
     "contactInfo": "Contact Information",
-    "serviceTimes": "Service Times",
-    "madeWith": "Made with",
-    "forGod": "for the glory of God",
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service"
   },
   "statementOfFaith": {
     "title": "Statement of Faith",
-    "subtitle": "Our foundational beliefs based on the Word of God",
     "triuneGod": {
       "title": "The Triune God",
       "content": "We believe in one living and true God, eternally existing as Father, Son, and Holy Spirit—equal in power and glory. God created all things and continues to sustain and rule over all creation.",
@@ -311,27 +202,7 @@
   },
   "testimonials": {
     "title": "Testimonials",
-    "subtitle": "Hear from our church family about how God is working in their lives",
-    "testimonial1": {
-      "name": "Srini Sham",
-      "text": "Really blessed to be part of the church family where focus is on Jesus. God has anointed and transformed my life. The word of God shared here enriches me. Glad to be here. Praise God."
-    },
-    "testimonial2": {
-      "name": "Sarah Johnson",
-      "text": "IPC Hebron has been a blessing in my life. The worship services are powerful, and the teaching of God's word has helped me grow spiritually. I'm grateful for this church family."
-    },
-    "testimonial3": {
-      "name": "David Kumar",
-      "text": "The love and fellowship I've experienced here is amazing. The prayers and support from the church community have been instrumental in my spiritual journey. Thank you, IPC Hebron!"
-    },
-    "testimonial4": {
-      "name": "Priya Menon",
-      "text": "Being part of IPC Hebron has transformed my relationship with God. The Holy Spirit moves powerfully here, and I've seen God's faithfulness in every area of my life."
-    },
-    "testimonial5": {
-      "name": "Michael Thomas",
-      "text": "This church is truly a place where God's presence is felt. The ministry, worship, and fellowship have been life-changing. I'm blessed to call IPC Hebron my home church."
-    }
+    "subtitle": "Hear from our church family about how God is working in their lives"
   },
   "whatsapp": {
     "contactName": "IPC Hebron",
@@ -342,7 +213,6 @@
   },
   "ourStory": {
     "title": "Our Story",
-    "subtitle": "A journey of faith, dedication, and God's faithfulness since 1989",
     "beginning": {
       "title": "Our Journey Begins",
       "paragraph1": "The ministry in Neria began in **1989** under the leadership of **Pr. K. J. Raju** from IPC Mardhala, with **Pr. K. P. Babu** initiating the ministry work in Neria. Through faithful Gospel outreach during this early period, many people heard the Good News and came to faith in Jesus Christ, and the ministry took strong spiritual root in the region. During this initial phase, the work was also guided and supported by **Pr. Paul Varkey**, the Centre Pastor for the Mangalore District at that time, whose encouragement and spiritual oversight helped establish the church on a firm foundation of faith and doctrine.",
@@ -364,64 +234,51 @@
       "kPBabu": {
         "name": "Pr K.P Babu",
         "tenure": "1989 - 1997",
-        "years": "8 years",
-        "description": "Pr K.P Babu was the founding pastor who established IPC Hebron in 1989. His vision and dedication laid the foundation for our church, and his faithful service for 8 years set the course for our ministry."
+        "years": "8 years"
       },
       "pPDaniel": {
         "name": "Pr P.P Daniel",
         "tenure": "1997 - 2001",
-        "years": "4 years",
-        "description": "Pr P.P Daniel served our church with great commitment for 4 years. His leadership strengthened our congregation and continued the work of building a strong foundation in faith and community."
+        "years": "4 years"
       },
       "rajuKJ": {
         "name": "Pr K.J Raju",
         "tenure": "2001 - 2007",
-        "years": "6 years",
-        "description": "Pr K.J Raju led our church for 6 years with wisdom and grace. During his tenure, the church experienced significant growth in membership and expanded its ministry outreach to the community."
+        "years": "6 years"
       },
       "rajuCS": {
         "name": "Pr C.S Raju",
         "tenure": "2007 - 2010",
-        "years": "3 years",
-        "description": "Pr C.S Raju served our congregation for 3 years with passion and dedication. His teaching ministry and pastoral care blessed many families and strengthened the spiritual foundation of our church."
+        "years": "3 years"
       },
       "josePaul": {
         "name": "Pr Jose Paul",
         "tenure": "2010 - 2013",
-        "years": "3 years",
-        "description": "Pr Jose Paul ministered to our church for 3 years with faithfulness and love. His emphasis on prayer and worship brought renewal to our congregation and deepened our relationship with God."
+        "years": "3 years"
       },
       "matthai": {
         "name": "Pr M.V Matthai",
         "tenure": "2013 - 2017",
-        "years": "4 years",
-        "description": "Pr M.V Matthai served our church with dedication and commitment for 4 years. His leadership brought stability and growth to our congregation, strengthening our faith and community bonds."
+        "years": "4 years"
       },
       "aby": {
         "name": "Pr Aby",
         "tenure": "2017 - 2020",
-        "years": "3 years",
-        "description": "Pr Aby served our church for 3 years with great commitment. His leadership focused on discipleship and community building, leaving a lasting impact on the spiritual growth of our members."
+        "years": "3 years"
       },
       "roy": {
         "name": "Pr Roy T Philip",
         "tenure": "2020 - 2023",
-        "years": "3 years",
-        "description": "Pr Roy T Philip led our congregation for 3 years with wisdom and compassion. His ministry emphasized evangelism and outreach, bringing many new souls to Christ and expanding our church's impact in the community."
+        "years": "3 years"
       },
       "suresh": {
         "name": "Pr K.E Suresh",
         "tenure": "2023 - Present",
-        "years": "2023 - Present",
-        "description": "Pr K.E Suresh is currently serving as our Senior Pastor, leading the congregation with vision and dedication. Under his leadership, the church continues to grow in faith, impact, and service to God and the community."
+        "years": "2023 - Present"
       }
     }
   },
   "common": {
-    "loading": "Loading...",
-    "error": "Error",
-    "close": "Close",
-    "next": "Next",
-    "previous": "Previous"
+    "loading": "Loading..."
   }
 }

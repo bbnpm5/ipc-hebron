@@ -10,13 +10,13 @@ const Home = () => {
   return (
     <div>
       <Helmet>
-        <title>IPC Hebron Neria | India Pentecostal Church, Wayanad</title>
-        <meta name="description" content="IPC Hebron Neria – India Pentecostal Church in Neria, Kalpetta, Wayanad. Join us for Sunday worship, Bible studies, prayer, and community. Also known as IBC Hebron." />
+        <title>IPC Hebron Neria | India Pentecostal Church, Belthangady</title>
+        <meta name="description" content="IPC Hebron Neria – India Pentecostal Church in Neria, Belthangady, Dakshina Kannada. Join us for Sunday worship, Bible studies, prayer, and community. Also known as IBC Hebron." />
       </Helmet>
       {/* Hero Section with Background Image */}
       <section className="relative w-full h-screen min-h-[500px] sm:min-h-[600px] md:min-h-[700px] flex items-center justify-center overflow-hidden">
         {/* Background Image with Parallax Effect */}
-        <div 
+        <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105 transition-transform duration-700 ease-out bg-fixed md:bg-fixed"
           style={{
             backgroundImage: 'url(/Home_BackgroundScreen.png)',
@@ -71,15 +71,15 @@ const Home = () => {
             </span>
           </h1>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center animate-scale-in px-4">
-            <Link 
-              to="/contact" 
+            <Link
+              to="/contact"
               className="group relative inline-flex items-center justify-center bg-white text-black px-6 sm:px-8 md:px-10 py-3 sm:py-4 text-base sm:text-lg font-bold uppercase tracking-wider rounded-xl transition-all duration-300 shadow-large hover:shadow-glow-lg hover:scale-110 active:scale-95 overflow-hidden min-h-[44px]"
             >
               <span className="relative z-10">{t('home.heroCTA')}</span>
               <div className="absolute inset-0 bg-gradient-to-r from-primary-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </Link>
-            <Link 
-              to="/about" 
+            <Link
+              to="/about"
               className="inline-flex items-center justify-center bg-transparent text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 text-base sm:text-lg font-semibold uppercase tracking-wider rounded-xl border-2 border-white/50 hover:border-white hover:bg-white/10 transition-all duration-300 backdrop-blur-sm min-h-[44px]"
             >
               {t('home.learnMore')}

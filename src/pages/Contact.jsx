@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Mail, Phone, MapPin, Send, CheckCircle, Facebook, Instagram, Youtube, MessageSquare, Sparkle, User, FileText, ArrowRight, Loader2, AlertCircle } from 'lucide-react'
+import { Mail, Phone, MapPin, Send, CheckCircle, Facebook, Instagram, Youtube, Sparkle, ArrowRight, Loader2, AlertCircle } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Helmet } from 'react-helmet-async'
 import { sendContactEmail } from '../config/emailjs'
@@ -67,7 +67,7 @@ const Contact = () => {
     <div>
       <Helmet>
         <title>Contact Us | IPC Hebron Neria</title>
-        <meta name="description" content="Get in touch with IPC Hebron Neria. Find our address in Neria, Kalpetta, Wayanad, phone number, and send us a message." />
+        <meta name="description" content="Get in touch with IPC Hebron Neria. Find our address in Neria, Belthangady, Dakshina Kannada, phone number, and send us a message." />
       </Helmet>
       {/* Page Banner - Matching About Page Style */}
       <section className="relative bg-gradient-to-r from-primary-600 to-primary-700 text-white py-8 md:py-12 overflow-hidden">

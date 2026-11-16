@@ -35,7 +35,7 @@ const Services = () => {
     <div>
       <Helmet>
         <title>Church Services | IPC Hebron Neria</title>
-        <meta name="description" content="Service times and details for IPC Hebron Neria – Sunday worship, mid-week Bible study, prayer meetings, and more in Neria, Wayanad." />
+        <meta name="description" content="Service times and details for IPC Hebron Neria – Sunday worship, mid-week Bible study, prayer meetings, and more in Neria, Belthangady." />
       </Helmet>
       {/* Page Banner */}
       <section className="relative bg-gradient-to-r from-primary-600 to-primary-700 text-white py-8 md:py-12 overflow-hidden">

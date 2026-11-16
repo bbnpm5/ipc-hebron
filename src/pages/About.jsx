@@ -8,7 +8,7 @@ const About = () => {
     <div>
       <Helmet>
         <title>About Us | IPC Hebron Neria</title>
-        <meta name="description" content="Learn about IPC Hebron Neria – our faith, leadership, and mission as India Pentecostal Church in Neria, Wayanad." />
+        <meta name="description" content="Learn about IPC Hebron Neria – our faith, leadership, and mission as India Pentecostal Church in Neria, Belthangady." />
       </Helmet>
       {/* Page Banner */}
       <section className="relative bg-gradient-to-r from-primary-600 to-primary-700 text-white py-8 md:py-12 overflow-hidden">

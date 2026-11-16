@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Calendar, Clock, MapPin, Users, RefreshCw, AlertCircle, Sparkles, ArrowRight } from 'lucide-react'
+import { Calendar, Clock, MapPin, RefreshCw, AlertCircle, Sparkles } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Helmet } from 'react-helmet-async'
 import { getEvents } from '../services/googleCalendar'
@@ -10,84 +10,17 @@ const Events = () => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
-  // Fallback sample events if Google Calendar is not configured
-  const fallbackEvents = [
-    {
-      id: 1,
-      title: "Youth Conference",
-      date: "2024-02-15",
-      time: "6:00 PM",
-      location: "Church Main Hall",
-      description: "A special gathering for young people with worship, teaching, and fellowship.",
-      category: "Youth"
-    },
-    {
-      id: 2,
-      title: "Bible Study Workshop",
-      date: "2024-02-20",
-      time: "7:00 PM",
-      location: "Church Main Hall",
-      description: "Learn effective methods for studying and understanding God's Word.",
-      category: "Education"
-    },
-    {
-      id: 3,
-      title: "Community Outreach",
-      date: "2024-02-25",
-      time: "9:00 AM",
-      location: "Local Community Center",
-      description: "Join us as we serve our community and share the love of Christ.",
-      category: "Outreach"
-    },
-    {
-      id: 4,
-      title: "Worship Night",
-      date: "2024-03-01",
-      time: "7:00 PM",
-      location: "Church Main Hall",
-      description: "An evening of extended worship, prayer, and seeking God's presence.",
-      category: "Worship"
-    },
-    {
-      id: 5,
-      title: "Easter Celebration",
-      date: "2024-03-31",
-      time: "10:00 AM",
-      location: "Church Main Hall",
-      description: "Celebrate the resurrection of our Lord and Savior Jesus Christ.",
-      category: "Holiday"
-    },
-    {
-      id: 6,
-      title: "Prayer & Fasting Retreat",
-      date: "2024-04-05",
-      time: "All Day",
-      location: "Church Main Hall",
-      description: "A day dedicated to prayer, fasting, and seeking God's face together.",
-      category: "Prayer"
-    }
-  ]
-
   // Fetch events from Google Calendar
   useEffect(() => {
     const loadEvents = async () => {
       setLoading(true)
       setError(null)
       try {
-        const googleEvents = await getEvents()
-        
-        if (googleEvents.length > 0) {
-          // Use events from Google Calendar
-          setEvents(googleEvents)
-        } else {
-          // Fallback to sample events if no Google Calendar events found
-          setEvents(fallbackEvents)
-        }
+        setEvents(await getEvents())
       } catch (err) {
         console.error('Error loading events:', err)
         setError(err.message)
-        // Use fallback events on error
-        setEvents(fallbackEvents)
+        setEvents([])
       } finally {
         setLoading(false)
       }
@@ -166,7 +99,7 @@ const Events = () => {
     <div>
       <Helmet>
         <title>Events | IPC Hebron Neria</title>
-        <meta name="description" content="Upcoming events at IPC Hebron Neria – church gatherings, prayer nights, youth events, and special services in Neria, Wayanad." />
+        <meta name="description" content="Upcoming events at IPC Hebron Neria – church gatherings, prayer nights, youth events, and special services in Neria, Belthangady." />
       </Helmet>
       {/* Page Banner */}
       <section className="relative bg-gradient-to-r from-primary-600 to-primary-700 text-white py-8 md:py-12 overflow-hidden">
@@ -208,7 +141,7 @@ const Events = () => {
               </div>
               <p className="text-gray-600 text-lg font-medium">{t('common.loading')}</p>
             </div>
-          ) : error && events.length === 0 ? (
+          ) : error ? (
             <div className="max-w-6xl mx-auto mb-8 animate-fade-in">
               <div className="bg-white rounded-2xl shadow-soft border border-yellow-200 p-6 hover:shadow-medium transition-shadow">
                 <div className="flex items-start space-x-4">
@@ -217,7 +150,7 @@ const Events = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-700 font-medium">
-                      {error}. Showing sample events. Please configure Google Calendar API to see your events.
+                      We couldn't load our events right now. Please check back later.
                     </p>
                   </div>
                 </div>
@@ -343,34 +276,6 @@ const Events = () => {
               )
             })}
           </div>
-
-          {/* Configuration Note */}
-          {!import.meta.env.VITE_GOOGLE_CALENDAR_API_KEY && (
-            <div className="max-w-6xl mx-auto mt-12 animate-fade-in">
-              <div className="bg-white rounded-2xl shadow-soft border border-primary-200 p-8">
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0">
-                    <div className="relative">
-                      <div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-primary-700 rounded-2xl blur-md opacity-40"></div>
-                      <div className="relative w-14 h-14 bg-gradient-to-br from-primary-500 to-primary-700 rounded-2xl flex items-center justify-center shadow-medium">
-                        <Calendar className="w-7 h-7 text-white" />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">Google Calendar Integration</h3>
-                    <p className="text-sm text-gray-700 mb-3 leading-relaxed">
-                      To display events from your Google Calendar automatically,
-                      please configure the API credentials. See <code className="bg-gray-100 px-2 py-1 rounded text-xs font-mono border border-gray-200">GOOGLE_CALENDAR_SETUP.md</code> for instructions.
-                    </p>
-                    <p className="text-xs text-gray-600">
-                      Currently showing sample events. Once configured, your Google Calendar events will appear here automatically.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
         </div>
       </section>
     </div>

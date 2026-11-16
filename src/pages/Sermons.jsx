@@ -12,57 +12,16 @@ const Sermons = () => {
   const [error, setError] = useState(null)
   const [playingVideoId, setPlayingVideoId] = useState(null)
 
-  // Fallback sermons if YouTube API is not configured
-  const fallbackSermons = [
-    {
-      id: 'DVjxKOejX4s',
-      title: "Walking in Faith",
-      date: "2024-01-14T00:00:00Z",
-      description: "A message about trusting God in every season of life and walking by faith, not by sight.",
-      youtubeUrl: "https://www.youtube.com/watch?v=DVjxKOejX4s",
-      thumbnail: getYouTubeThumbnailUrl('DVjxKOejX4s', 'high')
-    },
-    {
-      id: 'U1BletN1NBs',
-      title: "The Power of Prayer",
-      date: "2024-01-07T00:00:00Z",
-      description: "Understanding the importance and power of prayer in the life of a believer.",
-      youtubeUrl: "https://www.youtube.com/watch?v=U1BletN1NBs",
-      thumbnail: getYouTubeThumbnailUrl('U1BletN1NBs', 'high')
-    },
-    {
-      id: 'Qg_PWkH0uOg',
-      title: "Living in the Spirit",
-      date: "2023-12-31T00:00:00Z",
-      description: "How to be led by the Holy Spirit and walk in the fullness of God's power.",
-      youtubeUrl: "https://www.youtube.com/watch?v=Qg_PWkH0uOg",
-      thumbnail: getYouTubeThumbnailUrl('Qg_PWkH0uOg', 'high')
-    },
-    {
-      id: 'WxxgIodwbHc',
-      title: "God's Unfailing Love",
-      date: "2023-12-24T00:00:00Z",
-      description: "Celebrating the birth of Christ and the depth of God's love for humanity.",
-      youtubeUrl: "https://www.youtube.com/watch?v=WxxgIodwbHc",
-      thumbnail: getYouTubeThumbnailUrl('WxxgIodwbHc', 'high')
-    }
-  ]
-
   useEffect(() => {
     const loadVideos = async () => {
       setLoading(true)
       setError(null)
       try {
-        const latestVideos = await getLatestVideos(6)
-        if (latestVideos.length > 0) {
-          setVideos(latestVideos)
-        } else {
-          setVideos(fallbackSermons)
-        }
+        setVideos(await getLatestVideos(6))
       } catch (err) {
         console.error('Error loading YouTube videos:', err)
         setError(err.message)
-        setVideos(fallbackSermons)
+        setVideos([])
       } finally {
         setLoading(false)
       }
@@ -168,20 +127,28 @@ const Sermons = () => {
             </div>
           )}
 
-          {/* Error State */}
-          {error && (
-            <div className="max-w-3xl mx-auto mb-8 animate-fade-in">
-              <div className="bg-white rounded-2xl shadow-soft border border-yellow-200 p-6">
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-xl flex items-center justify-center shadow-medium">
-                    <AlertCircle className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-700 font-medium">{error}</p>
-                    <p className="text-xs text-gray-500 mt-1">Showing sample sermons below.</p>
-                  </div>
+          {/* No videos (not configured, none uploaded, or failed to load) */}
+          {!loading && videos.length === 0 && (
+            <div className="max-w-3xl mx-auto text-center py-12 animate-fade-in">
+              <div className="inline-block mb-6">
+                <div className="w-20 h-20 bg-gradient-to-br from-red-500 to-red-700 rounded-2xl flex items-center justify-center mx-auto shadow-large">
+                  {error ? <AlertCircle className="w-10 h-10 text-white" /> : <Youtube className="w-10 h-10 text-white" />}
                 </div>
               </div>
+              <p className="text-gray-700 text-lg font-semibold mb-2">
+                {error ? "We couldn't load our latest sermons right now." : 'Our sermons are on YouTube.'}
+              </p>
+              <p className="text-gray-500 text-sm mb-8">Watch all our messages on the IPC Hebron Neria YouTube channel.</p>
+              <a
+                href={channelUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold rounded-2xl transition-all duration-300 shadow-large hover:shadow-glow-lg hover:scale-105"
+              >
+                <Youtube className="w-6 h-6 group-hover:scale-110 transition-transform" />
+                <span>Watch on YouTube</span>
+                <ExternalLink className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </a>
             </div>
           )}
 
@@ -309,36 +276,6 @@ const Sermons = () => {
                 <span>View All Videos on YouTube</span>
                 <ExternalLink className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
-            </div>
-          )}
-
-          {/* Configuration Note */}
-          {!import.meta.env.VITE_YOUTUBE_CHANNEL_ID && (
-            <div className="max-w-4xl mx-auto mt-12 animate-fade-in">
-              <div className="bg-white rounded-2xl shadow-soft border border-primary-200 p-8">
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0">
-                    <div className="relative">
-                      <div className="absolute inset-0 bg-gradient-to-br from-red-500 to-red-700 rounded-2xl blur-md opacity-40"></div>
-                      <div className="relative w-14 h-14 bg-gradient-to-br from-red-500 to-red-700 rounded-2xl flex items-center justify-center shadow-medium">
-                        <Youtube className="w-7 h-7 text-white" />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold text-gray-900 mb-3">YouTube Channel Integration</h3>
-                    <p className="text-sm text-gray-700 mb-3 leading-relaxed">
-                      To display your latest YouTube videos automatically, add these to your <code className="bg-gray-100 px-2 py-1 rounded text-xs font-mono border border-gray-200">.env</code> file:
-                    </p>
-                    <div className="bg-gray-50 rounded-lg p-4 text-xs font-mono">
-                      <p className="text-gray-600">VITE_YOUTUBE_CHANNEL_ID=your_channel_id_here</p>
-                    </div>
-                    <p className="text-xs text-gray-500 mt-3">
-                      No API key needed - uses the public YouTube RSS feed. Currently showing sample sermons.
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
           )}
         </div>

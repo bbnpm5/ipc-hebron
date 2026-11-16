@@ -34,36 +34,6 @@ export const extractYouTubeVideoId = (url) => {
 }
 
 /**
- * Generates YouTube embed URL
- * @param {string} videoId - YouTube video ID
- * @param {object} options - Embed options
- * @returns {string} - YouTube embed URL
- */
-export const getYouTubeEmbedUrl = (videoId, options = {}) => {
-  if (!videoId) return null
-
-  const params = new URLSearchParams({
-    autoplay: options.autoplay ? '1' : '0',
-    modestbranding: options.modestbranding !== false ? '1' : '0',
-    rel: options.rel !== false ? '1' : '0',
-    showinfo: '0',
-    ...options.params
-  })
-
-  return `https://www.youtube.com/embed/${videoId}?${params.toString()}`
-}
-
-/**
- * Generates YouTube watch URL
- * @param {string} videoId - YouTube video ID
- * @returns {string} - YouTube watch URL
- */
-export const getYouTubeWatchUrl = (videoId) => {
-  if (!videoId) return null
-  return `https://www.youtube.com/watch?v=${videoId}`
-}
-
-/**
  * Generates YouTube thumbnail URL
  * @param {string} videoId - YouTube video ID
  * @param {string} quality - Thumbnail quality: 'default', 'medium', 'high', 'standard', 'maxres'

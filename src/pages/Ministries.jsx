@@ -47,7 +47,7 @@ const Ministries = () => {
     <div>
       <Helmet>
         <title>Ministries | IPC Hebron Neria</title>
-        <meta name="description" content="Explore the ministries of IPC Hebron Neria – youth, women, men, children, and outreach ministries serving Neria and Wayanad." />
+        <meta name="description" content="Explore the ministries of IPC Hebron Neria – youth, women, men, children, and outreach ministries serving Neria and Belthangady." />
       </Helmet>
       {/* Page Banner */}
       <section className="relative bg-gradient-to-r from-primary-600 to-primary-700 text-white py-8 md:py-12 overflow-hidden">

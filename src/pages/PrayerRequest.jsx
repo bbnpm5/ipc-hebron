@@ -1,11 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
-import { Heart, Send, CheckCircle, Sparkles, User, Mail, Phone, FileText, Loader2, AlertCircle } from 'lucide-react'
-import { useTranslation } from 'react-i18next'
+import { Send, CheckCircle, Sparkles, User, Mail, Phone, FileText, Loader2, AlertCircle } from 'lucide-react'
 import { Helmet } from 'react-helmet-async'
 import { sendPrayerRequestEmail } from '../config/emailjs'
 
 const PrayerRequest = () => {
-  const { t } = useTranslation()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
