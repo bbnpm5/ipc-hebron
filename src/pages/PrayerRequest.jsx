@@ -138,7 +138,7 @@ const PrayerRequest = () => {
               {/* Modern Form Card */}
               <div className="relative bg-white rounded-3xl shadow-soft hover:shadow-large transition-all duration-500 overflow-hidden border border-gray-100 p-8 md:p-10 animate-fade-in">
                 {/* Animated Background Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-primary-700 opacity-0 hover:opacity-3 transition-opacity duration-700"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-primary-700 opacity-0 hover:opacity-3 transition-opacity duration-700 pointer-events-none"></div>
 
                 {/* Introduction */}
                 <div className="relative z-10 mb-8 text-center">
@@ -306,7 +306,7 @@ const PrayerRequest = () => {
               {/* Prayer Information Card */}
               <div className="mt-8 relative bg-white rounded-2xl shadow-soft p-6 md:p-8 animate-fade-in border border-gray-100">
                 {/* Animated Background Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-primary-700 opacity-0 hover:opacity-3 transition-opacity duration-700 rounded-2xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-primary-700 opacity-0 hover:opacity-3 transition-opacity duration-700 rounded-2xl pointer-events-none"></div>
 
                 <div className="relative z-10">
                   <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">

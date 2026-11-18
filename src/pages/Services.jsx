@@ -164,7 +164,7 @@ const Services = () => {
             >
               <div className="relative bg-white rounded-3xl shadow-soft hover:shadow-large transition-all duration-500 overflow-hidden border border-gray-100 group-hover:border-primary-200 p-8">
                 {/* Animated Background Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-primary-700 opacity-0 group-hover:opacity-5 transition-opacity duration-700"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-primary-700 opacity-0 group-hover:opacity-5 transition-opacity duration-700 pointer-events-none"></div>
                 <div className="absolute -top-32 -right-32 w-96 h-96 bg-gradient-to-br from-primary-500 to-primary-700 rounded-full blur-3xl opacity-0 group-hover:opacity-10 transition-opacity duration-700"></div>
 
                 <div className="relative z-10">
@@ -202,7 +202,7 @@ const Services = () => {
             >
               <div className="relative bg-white rounded-3xl shadow-soft hover:shadow-large transition-all duration-500 overflow-hidden border border-gray-100 group-hover:border-accent-200 p-8">
                 {/* Animated Background Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-accent-500 to-accent-700 opacity-0 group-hover:opacity-5 transition-opacity duration-700"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-accent-500 to-accent-700 opacity-0 group-hover:opacity-5 transition-opacity duration-700 pointer-events-none"></div>
                 <div className="absolute -top-32 -right-32 w-96 h-96 bg-gradient-to-br from-accent-500 to-accent-700 rounded-full blur-3xl opacity-0 group-hover:opacity-10 transition-opacity duration-700"></div>
 
                 <div className="relative z-10">
@@ -240,7 +240,7 @@ const Services = () => {
             >
               <div className="relative bg-white rounded-3xl shadow-soft hover:shadow-large transition-all duration-500 overflow-hidden border border-gray-100 group-hover:border-gold-200 p-8">
                 {/* Animated Background Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-gold-500 to-gold-700 opacity-0 group-hover:opacity-5 transition-opacity duration-700"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-gold-500 to-gold-700 opacity-0 group-hover:opacity-5 transition-opacity duration-700 pointer-events-none"></div>
                 <div className="absolute -top-32 -right-32 w-96 h-96 bg-gradient-to-br from-gold-500 to-gold-700 rounded-full blur-3xl opacity-0 group-hover:opacity-10 transition-opacity duration-700"></div>
 
                 <div className="relative z-10">
@@ -278,7 +278,7 @@ const Services = () => {
             >
               <div className="relative bg-white rounded-3xl shadow-soft hover:shadow-large transition-all duration-500 overflow-hidden border border-gray-100 group-hover:border-red-200 p-8">
                 {/* Animated Background Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-red-500 to-red-700 opacity-0 group-hover:opacity-5 transition-opacity duration-700"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-red-500 to-red-700 opacity-0 group-hover:opacity-5 transition-opacity duration-700 pointer-events-none"></div>
                 <div className="absolute -top-32 -right-32 w-96 h-96 bg-gradient-to-br from-red-500 to-red-700 rounded-full blur-3xl opacity-0 group-hover:opacity-10 transition-opacity duration-700"></div>
 
                 <div className="relative z-10">

@@ -120,7 +120,7 @@ const Contact = () => {
               {/* Modern Address Card */}
               <div className="group relative bg-white rounded-2xl shadow-soft hover:shadow-large transition-all duration-500 overflow-hidden border border-gray-100 hover:border-primary-200">
                 {/* Animated Background Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-primary-700 opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-primary-700 opacity-0 group-hover:opacity-5 transition-opacity duration-500 pointer-events-none"></div>
 
                 <div className="relative p-5 md:p-6">
                   <div className="flex items-start space-x-4">
@@ -150,7 +150,7 @@ const Contact = () => {
               {/* Modern Phone Card */}
               <div className="group relative bg-white rounded-2xl shadow-soft hover:shadow-large transition-all duration-500 overflow-hidden border border-gray-100 hover:border-accent-200">
                 {/* Animated Background Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-accent-500 to-accent-700 opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-accent-500 to-accent-700 opacity-0 group-hover:opacity-5 transition-opacity duration-500 pointer-events-none"></div>
 
                 <div className="relative p-5 md:p-6">
                   <div className="flex items-start space-x-4">
@@ -182,7 +182,7 @@ const Contact = () => {
               {/* Modern Email Card */}
               <div className="group relative bg-white rounded-2xl shadow-soft hover:shadow-large transition-all duration-500 overflow-hidden border border-gray-100 hover:border-gold-200">
                 {/* Animated Background Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-gold-500 to-gold-700 opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-gold-500 to-gold-700 opacity-0 group-hover:opacity-5 transition-opacity duration-500 pointer-events-none"></div>
 
                 <div className="relative p-5 md:p-6">
                   <div className="flex items-start space-x-4">
@@ -214,7 +214,7 @@ const Contact = () => {
               {/* Modern Social Media Card */}
               <div className="group relative bg-white rounded-2xl shadow-soft hover:shadow-large transition-all duration-500 overflow-hidden border border-gray-100 hover:border-primary-200">
                 {/* Animated Background Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-accent-500 opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-accent-500 opacity-0 group-hover:opacity-5 transition-opacity duration-500 pointer-events-none"></div>
 
                 <div className="relative p-5 md:p-6">
                   <h3 className="font-bold text-gray-900 mb-4 text-base group-hover:text-primary-600 transition-colors duration-300">
@@ -262,7 +262,7 @@ const Contact = () => {
             {/* Modern Contact Form */}
             <div className="group relative bg-white rounded-2xl shadow-soft hover:shadow-large transition-all duration-500 overflow-hidden border border-gray-100 hover:border-primary-200 animate-fade-in" style={{ animationDelay: '0.1s' }}>
               {/* Animated Background Gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-primary-700 opacity-0 group-hover:opacity-3 transition-opacity duration-700"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-primary-700 opacity-0 group-hover:opacity-3 transition-opacity duration-700 pointer-events-none"></div>
 
               <div className="relative p-6 md:p-8">
                 <div className="mb-6">

@@ -56,10 +56,10 @@ const DailyVerse = () => {
       { text: "For I am convinced that neither death nor life, neither angels nor demons, neither the present nor the future, nor any powers, neither height nor depth, nor anything else in all creation, will be able to separate us from the love of God that is in Christ Jesus our Lord.", reference: "Romans 8:38-39 (NIV)" },
       { text: "The Lord is my rock, my fortress and my deliverer; my God is my rock, in whom I take refuge, my shield and the horn of my salvation, my stronghold.", reference: "Psalm 18:2 (NIV)" },
       { text: "Rejoice in the Lord always. I will say it again: Rejoice!", reference: "Philippians 4:4 (NIV)" },
-      { text: "Have I not commanded you? Be strong and courageous. Do not be afraid; do not be discouraged, for the Lord your God will be with you wherever you go.", reference: "Joshua 1:9 (NIV)" },
+      { text: "God is our refuge and strength, an ever-present help in trouble.", reference: "Psalm 46:1 (NIV)" },
       { text: "I say to myself, 'The Lord is my portion; therefore I will wait for him.'", reference: "Lamentations 3:24 (NIV)" },
       { text: "But as for me and my household, we will serve the Lord.", reference: "Joshua 24:15 (NIV)" },
-      { text: "in all your ways submit to him, and he will make your paths straight.", reference: "Proverbs 3:6 (NIV)" }
+      { text: "The Lord bless you and keep you; the Lord make his face shine on you and be gracious to you; the Lord turn his face toward you and give you peace.", reference: "Numbers 6:24-26 (NIV)" }
     ],
     kn: [
       { text: "ನಿಮಗಾಗಿ ನಾನು ಹೊಂದಿರುವ ಯೋಜನೆಗಳನ್ನು ನಾನು ಬಲ್ಲೆನು, ಎಂದು ಕರ್ತನು ಹೇಳುತ್ತಾನೆ, ನಿಮ್ಮನ್ನು ಸಮೃದ್ಧಿಗೊಳಿಸುವ ಮತ್ತು ನಿಮ್ಮನ್ನು ಹಾನಿಗೊಳಿಸದ ಯೋಜನೆಗಳು, ನಿಮಗೆ ಭರವಸೆ ಮತ್ತು ಭವಿಷ್ಯವನ್ನು ನೀಡುವ ಯೋಜನೆಗಳು.", reference: "ಯೆರೆಮೀಯ 29:11" },
@@ -145,12 +145,15 @@ const DailyVerse = () => {
       const lang = currentLang.startsWith('kn') ? 'kn' : currentLang.startsWith('ml') ? 'ml' : 'en'
       const verses = bibleVerses[lang] || bibleVerses.en
       
-      // Get day of year (1-365/366)
-      const now = new Date()
-      const start = new Date(now.getFullYear(), 0, 0)
-      const diff = now - start
+      // Day of year (1-365/366) by India's calendar date, so every visitor
+      // sees the same verse on the same day and it changes at midnight IST.
+      // Counting whole calendar days (in UTC) avoids daylight-saving shifts.
+      const [y, m, d] = new Date()
+        .toLocaleDateString('en-CA', { timeZone: 'Asia/Kolkata' }) // YYYY-MM-DD
+        .split('-')
+        .map(Number)
       const oneDay = 1000 * 60 * 60 * 24
-      const dayOfYear = Math.floor(diff / oneDay)
+      const dayOfYear = (Date.UTC(y, m - 1, d) - Date.UTC(y, 0, 0)) / oneDay
       
       // Use day of year to select verse (cycles through array)
       const verseIndex = dayOfYear % verses.length

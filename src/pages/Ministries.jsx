@@ -175,7 +175,7 @@ const Ministries = () => {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="group relative bg-white rounded-2xl p-8 text-center shadow-soft hover:shadow-large transition-all duration-500 border border-gray-100 hover:border-primary-200">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-primary-700 opacity-0 group-hover:opacity-5 transition-opacity duration-700 rounded-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-primary-700 opacity-0 group-hover:opacity-5 transition-opacity duration-700 rounded-2xl pointer-events-none"></div>
               <div className="relative z-10">
                 <div className="relative mx-auto mb-6 w-16 h-16">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary-600 to-primary-700 rounded-2xl blur-md opacity-0 group-hover:opacity-40 transition-opacity duration-500"></div>
@@ -191,7 +191,7 @@ const Ministries = () => {
               <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-600 to-primary-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left rounded-b-2xl"></div>
             </div>
             <div className="group relative bg-white rounded-2xl p-8 text-center shadow-soft hover:shadow-large transition-all duration-500 border border-gray-100 hover:border-accent-200">
-              <div className="absolute inset-0 bg-gradient-to-br from-accent-500 to-accent-700 opacity-0 group-hover:opacity-5 transition-opacity duration-700 rounded-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-accent-500 to-accent-700 opacity-0 group-hover:opacity-5 transition-opacity duration-700 rounded-2xl pointer-events-none"></div>
               <div className="relative z-10">
                 <div className="relative mx-auto mb-6 w-16 h-16">
                   <div className="absolute inset-0 bg-gradient-to-br from-accent-600 to-accent-700 rounded-2xl blur-md opacity-0 group-hover:opacity-40 transition-opacity duration-500"></div>
@@ -207,7 +207,7 @@ const Ministries = () => {
               <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-accent-600 to-accent-700 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left rounded-b-2xl"></div>
             </div>
             <div className="group relative bg-white rounded-2xl p-8 text-center shadow-soft hover:shadow-large transition-all duration-500 border border-gray-100 hover:border-primary-200">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-primary-700 opacity-0 group-hover:opacity-5 transition-opacity duration-700 rounded-2xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-500 to-primary-700 opacity-0 group-hover:opacity-5 transition-opacity duration-700 rounded-2xl pointer-events-none"></div>
               <div className="relative z-10">
                 <div className="relative mx-auto mb-6 w-16 h-16">
                   <div className="absolute inset-0 bg-gradient-to-br from-primary-600 to-primary-700 rounded-2xl blur-md opacity-0 group-hover:opacity-40 transition-opacity duration-500"></div>
