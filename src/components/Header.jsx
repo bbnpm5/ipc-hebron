@@ -129,21 +129,21 @@ const Header = () => {
                     <span className="block bg-gradient-to-r from-white to-primary-200 bg-clip-text text-transparent">ഐപിസി</span>
                     <span className="block bg-gradient-to-r from-white to-primary-200 bg-clip-text text-transparent">ഹെബ്രോൺ</span>
                   </h1>
-                  <p className="text-[10px] text-gray-300 hidden sm:block leading-tight mt-1 truncate max-w-[220px] xl:max-w-none group-hover:text-gray-200 transition-colors">{t('header.location')}</p>
+                  <p className="text-[10px] text-gray-300 block leading-tight mt-1 truncate max-w-[220px] xl:max-w-none group-hover:text-gray-200 transition-colors">{t('header.location')}</p>
                 </div>
               ) : isKannada ? (
                 <div className="min-w-0">
                   <h1 className="font-bold text-white leading-tight text-sm md:text-base lg:text-lg whitespace-normal break-words drop-shadow-lg group-hover:text-primary-200 transition-colors duration-300 bg-gradient-to-r from-white to-primary-200 bg-clip-text text-transparent">
                     {t('header.churchName')}
                   </h1>
-                  <p className="text-[9px] md:text-[10px] text-gray-300 hidden sm:block leading-tight whitespace-normal break-words group-hover:text-gray-200 transition-colors">{t('header.location')}</p>
+                  <p className="text-[9px] md:text-[10px] text-gray-300 block leading-tight whitespace-normal break-words group-hover:text-gray-200 transition-colors">{t('header.location')}</p>
                 </div>
               ) : (
                 <div className="min-w-0">
                   <h1 className="font-bold text-white leading-tight text-base md:text-lg lg:text-xl truncate drop-shadow-lg group-hover:text-primary-200 transition-colors duration-300 bg-gradient-to-r from-white to-primary-200 bg-clip-text text-transparent">
                     {t('header.churchName')}
                   </h1>
-                  <p className="text-[10px] md:text-xs text-gray-300 hidden sm:block leading-tight truncate group-hover:text-gray-200 transition-colors">{t('header.location')}</p>
+                  <p className="text-[11px] md:text-xs text-gray-300 block leading-tight truncate group-hover:text-gray-200 transition-colors">{t('header.location')}</p>
                 </div>
               )}
             </div>
