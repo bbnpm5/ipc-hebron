@@ -1,0 +1,14 @@
+{
+  "title": "Baptism Service",
+  "subtitle": "New life in Christ",
+  "label": "Special Service",
+  "date": "",
+  "description": "Celebrating public confession of faith through water baptism with the church family.",
+  "order": 2,
+  "cover": "01-baptism-service.jpeg",
+  "captions": {
+    "01-baptism-service.jpeg": "Baptism service",
+    "02-faith-and-obedience.jpeg": "Celebrating faith and obedience",
+    "03-church-rejoicing.png": "Church rejoicing together"
+  }
+}

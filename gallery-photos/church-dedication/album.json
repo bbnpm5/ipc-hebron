@@ -1,0 +1,13 @@
+{
+  "title": "Church Dedication",
+  "subtitle": "Milestone in church history",
+  "label": "Dedication Ceremony",
+  "date": "",
+  "description": "A memorable day dedicating our church building to God, with thanksgiving and prayers for future ministry.",
+  "order": 3,
+  "cover": "01-dedication-service.jpg",
+  "captions": {
+    "01-dedication-service.jpg": "Dedication service",
+    "02-gods-faithfulness.jpg": "Celebrating God's faithfulness"
+  }
+}

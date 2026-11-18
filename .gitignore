@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+# Generated from /gallery-photos by scripts/build-gallery.mjs (npm run gallery)
+public/gallery-generated
+src/generated
+
 # Environment variables
 .env
 .env.local

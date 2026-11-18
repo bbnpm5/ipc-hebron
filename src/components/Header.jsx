@@ -34,7 +34,9 @@ const Header = () => {
     { path: '/contact', label: t('nav.contact') },
   ]
 
-  const isActive = (path) => location.pathname === path
+  // Exact match, plus sub-pages such as /gallery/baptism-service
+  const isActive = (path) =>
+    location.pathname === path || (path !== '/' && location.pathname.startsWith(path + '/'))
 
   // Scroll detection
   useEffect(() => {
