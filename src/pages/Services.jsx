@@ -1,4 +1,4 @@
-import { Calendar, Clock, Users, Heart, Sparkles, ArrowRight } from 'lucide-react'
+import { Calendar, Clock, Users, Heart, Sparkles } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Helmet } from 'react-helmet-async'
 
@@ -100,12 +100,7 @@ const Services = () => {
                       
                       {/* Title Section */}
                       <div className="flex-1">
-                        <div className="flex items-center space-x-3 mb-2">
-                          <h2 className="text-2xl md:text-3xl font-bold">{service.day}</h2>
-                          <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-xs font-bold uppercase tracking-wide">
-                            {service.color === 'accent' ? 'Fellowship' : 'Worship'}
-                          </span>
-                        </div>
+                        <h2 className="text-2xl md:text-3xl font-bold mb-2">{service.day}</h2>
                         <p className="text-lg md:text-xl opacity-95 font-medium">{service.title}</p>
                       </div>
                     </div>
@@ -125,15 +120,9 @@ const Services = () => {
                     </div>
                     
                     {/* Description */}
-                    <p className="text-gray-700 leading-relaxed text-base md:text-lg mb-4">
+                    <p className="text-gray-700 leading-relaxed text-base md:text-lg">
                       {service.description}
                     </p>
-                    
-                    {/* Learn More Indicator */}
-                    <div className="flex items-center text-primary-600 font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <span className="text-sm">Learn more</span>
-                      <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
-                    </div>
                   </div>
                 </div>
               )

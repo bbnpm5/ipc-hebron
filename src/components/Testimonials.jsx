@@ -9,13 +9,6 @@ const Testimonials = () => {
 
   const testimonials = [
     {
-      id: 1,
-      name: isKannada ? 'ಎಂ ಜೆ ಜಾಕೋಬ್' : 'M J Jacob',
-      text: isKannada
-        ? 'ಯೇಸುವಿನ ಮೇಲೆ ಕೇಂದ್ರೀಕೃತವಾದ ಚರ್ಚ್ ಕುಟುಂಬದ ಭಾಗವಾಗಿ ದೇವರು ನನ್ನ ಜೀವನವನ್ನು ಪರಿವರ್ತಿಸಿದ್ದಾನೆ, ಮತ್ತು ಇಲ್ಲಿ ಕೇಳ್ಪಡುವ ಸಂದೇಶವು ನನ್ನನ್ನು ಆತ್ಮಿಕವಾಗಿ ಆಶಿರ್ವಾದಿಸುತಿದೆ. ಈ ಸಭೆಯಲ್ಲಿರಿವುದಕ್ಕೆ ಕೃತಜ್ಞನಾಗಿದ್ದೇನೆ. ದೇವರಿಗೆ ಮಹಿಮೆ!'
-        : 'Blessed to be part of a church family focused on Jesus. God has transformed my life, and every message here builds me up. Grateful to be here. Praise God!'
-    },
-    {
       id: 2,
       name: isKannada ? 'ಸಿಬಿನ್ ಪಿ ಎಂ' : 'Sibin P.M',
       text: isKannada
@@ -28,20 +21,6 @@ const Testimonials = () => {
       text: isKannada
         ? 'ನಾನು ಇಲ್ಲಿ ಅನುಭವಿಸಿದ ಪ್ರೀತಿ ಮತ್ತು ಸಹಭಾಗಿತ್ವ ಅದ್ಭುತವಾಗಿದೆ. ಚರ್ಚ್ ಸಮುದಾಯದ ಪ್ರಾರ್ಥನೆಗಳು ಮತ್ತು ಬೆಂಬಲ ನನ್ನ ಆಧ್ಯಾತ್ಮಿಕ ಪ್ರಯಾಣದಲ್ಲಿ ಪ್ರಮುಖ ಪಾತ್ರ ವಹಿಸಿವೆ. ಧನ್ಯವಾದಗಳು, ಐಪಿಸಿ ಹೆಬ್ರಾನ್!'
         : 'The love and fellowship I\'ve experienced here is amazing. The prayers and support from the church community have been instrumental in my spiritual journey. Thank you, IPC Hebron!'
-    },
-    {
-      id: 4,
-      name: isKannada ? 'ಸುಜಾ ಟಾಮಿ' : 'Suja Tomy',
-      text: isKannada
-        ? 'ಐಪಿಸಿ ಹೆಬ್ರಾನ್ ನ ಭಾಗವಾಗಿರುವುದರಿಂದ ದೇವರೊಂದಿಗಿನ ನನ್ನ ಸಂಬಂಧವು ರೂಪಾಂತರಗೊಂಡಿದೆ. ಪವಿತ್ರಾತ್ಮವು ಇಲ್ಲಿ ಶಕ್ತಿಯುತವಾಗಿ ಚಲಿಸುತ್ತದೆ ಮತ್ತು ನನ್ನ ಜೀವನದ ಪ್ರತಿಯೊಂದು ಕ್ಷೇತ್ರದಲ್ಲೂ ದೇವರ ನಂಬಿಗಸ್ತಿಕೆಯನ್ನು ನಾನು ನೋಡಿದ್ದೇನೆ.'
-        : 'Being part of IPC Hebron has transformed my relationship with God. The Holy Spirit moves powerfully here, and I\'ve seen God\'s faithfulness in every area of my life.'
-    },
-    {
-      id: 5,
-      name: isKannada ? 'ಕೆ ರಾಜು' : 'K Raju',
-      text: isKannada
-        ? 'ಈ ಚರ್ಚ್ ನಿಜವಾಗಿಯೂ ದೇವರ ಸಾನಿಧ್ಯವನ್ನು ಅನುಭವಿಸುವ ಸ್ಥಳವಾಗಿದೆ. ಸೇವೆ, ಆರಾಧನೆ ಮತ್ತು ಫೆಲೋಶಿಪ್ ಜೀವನವನ್ನು ಬದಲಾಯಿಸುತ್ತಿದೆ. ಐಪಿಸಿ ಹೆಬ್ರಾನ್ ಅನ್ನು ನನ್ನ ಮನೆ ಚರ್ಚ್ ಎಂದು ಕರೆಯಲು ನಾನು ಧನ್ಯನಾಗಿದ್ದೇನೆ.'
-        : 'This church is truly a place where God\'s presence is felt. The ministry, worship, and fellowship have been life-changing. I\'m blessed to call IPC Hebron my home church.'
     }
   ]
 
