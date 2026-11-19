@@ -54,45 +54,41 @@ const Header = () => {
   }, [])
 
   return (
-    <header className={`sticky top-0 z-50 w-full transition-all duration-300 ${
-      isScrolled ? 'shadow-2xl' : 'shadow-glow'
+    <header className={`sticky top-0 z-50 w-full shadow-2xl md:transition-shadow md:duration-300 ${
+      isScrolled ? '' : 'md:shadow-glow'
     }`}>
-      {/* Enhanced Glassmorphism Background with Animated Gradients */}
-      <div
-        className={`absolute inset-0 transition-all duration-300 ${
-          isScrolled ? 'bg-gradient-to-b from-black via-gray-900 to-black' : 'bg-fixed md:bg-fixed'
-        }`}
-        style={!isScrolled ? {
-          backgroundImage: 'url(/Home_BackgroundScreen.png)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
-        } : {}}
-      >
-        {/* Strong Dark Overlay for Better Contrast */}
-        <div className={`absolute inset-0 backdrop-blur-xl transition-all duration-300 ${
-          isScrolled
-            ? 'bg-gradient-to-b from-black/98 via-black/95 to-black/98'
-            : 'bg-gradient-to-b from-black/95 via-black/90 to-black/95'
-        }`}></div>
+      {/* Header background. overflow-hidden keeps the glow circles inside the
+          header, so the page is never wider than a phone screen. */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Base: dark gradient, the same on every screen and scroll position */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900 to-black"></div>
 
-        {/* Vibrant Animated Gradient Overlays */}
-        {!isScrolled && (
-          <>
-            <div className="absolute inset-0 bg-gradient-to-r from-primary-600/40 via-transparent to-accent-600/40 animate-pulse"></div>
-            <div className="absolute inset-0 bg-gradient-to-b from-primary-900/50 via-transparent to-transparent"></div>
+        {/* Phones: one light, static colour tint. Nothing here changes while
+            scrolling, so budget phones have nothing heavy to redraw. */}
+        <div className="md:hidden absolute inset-0 bg-gradient-to-r from-primary-600/30 via-transparent to-accent-600/30"></div>
 
-            {/* Animated Glow Effects */}
-            <div className="absolute top-0 left-0 w-96 h-96 bg-primary-500/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 animate-pulse"></div>
-            <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent-500/20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2 animate-pulse"></div>
-          </>
-        )}
+        {/* Tablets and desktops: background photo, blur and animated glows
+            while at the top of the page, fading out once scrolled */}
+        <div className={`hidden md:block absolute inset-0 transition-opacity duration-300 ${
+          isScrolled ? 'opacity-0' : 'opacity-100'
+        }`}>
+          <div
+            className="absolute inset-0 bg-fixed"
+            style={{
+              backgroundImage: 'url(/Home_BackgroundScreen.png)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center'
+            }}
+          ></div>
+          <div className="absolute inset-0 backdrop-blur-xl bg-gradient-to-b from-black/95 via-black/90 to-black/95"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-primary-600/40 via-transparent to-accent-600/40 animate-pulse"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-primary-900/50 via-transparent to-transparent"></div>
+          <div className="absolute top-0 left-0 w-96 h-96 bg-primary-500/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 animate-pulse"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent-500/20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2 animate-pulse"></div>
+        </div>
 
         {/* Bottom Border Glow */}
-        <div className={`absolute bottom-0 left-0 right-0 h-[1px] transition-all duration-300 ${
-          isScrolled
-            ? 'bg-gradient-to-r from-transparent via-primary-400/80 to-transparent'
-            : 'bg-gradient-to-r from-transparent via-primary-500/60 to-transparent'
-        }`}></div>
+        <div className="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary-400/70 to-transparent"></div>
       </div>
       
       <nav className="max-w-7xl 2xl:max-w-screen-2xl mx-auto relative z-10">

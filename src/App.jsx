@@ -24,7 +24,9 @@ function App() {
     <HelmetProvider>
     <Router>
       <ScrollToTop />
-      <div className="min-h-screen flex flex-col">
+      {/* overflow-x-clip: nothing can make the page wider than the screen.
+          (clip, unlike hidden, doesn't break the sticky header.) */}
+      <div className="min-h-screen flex flex-col overflow-x-clip">
         <Header />
         <main className="flex-grow">
           <Routes>
